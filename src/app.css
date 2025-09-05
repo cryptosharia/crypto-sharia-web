@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant hover (&:hover);
+
 body {
 	/* Prevent navbar from overlapping content */
 	margin-top: 4rem;
