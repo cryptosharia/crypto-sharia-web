@@ -2,7 +2,13 @@
 
 @custom-variant hover (&:hover);
 
+html {
+  /* scrollbar-gutter: stable; */
+  scrollbar-width: thin;
+}
+
 body {
-	/* Prevent navbar from overlapping content */
-	margin-top: 4rem;
+  /* Prevent navbar from overlapping content */
+  margin-top: 4rem;
+  overflow-x: hidden;
 }
