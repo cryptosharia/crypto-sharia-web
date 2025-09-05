@@ -1,1 +1,6 @@
 @import 'tailwindcss';
+
+body {
+	/* Prevent navbar from overlapping content */
+	margin-top: 4rem;
+}
