@@ -7,9 +7,9 @@
 
 {#snippet line(device: 'desktop' | 'mobile')}
   {#if device === 'desktop'}
-    <div class="mx-8 hidden w-[1px] bg-orange-300 md:block lg:mx-12"></div>
+    <div class="mx-8 hidden border-r-2 border-orange-300 md:block lg:mx-12"></div>
   {:else}
-    <div class="mr-8 ml-6 w-[1px] bg-orange-300 md:hidden lg:mx-12"></div>
+    <div class="mr-8 ml-6 border-r-2 border-orange-300 md:hidden lg:mx-12"></div>
   {/if}
 {/snippet}
 
@@ -28,10 +28,10 @@
     </p>
     <div class="flex-1"></div>
     <div class="flex flex-row items-center justify-around gap-6 pt-6">
-      <img src={btc} alt="Bitcoin" class="size-8.5" />
-      <img src={eth} alt="Ethereum" class="size-8.5" />
-      <img src={sol} alt="Solana" class="size-8.5" />
-      <img src={sui} alt="Sui" class="size-8.5" />
+      <img src={btc} alt="Bitcoin" class="size-8" />
+      <img src={eth} alt="Ethereum" class="size-8" />
+      <img src={sol} alt="Solana" class="size-8" />
+      <img src={sui} alt="Sui" class="size-8" />
     </div>
   </div>
   {@render line('desktop')}
