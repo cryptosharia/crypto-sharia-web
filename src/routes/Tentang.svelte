@@ -3,6 +3,7 @@
   import eth from '$lib/assets/crypto-icons/eth.png';
   import sol from '$lib/assets/crypto-icons/sol.png';
   import sui from '$lib/assets/crypto-icons/sui.png';
+  import Title from '../components/Title.svelte';
 </script>
 
 {#snippet line(device: 'desktop' | 'mobile')}
@@ -17,7 +18,7 @@
   class="flex max-w-[100rem] flex-col items-stretch justify-between px-4 sm:px-6 md:flex-row md:px-12 lg:px-24 xl:px-36"
 >
   <div class="flex flex-1 flex-col rounded-4xl border border-slate-200 p-8 shadow-md">
-    <h1 class="mb-1.5 text-3xl font-bold text-orange-600">Tentang <u><i>CryptoSharia</i></u></h1>
+    <Title>Tentang <u><i>CryptoSharia</i></u></Title>
     <p class="text-justify text-base">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum lacinia elementum.
       Praesent molestie vel sem rutrum accumsan. Curabitur fermentum nec erat eu iaculis. Nullam
@@ -43,7 +44,7 @@
           <div
             class="absolute top-1/2 -left-10 size-4 -translate-y-1/2 rounded-full bg-orange-600 lg:-left-14"
           ></div>
-          <h1 class="mb-1.5 text-3xl font-bold text-orange-600">Visi</h1>
+          <Title>Visi</Title>
         </div>
         <p class="text-justify text-base">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum lacinia
@@ -57,7 +58,7 @@
           <div
             class="absolute top-1/2 -left-10 size-4 -translate-y-1/2 rounded-full bg-orange-600 lg:-left-14"
           ></div>
-          <h1 class="mb-1.5 text-3xl font-bold text-orange-600">Misi</h1>
+          <Title>Misi</Title>
         </div>
         <ul class="list-disc text-base">
           <li>Lorem ipsum dolor sit amet</li>
