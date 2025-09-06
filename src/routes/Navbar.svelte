@@ -68,7 +68,7 @@
                 <a
                   href={link.href}
                   onclick={() => setTimeout(() => (isDrawerOpen = false), 200)}
-                  class="block w-full text-center font-medium transition-colors duration-300 ease-in-out hover:text-orange-600"
+                  class="block w-full text-center text-base font-medium transition-colors duration-300 ease-in-out hover:text-orange-600"
                   >{link.text}</a
                 >
               </li>
@@ -77,7 +77,7 @@
                 <a
                   href={link.href}
                   onclick={() => setTimeout(() => (isDrawerOpen = false), 200)}
-                  class="block w-full rounded-full border-2 border-orange-600 bg-orange-600 px-4 py-1.5 text-center font-bold text-white transition-colors duration-300 ease-in-out hover:bg-white hover:text-orange-600"
+                  class="block w-full rounded-full border-2 border-orange-600 bg-orange-600 px-4 py-1.5 text-center text-base font-bold text-white transition-colors duration-300 ease-in-out hover:bg-white hover:text-orange-600"
                   >{link.text}</a
                 >
               </li>
