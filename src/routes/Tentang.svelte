@@ -18,7 +18,7 @@
   class="flex max-w-[100rem] flex-col items-stretch justify-between px-4 sm:px-6 md:flex-row md:px-12 lg:px-24 xl:px-36"
 >
   <div class="flex flex-1 flex-col rounded-4xl border border-slate-200 p-8 shadow-md">
-    <Title>Tentang <u><i>CryptoSharia</i></u></Title>
+    <Title isSmall={true}>Tentang <u><i>CryptoSharia</i></u></Title>
     <p class="text-justify text-base">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum lacinia elementum.
       Praesent molestie vel sem rutrum accumsan. Curabitur fermentum nec erat eu iaculis. Nullam
@@ -44,7 +44,7 @@
           <div
             class="absolute top-1/2 -left-10 size-4 -translate-y-1/2 rounded-full bg-orange-600 lg:-left-14"
           ></div>
-          <Title>Visi</Title>
+          <Title isSmall={true}>Visi</Title>
         </div>
         <p class="text-justify text-base">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum lacinia
@@ -58,7 +58,7 @@
           <div
             class="absolute top-1/2 -left-10 size-4 -translate-y-1/2 rounded-full bg-orange-600 lg:-left-14"
           ></div>
-          <Title>Misi</Title>
+          <Title isSmall={true}>Misi</Title>
         </div>
         <ul class="list-disc text-base">
           <li>Lorem ipsum dolor sit amet</li>

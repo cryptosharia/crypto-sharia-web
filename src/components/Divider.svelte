@@ -3,7 +3,7 @@
 </script>
 
 <span
-  class="mx-auto my-1.5 block h-[2px] bg-slate-200"
-  class:w-[calc(100%-4rem)]={usePadding}
+  class="mx-auto my-1.5 block h-[1.5px] bg-slate-300"
+  class:w-[90%]={usePadding}
   class:w-full={!usePadding}
 ></span>
