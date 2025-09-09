@@ -2,6 +2,19 @@
 
 @custom-variant hover (&:hover);
 
+@theme {
+  --animate-infinite-scroll: infinite-scroll 5s linear infinite;
+
+  @keyframes infinite-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
 html {
   /* scrollbar-gutter: stable; */
   scrollbar-width: thin;

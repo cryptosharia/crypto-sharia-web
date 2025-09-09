@@ -130,6 +130,6 @@
   }
 
   :global(.drawer-open) {
-    transform: translateY(calc(100% + 3.9rem));
+    transform: translateY(calc(100% + 3.8rem));
   }
 </style>

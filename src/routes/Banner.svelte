@@ -9,12 +9,12 @@
     style="background-image: url({banner});"
   ></div>
   <div class="absolute top-0 left-0 flex h-full w-full items-center justify-center">
-    <section class="flex flex-col items-center">
+    <div class="flex flex-col items-center">
       <img src={logo2} alt="Logo" class="w-56 lg:w-64" />
       <h1 class="mt-6 text-center text-4xl font-bold text-white lg:text-5xl">CryptoSharia</h1>
       <p class="mt-2 text-center text-lg text-white max-sm:px-14 lg:text-xl">
         Platform Edukasi dan Informasi Aset Kripto Syariah
       </p>
-    </section>
+    </div>
   </div>
 </section>
