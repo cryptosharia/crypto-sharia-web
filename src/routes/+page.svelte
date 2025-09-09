@@ -1,6 +1,7 @@
 <script lang="ts">
   import Banner from './Banner.svelte';
   import Kolaborasi from './Kolaborasi.svelte';
+  import Pembina from './Pembina.svelte';
   import Tentang from './Tentang.svelte';
 </script>
 
@@ -8,4 +9,5 @@
   <Banner />
   <Tentang />
   <Kolaborasi />
+  <Pembina />
 </main>

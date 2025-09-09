@@ -3,7 +3,7 @@
   import logo2 from '$lib/assets/logo2.png';
 </script>
 
-<section class="relative rounded-4xl">
+<section class="relative">
   <div
     class="h-[36rem] w-screen bg-cover bg-center brightness-25"
     style="background-image: url({banner});"
