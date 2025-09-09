@@ -4,24 +4,37 @@
   import halalKulture from '$lib/assets/halal-kulture-logo.png';
   import Divider from '../components/Divider.svelte';
 
-  const logos = [fasset, halalKulture];
+  const brands = [
+    {
+      name: 'Fasset',
+      logo: fasset,
+      url: 'https://fasset.id'
+    },
+    {
+      name: 'Halal Kulture',
+      logo: halalKulture,
+      url: 'https://halalkulturemarket.com'
+    }
+  ];
 </script>
 
 <section>
   <Divider usePadding={false} />
   <div class="relative rounded-4xl">
     <div
-      class="h-[12rem] w-screen bg-cover bg-center brightness-25"
+      class="h-[12rem] w-screen bg-cover bg-center brightness-30"
       style="background-image: url({collaborationBG});"
     ></div>
     <div class="absolute top-0 left-1/2 flex h-full -translate-x-1/2 overflow-hidden">
       {#each Array.from({ length: 20 }) as _, i}
         <div
-          class="pr- flex min-w-fit animate-infinite-scroll items-center gap-x-8 pr-8 md:gap-x-12 md:pr-12"
+          class="flex min-w-fit animate-infinite-scroll items-center gap-x-8 pr-8 md:gap-x-12 md:pr-12"
           aria-hidden={i !== 0}
         >
-          {#each logos as logo}
-            <img src={logo} alt="Collaboration Logo" class="w-38 md:w-42" />
+          {#each brands as brand}
+            <a href={brand.url} target="_blank">
+              <img src={brand.logo} alt={brand.name} class="w-38 md:w-42" />
+            </a>
           {/each}
         </div>
       {/each}
