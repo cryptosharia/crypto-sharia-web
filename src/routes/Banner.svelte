@@ -6,7 +6,7 @@
 <section class="relative">
   <div
     class="h-[36rem] w-screen bg-cover bg-center brightness-25"
-    style="background-image: url({banner});"
+    style="background-image: url({banner}); background-attachment: fixed;"
   ></div>
   <div class="absolute top-0 left-0 flex h-full w-full items-center justify-center">
     <div class="flex flex-col items-center">
