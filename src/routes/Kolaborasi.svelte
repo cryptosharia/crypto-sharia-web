@@ -1,7 +1,7 @@
 <script lang="ts">
-  import collaborationBG from '$lib/assets/collaboration-bg.png';
-  import fasset from '$lib/assets/fasset-logo.png';
-  import halalKulture from '$lib/assets/halal-kulture-logo.png';
+  import collaborationBG from '$lib/assets/collaborations/collaboration-bg.png';
+  import fasset from '$lib/assets/collaborations/fasset-logo.png';
+  import halalKulture from '$lib/assets/collaborations/halal-kulture-logo.png';
   import Divider from '../components/Divider.svelte';
 
   const brands = [
