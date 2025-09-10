@@ -6,6 +6,8 @@
   import testimonial from '$lib/assets/discord/testimonial.png';
   import informationUpdate from '$lib/assets/discord/information-update.png';
   import informationUpdateMobile from '$lib/assets/discord/information-update-mobile.png';
+  import halalCoinCalls from '$lib/assets/discord/halal-coin-calls.png';
+  import halalCoinCallsMobile from '$lib/assets/discord/halal-coin-calls-mobile.png';
   import modules from '$lib/assets/discord/modules.png';
   import cryptoModule from '$lib/assets/discord/crypto-module.png';
   import shariaModule from '$lib/assets/discord/sharia-module.png';
@@ -20,7 +22,7 @@
   >
     <div class="bg-black/75">
       <div
-        class="mx-auto flex max-w-[125rem] flex-col gap-y-10 px-[4%] py-12 md:gap-y-16 md:px-[14%] md:py-18"
+        class="mx-auto flex max-w-[125rem] flex-col gap-y-10 px-[4%] py-12 md:gap-y-16 md:px-[7%] md:py-18 lg:px-[10%] xl:px-[14%]"
       >
         <h1 class="strokeme text-center font-jua text-5xl text-orange-600 sm:text-6xl xl:text-7xl">
           JOIN <span class="text-discord">Discord Premium</span> CryptoSharia
@@ -38,6 +40,12 @@
           class="block w-full md:hidden"
           src={informationUpdateMobile}
           alt="Discord Information Update"
+        />
+        <img class="hidden w-full md:block" src={halalCoinCalls} alt="Discord Halal Coin Calls" />
+        <img
+          class="block w-full md:hidden"
+          src={halalCoinCallsMobile}
+          alt="Discord Halal Coin Calls"
         />
         <img class="hidden w-full md:block" src={modules} alt="Discord Modules" />
         <div class="flex w-full flex-col gap-y-8 md:hidden">
