@@ -1,6 +1,7 @@
 <script lang="ts">
   import GradientDivider from '../components/GradientDivider.svelte';
   import discordBG from '$lib/assets/discord/discord-bg.png';
+  import discordLogo from '$lib/assets/discord/discord-logo.png';
   import post from '$lib/assets/discord/post.png';
   import testimonial from '$lib/assets/discord/testimonial.png';
   import informationUpdate from '$lib/assets/discord/information-update.png';
@@ -8,18 +9,20 @@
   import modules from '$lib/assets/discord/modules.png';
   import cryptoModule from '$lib/assets/discord/crypto-module.png';
   import shariaModule from '$lib/assets/discord/sharia-module.png';
+  import PrimaryButton from '../components/PrimaryButton.svelte';
 </script>
 
 <section class="w-full">
   <GradientDivider size="large" />
-  <div class="w-full bg-cover bg-center" style="background-image: url({discordBG});">
+  <div
+    class="w-full bg-cover bg-center"
+    style="background-image: url({discordBG}); background-attachment: fixed;"
+  >
     <div class="bg-black/75">
       <div
-        class="mx-auto flex max-w-[125rem] flex-col gap-y-10 px-[4%] py-12 md:gap-y-15 md:px-[10%]"
+        class="mx-auto flex max-w-[125rem] flex-col gap-y-10 px-[4%] py-12 md:gap-y-16 md:px-[14%] md:py-18"
       >
-        <h1
-          class="strokeme text-center font-jua text-5xl text-orange-600 sm:text-6xl lg:text-7xl xl:text-[5rem]"
-        >
+        <h1 class="strokeme text-center font-jua text-5xl text-orange-600 sm:text-6xl xl:text-7xl">
           JOIN <span class="text-discord">Discord Premium</span> CryptoSharia
         </h1>
         <div class="flex flex-col justify-center gap-y-5 md:flex-row md:gap-x-4 lg:gap-x-8">
@@ -37,15 +40,67 @@
           alt="Discord Information Update"
         />
         <img class="hidden w-full md:block" src={modules} alt="Discord Modules" />
-        <div class="flex w-full flex-col gap-y-6 md:hidden">
+        <div class="flex w-full flex-col gap-y-8 md:hidden">
           <img src={cryptoModule} alt="Discord Crypto Module" />
           <img src={shariaModule} alt="Discord Sharia Module" />
+        </div>
+        <div class="flex flex-col items-center gap-y-10">
+          <blockquote class="text-center font-jua">
+            <p class="mb-1.5 text-3xl font-bold text-white sm:text-4xl xl:text-5xl">
+              ❝Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elito. Suspendisse dictum gomu
+              gomu no lacinia elementum❞
+            </p>
+            <cite class="text-2xl font-bold text-white italic md:text-[2rem]">-Daffa Ilhami-</cite>
+          </blockquote>
+          {@render joinButton('large')}
+          {@render joinButton('medium')}
+          {@render joinButton('small')}
         </div>
       </div>
     </div>
   </div>
   <GradientDivider size="large" reverse={true} />
 </section>
+
+{#snippet joinButton(size: 'small' | 'medium' | 'large')}
+  <div
+    class="flex-row items-center justify-center"
+    class:hidden={size === 'large' || size === 'medium'}
+    class:xl:flex={size === 'large'}
+    class:sm:flex={size === 'medium'}
+    class:xl:hidden={size === 'medium'}
+    class:flex={size === 'small'}
+    class:sm:hidden={size === 'small'}
+  >
+    <img
+      src={discordLogo}
+      alt="Discord Logo"
+      class="-rotate-90"
+      class:h-12={size === 'large'}
+      class:h-10={size === 'medium'}
+      class:h-9={size === 'small'}
+      class:w-15={size === 'large'}
+      class:w-12={size === 'medium' || size === 'small'}
+      class:translate-x-[10px]={size === 'large'}
+      class:translate-x-[8px]={size === 'medium'}
+      class:translate-x-[9px]={size === 'small'}
+    />
+    <PrimaryButton {size} text="< Gabung Sekarang >" href="#discord" />
+    <img
+      src={discordLogo}
+      alt="Discord Logo"
+      class="rotate-90"
+      class:h-12={size === 'large'}
+      class:h-10={size === 'medium'}
+      class:h-9={size === 'small'}
+      class:w-15={size === 'large'}
+      class:w-12={size === 'medium' || size === 'small'}
+      class:translate-x-[-10px]={size === 'large'}
+      class:translate-x-[-8px]={size === 'medium'}
+      class:translate-x-[-9px]={size === 'small'}
+    />
+  </div>
+{/snippet}
 
 <style>
   .text-discord {
@@ -55,10 +110,10 @@
   @media (min-width: 1024px) {
     .strokeme {
       text-shadow:
-        -2.4px -2.4px 0 #fff,
-        2.4px -2.4px 0 #fff,
-        -2.4px 2.4px 0 #fff,
-        2.4px 2.4px 0 #fff;
+        -2.5px -2.5px 0 #fff,
+        2.5px -2.5px 0 #fff,
+        -2.5px 2.5px 0 #fff,
+        2.5px 2.5px 0 #fff;
     }
   }
 
@@ -75,10 +130,10 @@
   @media (max-width: 639px) {
     .strokeme {
       text-shadow:
-        -1.6px -1.6px 0 #fff,
-        1.6px -1.6px 0 #fff,
-        -1.6px 1.6px 0 #fff,
-        1.6px 1.6px 0 #fff;
+        -1.5px -1.5px 0 #fff,
+        1.5px -1.5px 0 #fff,
+        -1.5px 1.5px 0 #fff,
+        1.5px 1.5px 0 #fff;
     }
   }
 </style>
