@@ -22,14 +22,18 @@
   >
     <div class="bg-black/75">
       <div
-        class="mx-auto flex max-w-[125rem] flex-col gap-y-10 px-[4%] py-12 md:gap-y-16 md:px-[7%] md:py-18 lg:px-[10%] xl:px-[14%]"
+        class="mx-auto flex max-w-[75rem] flex-col gap-y-12 px-[4%] py-14 sm:px-[12%] md:gap-y-15 md:px-[4%] md:py-17 lg:gap-y-18 lg:px-[10%] lg:py-20 xl:px-[4%] 2xl:px-[0]"
       >
         <h1 class="strokeme text-center font-jua text-5xl text-orange-600 sm:text-6xl xl:text-7xl">
           JOIN <span class="text-discord">Discord Premium</span> CryptoSharia
         </h1>
-        <div class="flex flex-col justify-center gap-y-5 md:flex-row md:gap-x-4 lg:gap-x-8">
+        <div class="flex flex-col justify-center gap-y-8 md:flex-row md:gap-x-4 lg:gap-x-8">
           <img src={post} alt="Discord Post" class="w-full md:w-1/2" />
           <img src={testimonial} alt="Discord Testimonial" class="w-full md:w-1/2" />
+        </div>
+        <div class="flex w-full flex-col gap-y-8 md:hidden">
+          <img src={cryptoModule} alt="Discord Crypto Module" />
+          <img src={shariaModule} alt="Discord Sharia Module" />
         </div>
         <img
           class="hidden w-full md:block"
@@ -48,10 +52,6 @@
           alt="Discord Halal Coin Calls"
         />
         <img class="hidden w-full md:block" src={modules} alt="Discord Modules" />
-        <div class="flex w-full flex-col gap-y-8 md:hidden">
-          <img src={cryptoModule} alt="Discord Crypto Module" />
-          <img src={shariaModule} alt="Discord Sharia Module" />
-        </div>
         <div class="flex flex-col items-center gap-y-10">
           <blockquote class="text-center font-jua">
             <p class="mb-1.5 text-3xl font-bold text-white sm:text-4xl xl:text-5xl">
