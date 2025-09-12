@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Artikel from './Artikel.svelte';
   import Banner from './Banner.svelte';
   import Discord from './Discord.svelte';
   import Kolaborasi from './Kolaborasi.svelte';
@@ -12,4 +13,5 @@
   <Kolaborasi />
   <Pembina />
   <Discord />
+  <Artikel />
 </main>
