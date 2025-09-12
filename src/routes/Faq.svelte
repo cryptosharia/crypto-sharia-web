@@ -6,19 +6,29 @@
   import Title from '../components/Title.svelte';
   // console.log(arrowUp);
 
-  function toggleAccordion(index: number) {
-    const content = document.getElementById(`faq-content-${index}`);
-    const arrowUp = document.getElementById(`faq-arrow-up-${index}`);
-    const arrowDown = document.getElementById(`faq-arrow-down-${index}`);
+  function toggleAccordion(i: number) {
+    const container = document.getElementById(`faq-${i}`);
+    const question = document.getElementById(`faq-question-${i}`);
+    const content = document.getElementById(`faq-content-${i}`);
+    const arrowUp = document.getElementById(`faq-arrow-up-${i}`);
+    const arrowDown = document.getElementById(`faq-arrow-down-${i}`);
 
-    if (content && arrowUp && arrowDown) {
+    if (content && arrowUp && arrowDown && container && question) {
       // Toggle the content's max-height for smooth opening and closing
       if (content.style.maxHeight && content.style.maxHeight !== '0px') {
         content.style.maxHeight = '0';
+        // container.classList.remove('border-orange-600');
+        // container.classList.add('border-slate-200');
+        question.classList.remove('text-orange-600');
+        question.classList.add('text-slate-800');
         arrowUp.classList.remove('hidden');
         arrowDown.classList.add('hidden');
       } else {
         content.style.maxHeight = content.scrollHeight + 'px';
+        // container.classList.add('border-orange-600');
+        // container.classList.remove('border-slate-200');
+        question.classList.add('text-orange-600');
+        question.classList.remove('text-slate-800');
         arrowUp.classList.add('hidden');
         arrowDown.classList.remove('hidden');
       }
@@ -59,15 +69,28 @@
 <section class="w-full max-w-[90rem]">
   <Title class="text-center">FAQ</Title>
   <Divider />
-  <div class="mx-auto mt-5 flex max-w-[50rem] flex-col gap-y-3">
+  <div
+    class="md::max-w-[80%] mx-auto mt-5 flex max-w-[90%] flex-col gap-y-4 text-slate-700 lg:max-w-[50rem] lg:gap-y-3"
+  >
     {#each faqs as faq, i}
-      <div class="rounded-xl border-2 border-slate-200 px-5 pt-4 shadow-sm">
+      <div
+        id={`faq-${i + 1}`}
+        class="rounded-xl border-2 border-slate-200 shadow-sm transition-colors duration-300 ease-in-out hover:border-orange-600"
+      >
         <button
           onclick={() => toggleAccordion(i + 1)}
-          class="flex w-full flex-row items-start justify-between gap-x-6 pb-4"
+          class="group flex w-full flex-row items-start justify-between gap-x-6 px-5 py-4 hover:cursor-pointer"
         >
-          <h6 class="text-left text-xl font-medium text-slate-800">{faq.question}</h6>
-          <span id={`faq-arrow-up-${i + 1}`} class="text-orange-600">
+          <h3
+            id={`faq-question-${i + 1}`}
+            class="text-left text-xl font-normal transition-colors duration-300 ease-in-out group-hover:text-orange-600"
+          >
+            {faq.question}
+          </h3>
+          <span
+            id={`faq-arrow-up-${i + 1}`}
+            class="text-orange-600 transition-colors duration-300 ease-in-out"
+          >
             <ArrowUp />
           </span>
           <span id={`faq-arrow-down-${i + 1}`} class="hidden text-orange-600">
@@ -76,9 +99,9 @@
         </button>
         <div
           id={`faq-content-${i + 1}`}
-          class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+          class="max-h-0 overflow-hidden px-5 transition-all duration-300 ease-in-out"
         >
-          <p class="pb-5 text-justify text-base text-slate-700">
+          <p class="pb-5 text-justify text-base">
             {faq.answer}
           </p>
         </div>
