@@ -3,18 +3,20 @@
     size = 'medium',
     extend = false,
     text,
-    href
+    href,
+    ...props
   }: {
     size?: 'small' | 'medium' | 'large';
     extend?: boolean;
     text: string;
     href: string;
+    class?: string;
   } = $props();
 </script>
 
 <a
   {href}
-  class="rounded-xl border-white bg-orange-600 text-center text-white transition-colors duration-300 ease-in-out hover:border-orange-600 hover:bg-white hover:text-orange-600"
+  class={`rounded-xl border-white bg-orange-600 text-center text-white transition-colors duration-300 ease-in-out hover:border-orange-600 hover:bg-white hover:text-orange-600 ${props.class}`}
   class:w-fit={!extend}
   class:text-[1.75rem]={size === 'large'}
   class:text-2xl={size === 'medium'}
