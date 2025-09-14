@@ -11,7 +11,7 @@
     <div class="size-full bg-black/75">
       <div class="flex h-full w-full items-center justify-center">
         <div class="flex flex-col items-center">
-          <img src={logo2} alt="Logo" class="w-56 lg:w-64" />
+          <img src={logo2} alt="CryptoSharia" class="w-56 lg:w-64" />
           <h1 class="mt-6 text-center text-4xl font-bold text-white sm:text-[2.65rem] md:text-5xl">
             CryptoSharia
           </h1>

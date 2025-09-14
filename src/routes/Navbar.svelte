@@ -25,7 +25,7 @@
   >
     <div>
       <a href="/" class="text-xl font-semibold text-orange-600 md:text-[1.4rem]">
-        <img src={logo1} alt="Logo" class="mr-0.5 inline size-9 md:mr-1.5 md:size-10" />
+        <img src={logo1} alt="CryptoSharia" class="mr-0.5 inline size-9 md:mr-1.5 md:size-10" />
         CryptoSharia
       </a>
     </div>

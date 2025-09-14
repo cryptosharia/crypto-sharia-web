@@ -46,7 +46,7 @@
         'https://assets.hackquest.io/hackathons/projects/logo/utBBBl9xvqMqlrzY17k5c.png',
       date: new Date(),
       title: 'Walrus Lorem Ipsum',
-      tags: ['Storage', 'dApps', 'Protocol'],
+      tags: ['Storage', 'dApps',   'Protocol'],
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     },

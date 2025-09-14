@@ -1,6 +1,7 @@
 <script lang="ts">
   import GradientDivider from '../components/GradientDivider.svelte';
   import kontakBG from '$lib/assets/kontak-bg.png';
+  import logo1 from '$lib/assets/logo1.png';
   import Title from '../components/Title.svelte';
   import Divider from '../components/Divider.svelte';
   import InputField from '../components/InputField.svelte';
@@ -46,9 +47,9 @@
     class="w-full bg-cover bg-center"
     style="background-image: url({kontakBG}); background-attachment: fixed;"
   >
-    <div class="bg-black/50">
+    <div class="bg-black/50 pt-13 pb-3">
       <div
-        class="mx-auto flex max-w-[70rem] flex-col gap-y-12 px-[4%] py-14 sm:px-[12%] md:gap-y-15 md:px-[4%] md:py-17 lg:gap-y-18 lg:px-[5%] lg:py-20 xl:px-[4%] 2xl:px-[0]"
+        class="mx-auto flex max-w-[70rem] flex-col gap-y-12 px-[4%] sm:px-[12%] md:gap-y-15 md:px-[4%] lg:gap-y-18 lg:px-[5%] xl:px-[4%] 2xl:px-[0]"
       >
         <div class="flex flex-row gap-x-12">
           <div class="flex-1">
@@ -107,6 +108,31 @@
           </div>
         </div>
       </div>
+      <div class="mx-auto mt-10 flex max-w-54 flex-col" style="letter-spacing: 1.5px;">
+        <a
+          href="/"
+          class="flex flex-col items-center gap-y-0.5 text-2xl font-semibold text-orange-600"
+        >
+          <span class="flex size-12.5 items-center justify-center rounded-full bg-white">
+            <img src={logo1} alt="CryptoSharia" class="size-12" />
+          </span>
+          <span class="strokeme">CryptoSharia</span>
+        </a>
+        <Divider usePadding={false} />
+        <span class="spacin text-center text-white"
+          >&copy; 2025 - CryptoSharia<br />All rights reserved.</span
+        >
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  .strokeme {
+    text-shadow:
+      -1.1px -1.1px 0 #fff,
+      1.1px -1.1px 0 #fff,
+      -1.1px 1.1px 0 #fff,
+      1.1px 1.1px 0 #fff;
+  }
+</style>
