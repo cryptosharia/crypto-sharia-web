@@ -5,6 +5,39 @@
   import Divider from '../components/Divider.svelte';
   import InputField from '../components/InputField.svelte';
   import PrimaryButton from '../components/PrimaryButton.svelte';
+  import instagram from '$lib/assets/socmed-icons/instagram.png';
+  import tiktok from '$lib/assets/socmed-icons/tiktok.png';
+  import discord from '$lib/assets/socmed-icons/discord.png';
+  import x from '$lib/assets/socmed-icons/x.png';
+  import youtube from '$lib/assets/socmed-icons/youtube.png';
+
+  const socmeds = [
+    {
+      name: 'Instagram',
+      icon: instagram,
+      url: 'https://instagram.com'
+    },
+    {
+      name: 'TikTok',
+      icon: tiktok,
+      url: 'https://tiktok.com'
+    },
+    {
+      name: 'Discord',
+      icon: discord,
+      url: 'https://discord.com'
+    },
+    {
+      name: 'X',
+      icon: x,
+      url: 'https://x.com'
+    },
+    {
+      name: 'YouTube',
+      icon: youtube,
+      url: 'https://youtube.com'
+    }
+  ];
 </script>
 
 <section id="kontak" class="w-full">
@@ -17,15 +50,25 @@
       <div
         class="mx-auto flex max-w-[70rem] flex-col gap-y-12 px-[4%] py-14 sm:px-[12%] md:gap-y-15 md:px-[4%] md:py-17 lg:gap-y-18 lg:px-[5%] lg:py-20 xl:px-[4%] 2xl:px-[0]"
       >
-        <div class="flex flex-row justify-center">
+        <div class="flex flex-row gap-x-12">
           <div class="flex-1">
             <Title class="text-center text-white">Kontak Kami</Title>
             <Divider usePadding={false} />
-            <div class="mt-3.5 flex flex-col gap-y-0">
+            <div class="mt-3.5 flex flex-col">
               <div class="flex flex-col gap-y-3">
-                <InputField label="Nama" hint="Masukkan nama anda" />
-                <InputField label="Email" hint="Masukkan alamat email anda" />
-                <InputField label="Pesan" hint="Masukkan pesan anda" multiline={true} />
+                <InputField type="text" required={true} label="Nama" hint="Masukkan nama anda" />
+                <InputField
+                  type="email"
+                  required={true}
+                  label="Email"
+                  hint="Masukkan alamat email anda"
+                />
+                <InputField
+                  type="multiline"
+                  required={true}
+                  label="Pesan"
+                  hint="Masukkan pesan anda"
+                />
               </div>
               <h3 class="my-1 text-right text-white" style="letter-spacing: 2px;">
                 <i>cryptoshariaforum@gmail.com</i>
@@ -33,16 +76,33 @@
               <PrimaryButton text="Kirim Pesan" href="#kontak" size="small" extend={true} />
             </div>
           </div>
-          <div class="flex flex-1 flex-col">
+          <div class="flex flex-1 flex-col gap-y-9">
             <div>
               <Title class="text-center text-white">Media Sosial</Title>
-              <Divider />
+              <Divider usePadding={false} />
+              <div class="mt-10 flex flex-row items-center justify-between px-14">
+                {#each socmeds as socmed}
+                  <a href={socmed.url} target="_blank">
+                    <img src={socmed.icon} alt={socmed.name} class="w-12" />
+                  </a>
+                {/each}
+              </div>
             </div>
             <div>
               <Title class="text-center text-white"
                 >Support <i class="text-orange-600">CryptoSharia</i></Title
               >
-              <Divider />
+              <Divider usePadding={false} />
+              <div class="mt-5 flex flex-col justify-between gap-y-3 px-12">
+                <div class="rounded-xl border-2 border-orange-600 bg-white p-3">
+                  <p class="text-center text-slate-800">
+                    Satu donasi kecil hari ini, bisa menjadi investasi besar di akhirat. Mari dukung
+                    gerakan edukasi <i><b>CryptoSharia</b></i>, agar ilmu dan pahala terus mengalir
+                    tanpa henti.
+                  </p>
+                </div>
+                <PrimaryButton text="💸 Support" href="#kontak" size="small" extend={true} />
+              </div>
             </div>
           </div>
         </div>
