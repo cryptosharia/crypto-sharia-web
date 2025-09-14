@@ -17,7 +17,7 @@
 </script>
 
 <div
-  class="w-82.5 overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-xl max-sm:w-[95%] sm:max-md:w-67.5 xl:w-88"
+  class="group w-82.5 overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-xl transition-transform duration-300 hover:scale-105 hover:cursor-pointer max-sm:w-[95%] sm:max-md:w-67.5 xl:w-88"
   class:max-sm:hidden={isHiddenOnMobile}
 >
   <div class="relative h-50 w-full object-cover sm:max-md:h-40">
@@ -28,7 +28,7 @@
     >
   </div>
   <div class="p-2.5 pt-1 md:p-3 md:pt-1">
-    <h2 class="line-clamp-1 text-[1.4rem] font-medium text-orange-600">
+    <h2 class="line-clamp-1 text-[1.4rem] font-medium text-orange-600 group-hover:underline">
       {title}
     </h2>
     <p class="line-clamp-3 text-justify text-slate-700">{content}</p>

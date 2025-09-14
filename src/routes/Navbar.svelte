@@ -57,7 +57,7 @@
       <!-- Mobile Menu (Drawer) -->
       <div
         id="drawer"
-        class="absolute left-1/2 -z-10 block w-full -translate-x-1/2 transform rounded-b-4xl border-b border-slate-200 bg-white px-6 shadow-md transition-transform duration-300 ease-in-out md:hidden"
+        class="absolute left-1/2 -z-10 block w-full -translate-x-1/2 transform rounded-b-4xl border-b border-slate-200 bg-white px-6 shadow-md transition-transform duration-300 ease-in-out"
         style={`top: -${drawerHeight}px`}
         class:drawer-open={isDrawerOpen}
       >

@@ -4,6 +4,7 @@
   import Discord from './Discord.svelte';
   import Faq from './Faq.svelte';
   import Kolaborasi from './Kolaborasi.svelte';
+  import Kontak from './Kontak.svelte';
   import Pembina from './Pembina.svelte';
   import Tentang from './Tentang.svelte';
 </script>
@@ -16,4 +17,5 @@
   <Discord />
   <Artikel />
   <Faq />
+  <Kontak />
 </main>
