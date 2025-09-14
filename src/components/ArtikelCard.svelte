@@ -5,12 +5,14 @@
     thumbnailUrl,
     date,
     title,
+    tags,
     content,
     isHiddenOnMobile = false
   }: {
     thumbnailUrl: string;
     date: Date;
     title: string;
+    tags: string[];
     content: string;
     isHiddenOnMobile?: boolean;
   } = $props();
@@ -31,6 +33,14 @@
     <h2 class="line-clamp-1 text-[1.4rem] font-medium text-orange-600 group-hover:underline">
       {title}
     </h2>
-    <p class="line-clamp-3 text-justify text-slate-700">{content}</p>
+    <p class="line-clamp-2 text-justify text-slate-700">{content}</p>
+    <div class="mt-2 flex flex-row justify-end gap-x-1.5">
+      {#each tags as tag}
+        <span
+          class="block rounded-2xl border border-slate-300 px-2 py-0.5 text-sm text-slate-600 shadow-2xl"
+          >{tag}</span
+        >
+      {/each}
+    </div>
   </div>
 </div>
