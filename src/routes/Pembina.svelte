@@ -35,11 +35,11 @@
   ];
 </script>
 
-<section class="w-full max-w-[90rem]">
+<section id="pembina" class="nav-space w-full max-w-[90rem]">
   <Title class="text-center">Pembina Kami</Title>
   <Divider />
   <div
-    class="flex w-full flex-row flex-wrap items-start justify-center gap-x-8 gap-y-8 px-6 pt-5 md:gap-x-24 md:gap-y-12 lg:gap-x-30 xl:gap-x-48"
+    class="flex w-full flex-row flex-wrap items-start justify-center gap-x-8 gap-y-8 px-6 pt-5 md:gap-x-24 md:gap-y-12 lg:gap-x-30 xl:gap-x-40"
   >
     {#each pembinas as pembina}
       <PembinaCard name={pembina.name} bio={pembina.bio} imageUrl={pembina.imageUrl} />

@@ -29,10 +29,17 @@ body {
 html {
   /* scrollbar-gutter: stable; */
   scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 
 body {
   /* Prevent navbar from overlapping content */
   margin-top: 4rem;
+
   @apply font-inter;
+}
+
+.nav-space {
+  padding-top: 5.5rem;
+  margin-top: -5.5rem;
 }

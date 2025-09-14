@@ -3,10 +3,10 @@
   import { onMount } from 'svelte';
 
   const links: { text: string; href: string }[] = [
-    { text: 'Tentang', href: '#' },
     { text: 'Pembina', href: '#pembina' },
     { text: 'Discord', href: '#discord' },
     { text: 'Artikel', href: '#artikel' },
+    { text: 'Screening', href: '#screening' },
     { text: 'FAQ', href: '#faq' },
     { text: 'Kontak', href: '#kontak' }
   ];
@@ -19,17 +19,17 @@
   });
 </script>
 
-<nav class="fixed top-0 left-0 z-10 flex h-16 w-screen bg-white text-slate-600 shadow-sm">
+<nav class="fixed top-0 left-0 z-999 flex h-16 w-full bg-white text-slate-600 shadow-sm">
   <div
     class="mx-auto flex h-full w-full max-w-[100rem] items-center justify-between bg-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-36"
   >
-    <section>
+    <div>
       <a href="/" class="text-xl font-semibold text-orange-600 md:text-[1.4rem]">
         <img src={logo1} alt="Logo" class="mr-0.5 inline size-9 md:mr-1.5 md:size-10" />
         CryptoSharia
       </a>
-    </section>
-    <section>
+    </div>
+    <div>
       <!-- Mobile Hamburger Button -->
       <button
         id="hamburger-button"
@@ -57,7 +57,7 @@
       <!-- Mobile Menu (Drawer) -->
       <div
         id="drawer"
-        class="absolute left-1/2 -z-10 w-screen -translate-x-1/2 transform rounded-b-4xl border-b border-slate-200 bg-white px-6 shadow-md transition-transform duration-300 ease-in-out"
+        class="absolute left-1/2 -z-10 block w-full -translate-x-1/2 transform rounded-b-4xl border-b border-slate-200 bg-white px-6 shadow-md transition-transform duration-300 ease-in-out md:hidden"
         style={`top: -${drawerHeight}px`}
         class:drawer-open={isDrawerOpen}
       >
@@ -109,7 +109,7 @@
         {/each}
       </ul>
       <!-- /Desktop Menu -->
-    </section>
+    </div>
   </div>
 </nav>
 

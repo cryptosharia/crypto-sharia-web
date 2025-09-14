@@ -14,20 +14,20 @@
   import PrimaryButton from '../components/PrimaryButton.svelte';
 </script>
 
-<section class="w-full">
+<section id="discord" class="w-full">
   <GradientDivider size="large" />
   <div
     class="w-full bg-cover bg-center"
     style="background-image: url({discordBG}); background-attachment: fixed;"
   >
-    <div class="bg-black/75">
+    <div class="bg-black/80">
       <div
-        class="mx-auto flex max-w-[75rem] flex-col gap-y-12 px-[4%] py-14 sm:px-[12%] md:gap-y-15 md:px-[4%] md:py-17 lg:gap-y-18 lg:px-[10%] lg:py-20 xl:px-[4%] 2xl:px-[0]"
+        class="mx-auto flex max-w-[70rem] flex-col gap-y-12 px-[4%] py-14 sm:px-[12%] md:gap-y-15 md:px-[4%] md:py-17 lg:gap-y-18 lg:px-[5%] lg:py-20 xl:px-[4%] 2xl:px-[0]"
       >
-        <h1 class="strokeme text-center font-jua text-5xl text-orange-600 sm:text-6xl xl:text-7xl">
+        <h1 class="strokeme text-center font-jua text-5xl text-orange-600 md:text-6xl">
           JOIN <span class="text-discord">Discord Premium</span> CryptoSharia
         </h1>
-        <div class="flex flex-col justify-center gap-y-8 md:flex-row md:gap-x-4 lg:gap-x-8">
+        <div class="flex flex-col justify-center gap-y-8 md:flex-row md:gap-x-4 lg:gap-x-5">
           <img src={post} alt="Discord Post" class="w-full md:w-1/2" />
           <img src={testimonial} alt="Discord Testimonial" class="w-full md:w-1/2" />
         </div>
@@ -54,7 +54,7 @@
         <img class="hidden w-full md:block" src={modules} alt="Discord Modules" />
         <div class="flex flex-col items-center gap-y-10">
           <blockquote class="text-center font-jua">
-            <p class="mb-1.5 text-3xl font-bold text-white sm:text-4xl xl:text-5xl">
+            <p class="mb-1.5 text-3xl font-bold text-white md:text-4xl">
               ❝Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elito. Suspendisse dictum gomu
               gomu no lacinia elementum❞
             </p>
@@ -84,28 +84,24 @@
       src={discordLogo}
       alt="Discord Logo"
       class="-rotate-90"
-      class:h-12={size === 'large'}
-      class:h-10={size === 'medium'}
-      class:h-9={size === 'small'}
-      class:w-15={size === 'large'}
+      class:h-10={size === 'large'}
+      class:h-9={size === 'small' || size === 'medium'}
+      class:w-13={size === 'large'}
       class:w-12={size === 'medium' || size === 'small'}
       class:translate-x-[10px]={size === 'large'}
-      class:translate-x-[8px]={size === 'medium'}
-      class:translate-x-[9px]={size === 'small'}
+      class:translate-x-[9px]={size === 'small' || size === 'medium'}
     />
     <PrimaryButton {size} text="< Gabung Sekarang >" href="#discord" />
     <img
       src={discordLogo}
       alt="Discord Logo"
       class="rotate-90"
-      class:h-12={size === 'large'}
-      class:h-10={size === 'medium'}
-      class:h-9={size === 'small'}
-      class:w-15={size === 'large'}
+      class:h-10={size === 'large'}
+      class:h-9={size === 'small' || size === 'medium'}
+      class:w-13={size === 'large'}
       class:w-12={size === 'medium' || size === 'small'}
       class:translate-x-[-10px]={size === 'large'}
-      class:translate-x-[-8px]={size === 'medium'}
-      class:translate-x-[-9px]={size === 'small'}
+      class:translate-x-[-9px]={size === 'small' || size === 'medium'}
     />
   </div>
 {/snippet}

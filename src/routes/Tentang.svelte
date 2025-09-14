@@ -15,17 +15,16 @@
 {/snippet}
 
 <section
-  class="flex max-w-[100rem] flex-col items-stretch justify-between px-4 sm:px-6 md:flex-row md:px-12 lg:px-24 xl:px-36"
+  class="flex max-w-[90rem] flex-col items-stretch justify-between px-4 sm:px-6 md:flex-row md:px-8 lg:px-24 xl:px-36"
 >
   <div class="flex flex-1 flex-col rounded-4xl border border-slate-200 p-8 shadow-md">
     <Title isSmall={true}>Tentang <u><i>CryptoSharia</i></u></Title>
     <p class="text-justify text-base">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum lacinia elementum.
       Praesent molestie vel sem rutrum accumsan. Curabitur fermentum nec erat eu iaculis. Nullam
-      urna mauris, varius in luctus et, faucibus id elit. Nam commodo elit nec mauris rhoncus
-      pellentesque.<br /><br />Fusce id pretium ligula. Proin tincidunt facilisis purus, non commodo
-      metus. Quisque nec tellus et turpis facilisis rutrum. Praesent in egestas odio. Donec at
-      faucibus mauris. Mauris justo magna, suscipit ut euismod eu, pharetra vitae diam.
+      urna mauris, varius in luctus et, faucibus id elit.<br /><br />Fusce id pretium ligula. Proin
+      tincidunt facilisis purus, non commodo metus. Quisque nec tellus et turpis facilisis rutrum.
+      Praesent in egestas odio.
     </p>
     <div class="flex-1"></div>
     <div class="flex flex-row items-center justify-around gap-6 pt-6">
@@ -36,7 +35,7 @@
     </div>
   </div>
   {@render line('desktop')}
-  <div class="flex flex-1 flex-row items-stretch p-8 pl-0 md:flex-col">
+  <div class="flex flex-1 flex-row items-stretch p-8 pb-0 pl-0 md:flex-col xl:pr-9">
     {@render line('mobile')}
     <div>
       <div>
@@ -49,7 +48,7 @@
         <p class="text-justify text-base">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum lacinia
           elementum. Praesent molestie vel sleft-10 left-10em rutrum accumsan. Curabitur fermentum
-          nec erat eu iaculis. Nullam urna mauris, varius in luctus et, faucibus id elit.
+          nec erat eu iaculis. Nullam urna mauris, varius in luctus et, faucibus elit.
         </p>
       </div>
       <br />
@@ -64,7 +63,6 @@
           <li>Lorem ipsum dolor sit amet</li>
           <li>Consectetur adipiscing elit</li>
           <li>Suspendisse dictum lacinia elementum</li>
-          <li>Praesent molestie vel sem rutrum accumsan</li>
         </ul>
       </div>
     </div>

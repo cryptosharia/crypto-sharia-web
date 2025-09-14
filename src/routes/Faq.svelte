@@ -66,7 +66,7 @@
   ];
 </script>
 
-<section class="w-full max-w-[90rem]">
+<section id="faq" class="nav-space w-full max-w-[90rem]">
   <Title class="text-center">FAQ</Title>
   <Divider />
   <div
@@ -75,7 +75,7 @@
     {#each faqs as faq, i}
       <div
         id={`faq-${i + 1}`}
-        class="rounded-xl border-2 border-slate-200 shadow-sm transition-colors duration-300 ease-in-out hover:border-orange-600"
+        class="rounded-xl border-2 border-slate-200 shadow-sm transition-colors duration-300 ease-in-out max-md:active:border-orange-600 md:hover:border-orange-600"
       >
         <button
           onclick={() => toggleAccordion(i + 1)}
@@ -83,7 +83,7 @@
         >
           <h3
             id={`faq-question-${i + 1}`}
-            class="text-left text-xl font-normal transition-colors duration-300 ease-in-out group-hover:text-orange-600"
+            class="text-left text-lg font-normal transition-colors duration-300 ease-in-out md:text-[1.2rem] md:group-hover:text-orange-600 lg:text-xl"
           >
             {faq.question}
           </h3>

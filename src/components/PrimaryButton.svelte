@@ -16,15 +16,9 @@
 
 <a
   {href}
-  class={`rounded-xl border-white bg-orange-600 text-center text-white transition-colors duration-300 ease-in-out hover:border-orange-600 hover:bg-white hover:text-orange-600 ${props.class}`}
+  class={`rounded-xl border-2 border-white bg-orange-600 px-3 py-2 text-center font-bold text-white transition-colors duration-300 ease-in-out md:hover:border-orange-600 md:hover:bg-white md:hover:text-orange-600 ${props.class} max-md:active:border-orange-600 max-md:active:bg-white max-md:active:text-orange-600 ${props.class}`}
   class:w-fit={!extend}
-  class:text-[1.75rem]={size === 'large'}
-  class:text-2xl={size === 'medium'}
-  class:text-xl={size === 'small'}
-  class:px-3={true}
-  class:py-2={true}
-  class:border-3={size === 'large'}
-  class:border-2={size === 'medium' || size === 'small'}
-  class:font-extrabold={size === 'large'}
-  class:font-bold={size === 'medium' || size === 'small'}>{text}</a
+  class:text-2xl={size === 'large'}
+  class:text-xl={size === 'medium'}
+  class:text-lg={size === 'small'}>{text}</a
 >
