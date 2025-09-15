@@ -34,7 +34,7 @@ html {
 
 body {
   /* Prevent navbar from overlapping content */
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
 
   @apply font-inter;
 }

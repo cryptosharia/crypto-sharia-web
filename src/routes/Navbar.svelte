@@ -19,9 +19,9 @@
   });
 </script>
 
-<nav class="fixed top-0 left-0 z-999 flex h-16 w-full bg-white text-slate-600 shadow-sm">
+<nav class="fixed top-0 left-0 z-999 flex h-16 w-full shadow-md backdrop-blur-lg">
   <div
-    class="mx-auto flex h-full w-full max-w-[100rem] items-center justify-between bg-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-36"
+    class="mx-auto flex h-full w-full max-w-[88rem] items-center justify-between px-4 md:px-0 md:max-lg:max-w-[95%] lg:px-12"
   >
     <div>
       <a href="/" class="text-xl font-semibold text-orange-600 md:text-[1.4rem]">
@@ -57,9 +57,9 @@
       <!-- Mobile Menu (Drawer) -->
       <div
         id="drawer"
-        class="absolute left-1/2 -z-10 block w-full -translate-x-1/2 transform rounded-b-4xl border-b border-slate-200 bg-white px-6 shadow-md transition-transform duration-300 ease-in-out"
-        style={`top: -${drawerHeight}px`}
+        class="absolute left-1/2 -z-10 block w-full -translate-x-1/2 transform rounded-b-4xl border-b border-slate-200 bg-white px-6 pt-14 shadow-md transition-transform duration-300 ease-in-out"
         class:drawer-open={isDrawerOpen}
+        style="top: calc(-{drawerHeight}px - 1px);"
       >
         <ul class="flex flex-col">
           {#each links as link}
@@ -68,7 +68,7 @@
                 <a
                   href={link.href}
                   onclick={() => setTimeout(() => (isDrawerOpen = false), 200)}
-                  class="block w-full text-center text-base font-medium transition-colors duration-300 ease-in-out hover:text-orange-600"
+                  class="block w-full text-center text-base font-medium text-slate-700 transition-colors duration-300 ease-in-out hover:text-orange-600"
                   >{link.text}</a
                 >
               </li>
@@ -93,7 +93,7 @@
             <li>
               <a
                 href={link.href}
-                class="font-medium transition-colors duration-300 ease-in-out hover:text-orange-600"
+                class="font-semibold text-slate-500 transition-colors duration-300 ease-in-out hover:text-orange-600"
                 >{link.text}</a
               >
             </li>
@@ -130,6 +130,14 @@
   }
 
   :global(.drawer-open) {
-    transform: translateY(calc(100% + 3.8rem));
+    transform: translateY(100%);
   }
+
+  /* .strokeme {
+    text-shadow:
+      -0.1px -0.1px 0 #fff,
+      0.1px -0.1px 0 #fff,
+      -0.1px 0.1px 0 #fff,
+      0.1px 0.1px 0 #fff;
+  } */
 </style>
