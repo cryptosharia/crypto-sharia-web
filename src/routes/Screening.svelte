@@ -54,6 +54,20 @@
       logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/20947.png'
     },
     {
+      name: 'Bonk',
+      ticker: 'BONK',
+      color: '#f6952a',
+      status: 'haram',
+      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/23095.png'
+    },
+    {
+      name: 'Tron',
+      ticker: 'Trx',
+      color: '#FF0000',
+      status: 'halal',
+      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1958.png'
+    },
+    {
       name: 'Hyperliquid',
       ticker: 'HYPE',
       color: '#56EDF0',
@@ -68,6 +82,20 @@
       logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3890.png'
     },
     {
+      name: 'Pepe',
+      ticker: 'PEPE',
+      color: '#4c9641',
+      status: 'haram',
+      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/24478.png'
+    },
+    {
+      name: 'Arbitrum',
+      ticker: 'ARB',
+      color: '#2c374b',
+      status: 'halal',
+      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11841.png'
+    },
+    {
       name: 'Cardano',
       ticker: 'ADA',
       color: '#3B82F6',
@@ -80,26 +108,36 @@
       color: '#EF8A13',
       status: 'haram',
       logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5994.png'
+    },
+    {
+      name: 'Pax Gold',
+      ticker: 'PAXG',
+      color: '#cca727',
+      status: 'halal',
+      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4705.png'
     }
   ];
 </script>
 
-<section id="screening" class="nav-space z-10 w-full max-w-[90rem]">
+<section id="screening" class="nav-space z-9 w-full max-w-[90rem]">
   <Title class="text-center">Token Screening</Title>
   <Divider />
-  <div
-    class="mx-auto mt-8 flex w-full flex-col items-center gap-y-6 md:max-w-[90%] md:gap-y-8 lg:gap-y-10"
-  >
+  <div class="mx-auto mt-8 flex w-full flex-col items-center gap-y-6 md:gap-y-8 lg:gap-y-10">
     <div
-      class="flex w-full flex-row flex-wrap items-start justify-center gap-2 gap-y-10 px-6 pt-5 sm:gap-8 md:gap-12 xl:gap-15"
+      class="flex w-full flex-row flex-wrap items-start justify-center gap-1 gap-y-10 px-6 pt-5 sm:gap-8 md:max-w-[80%] md:gap-12 lg:max-w-[82%] lg:gap-10 xl:max-w-[90%] xl:gap-15"
     >
-      {#each tokens as token}
+      {#each tokens as token, i}
         <TokenCard
           name={token.name}
           ticker={token.ticker}
           color={token.color}
           status={token.status}
           logoUrl={token.logoUrl}
+          isHiddenOnXS={i >= 6}
+          isHiddenOnSM={i >= 9}
+          isHiddenOnMD={i >= 9}
+          isHiddenOnLG={i >= 12}
+          isHiddenOnXL={i >= 15}
         />
       {/each}
     </div>

@@ -4,13 +4,33 @@
     ticker,
     color,
     status,
-    logoUrl
-  }: { name: string; ticker: string; color: string; status: 'halal' | 'haram'; logoUrl: string } =
-    $props();
+    logoUrl,
+    isHiddenOnXS = false,
+    isHiddenOnSM = false,
+    isHiddenOnMD = false,
+    isHiddenOnLG = false,
+    isHiddenOnXL = false
+  }: {
+    name: string;
+    ticker: string;
+    color: string;
+    status: 'halal' | 'haram';
+    logoUrl: string;
+    isHiddenOnXS?: boolean;
+    isHiddenOnSM?: boolean;
+    isHiddenOnMD?: boolean;
+    isHiddenOnLG?: boolean;
+    isHiddenOnXL?: boolean;
+  } = $props();
 </script>
 
 <div
   class="group -mt-13 flex w-42 flex-col items-center transition-transform duration-300 hover:scale-110 hover:cursor-pointer"
+  class:max-sm:hidden={isHiddenOnXS}
+  class:sm:max-md:hidden={isHiddenOnSM}
+  class:md:max-lg:hidden={isHiddenOnMD}
+  class:lg:max-xl:hidden={isHiddenOnLG}
+  class:xl:hidden={isHiddenOnXL}
 >
   <div class="relative z-3 translate-y-9">
     <div
@@ -35,12 +55,12 @@
     class="w-[93%] -translate-y-1 rounded-b-4xl border-2 border-t-0 border-slate-200 bg-white pt-1.75 pb-0.75 text-center shadow-md"
   >
     <h3
-      class="line-clamp-1 w-full text-2xl font-bold group-hover:underline"
+      class="line-clamp-1 w-full text-xl font-bold group-hover:underline"
       style="color: {color}; letter-spacing: 1.5px"
     >
       {name}
     </h3>
-    <span class="line-clamp-1 text-lg font-bold text-slate-600">{ticker}</span>
+    <span class="text-md line-clamp-1 font-bold text-slate-600">{ticker}</span>
   </div>
 </div>
 
