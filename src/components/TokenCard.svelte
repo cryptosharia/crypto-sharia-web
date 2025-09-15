@@ -1,0 +1,55 @@
+<script lang="ts">
+  let {
+    name,
+    ticker,
+    color,
+    status,
+    logoUrl
+  }: { name: string; ticker: string; color: string; status: 'halal' | 'haram'; logoUrl: string } =
+    $props();
+</script>
+
+<div
+  class="group -mt-13 flex w-42 flex-col items-center transition-transform duration-300 hover:scale-110 hover:cursor-pointer"
+>
+  <div class="relative z-3 translate-y-9">
+    <div
+      class="mx-auto flex size-24 items-center justify-center overflow-hidden rounded-full bg-white outline-2"
+      class:outline-green-500={status === 'halal'}
+      class:outline-red-500={status === 'haram'}
+    >
+      <img src={logoUrl} alt={`${name} | ${ticker}`} class="size-24 rounded-full" />
+    </div>
+    <div
+      class="absolute bottom-0 left-1/2 h-2.5 w-24 -translate-x-1/2"
+      class:bg-green-500={status === 'halal'}
+      class:bg-red-500={status === 'haram'}
+    ></div>
+  </div>
+  <div
+    class="z-2 h-10 w-full rounded-2xl border-2 border-white shadow-md"
+    class:bg-green-500={status === 'halal'}
+    class:bg-red-500={status === 'haram'}
+  ></div>
+  <div
+    class="w-[93%] -translate-y-1 rounded-b-4xl border-2 border-t-0 border-slate-200 bg-white pt-1.75 pb-0.75 text-center shadow-md"
+  >
+    <h3
+      class="line-clamp-1 w-full text-2xl font-bold group-hover:underline"
+      style="color: {color}; letter-spacing: 1.5px"
+    >
+      {name}
+    </h3>
+    <span class="line-clamp-1 text-lg font-bold text-slate-600">{ticker}</span>
+  </div>
+</div>
+
+<!-- <style>
+  .strokeme {
+    text-shadow:
+      -0.55px -0.55px 0 var(--color-slate-700),
+      0.55px -0.55px 0 var(--color-slate-700),
+      -0.55px 0.55px 0 var(--color-slate-700),
+      0.55px 0.55px 0 var(--color-slate-700);
+  }
+</style> -->
