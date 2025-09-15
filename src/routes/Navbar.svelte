@@ -5,8 +5,8 @@
   const links: { text: string; href: string }[] = [
     { text: 'Pembina', href: '#pembina' },
     { text: 'Discord', href: '#discord' },
-    { text: 'Artikel', href: '#artikel' },
     { text: 'Screening', href: '#screening' },
+    { text: 'Artikel', href: '#artikel' },
     { text: 'FAQ', href: '#faq' },
     { text: 'Kontak', href: '#kontak' }
   ];

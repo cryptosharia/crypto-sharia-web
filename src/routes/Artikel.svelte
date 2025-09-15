@@ -46,7 +46,7 @@
         'https://assets.hackquest.io/hackathons/projects/logo/utBBBl9xvqMqlrzY17k5c.png',
       date: new Date(),
       title: 'Walrus Lorem Ipsum',
-      tags: ['Storage', 'dApps',   'Protocol'],
+      tags: ['Storage', 'dApps', 'Protocol'],
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     },
@@ -62,7 +62,7 @@
   ];
 </script>
 
-<section id="artikel" class="nav-space z-10 w-full max-w-[90rem]">
+<section id="artikel" class="nav-space z-9 w-full max-w-[90rem]">
   <Title class="text-center">Artikel Terbaru</Title>
   <Divider />
   <div class="flex w-full flex-col items-center gap-y-6 md:gap-y-8 lg:gap-y-10">

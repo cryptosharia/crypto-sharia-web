@@ -1,6 +1,5 @@
 <script lang="ts">
   import GradientDivider from '../components/GradientDivider.svelte';
-  import discordBG from '$lib/assets/discord/discord-bg.png';
   import discordLogo from '$lib/assets/discord/discord-logo.png';
   import post from '$lib/assets/discord/post.png';
   import testimonial from '$lib/assets/discord/testimonial.png';
@@ -12,6 +11,9 @@
   import cryptoModule from '$lib/assets/discord/crypto-module.png';
   import shariaModule from '$lib/assets/discord/sharia-module.png';
   import PrimaryButton from '../components/PrimaryButton.svelte';
+
+  const discordBG =
+    'https://img.freepik.com/free-photo/abstract-orange-glowing-lines-background_1017-3201.jpg?semt=ais_hybrid&w=740';
 </script>
 
 <section id="discord" class="w-full">

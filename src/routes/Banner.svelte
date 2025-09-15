@@ -1,11 +1,13 @@
 <script lang="ts">
-  import banner from '$lib/assets/banner.png';
   import logo2 from '$lib/assets/logo2.png';
+
+  const banner =
+    'https://img.freepik.com/premium-photo/language-model39s-unleashed-power-language-models-web3-beyond-evolution-world-wide-web_717906-96832.jpg';
 </script>
 
 <section class="w-full">
   <div
-    class="h-[40rem] w-full bg-cover bg-center"
+    class="h-[42rem] w-full bg-cover bg-center"
     style="background-image: url({banner}); background-attachment: fixed;"
   >
     <div class="size-full bg-black/75">

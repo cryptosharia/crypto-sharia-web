@@ -16,8 +16,8 @@
   <Kolaborasi />
   <Pembina />
   <Discord />
-  <Artikel />
   <Screening />
+  <Artikel />
   <Faq />
   <Kontak />
 </main>
