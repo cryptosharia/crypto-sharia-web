@@ -49,61 +49,59 @@
   >
     <div class="bg-black/50 pt-13 pb-3">
       <div
-        class="mx-auto flex max-w-[70rem] flex-col gap-y-12 px-[4%] sm:px-[12%] md:gap-y-15 md:px-[4%] lg:gap-y-18 lg:px-[5%] xl:px-[4%] 2xl:px-[0]"
+        class="mx-auto flex max-w-[90%] flex-col sm:max-w-[36rem] lg:max-w-[90%] lg:flex-row lg:gap-x-8 xl:max-w-[70rem] xl:gap-x-12"
       >
-        <div class="flex flex-row gap-x-12">
-          <div class="flex-1">
-            <Title class="text-center text-white">Kontak Kami</Title>
+        <div class="flex-1">
+          <Title class="text-center text-white">Kontak Kami</Title>
+          <Divider usePadding={false} />
+          <div class="mt-3.5 flex flex-col">
+            <div class="flex flex-col gap-y-3">
+              <InputField type="text" required={true} label="Nama" hint="Masukkan nama anda" />
+              <InputField
+                type="email"
+                required={true}
+                label="Email"
+                hint="Masukkan alamat email anda"
+              />
+              <InputField
+                type="multiline"
+                required={true}
+                label="Pesan"
+                hint="Masukkan pesan anda"
+              />
+            </div>
+            <h3 class="my-1 text-right text-white" style="letter-spacing: 2px;">
+              <i>cryptoshariaforum@gmail.com</i>
+            </h3>
+            <PrimaryButton text="Kirim Pesan" href="#kontak" size="small" extend={true} />
+          </div>
+        </div>
+        <div class="flex flex-1 flex-col gap-y-12 max-lg:mt-12 lg:gap-y-9">
+          <div>
+            <Title class="text-center text-white">Media Sosial</Title>
             <Divider usePadding={false} />
-            <div class="mt-3.5 flex flex-col">
-              <div class="flex flex-col gap-y-3">
-                <InputField type="text" required={true} label="Nama" hint="Masukkan nama anda" />
-                <InputField
-                  type="email"
-                  required={true}
-                  label="Email"
-                  hint="Masukkan alamat email anda"
-                />
-                <InputField
-                  type="multiline"
-                  required={true}
-                  label="Pesan"
-                  hint="Masukkan pesan anda"
-                />
-              </div>
-              <h3 class="my-1 text-right text-white" style="letter-spacing: 2px;">
-                <i>cryptoshariaforum@gmail.com</i>
-              </h3>
-              <PrimaryButton text="Kirim Pesan" href="#kontak" size="small" extend={true} />
+            <div class="mt-10 flex flex-row items-center justify-between px-[3%] sm:px-14">
+              {#each socmeds as socmed}
+                <a href={socmed.url} target="_blank">
+                  <img src={socmed.icon} alt={socmed.name} class="w-12" />
+                </a>
+              {/each}
             </div>
           </div>
-          <div class="flex flex-1 flex-col gap-y-9">
-            <div>
-              <Title class="text-center text-white">Media Sosial</Title>
-              <Divider usePadding={false} />
-              <div class="mt-10 flex flex-row items-center justify-between px-14">
-                {#each socmeds as socmed}
-                  <a href={socmed.url} target="_blank">
-                    <img src={socmed.icon} alt={socmed.name} class="w-12" />
-                  </a>
-                {/each}
+          <div>
+            <Title class="text-center text-white"
+              >Support <i class="text-orange-600">CryptoSharia</i></Title
+            >
+            <Divider usePadding={false} />
+            <div class="mx-auto mt-5 flex flex-col justify-between gap-y-3 lg:max-w-[90%]">
+              <div class="rounded-xl border-2 border-orange-600 bg-white p-3">
+                <p class="text-center text-slate-800">
+                  Satu donasi kecil hari ini, bisa menjadi investasi besar di akhirat. Mari dukung
+                  gerakan edukasi <i><b>CryptoSharia</b></i>, agar ilmu dan pahala terus mengalir
+                  tanpa henti.
+                </p>
               </div>
-            </div>
-            <div>
-              <Title class="text-center text-white"
-                >Support <i class="text-orange-600">CryptoSharia</i></Title
-              >
-              <Divider usePadding={false} />
-              <div class="mt-5 flex flex-col justify-between gap-y-3 px-12">
-                <div class="rounded-xl border-2 border-orange-600 bg-white p-3">
-                  <p class="text-center text-slate-800">
-                    Satu donasi kecil hari ini, bisa menjadi investasi besar di akhirat. Mari dukung
-                    gerakan edukasi <i><b>CryptoSharia</b></i>, agar ilmu dan pahala terus mengalir
-                    tanpa henti.
-                  </p>
-                </div>
-                <PrimaryButton text="💸 Support" href="#kontak" size="small" extend={true} />
-              </div>
+              <PrimaryButton text="💸 Support" href="#kontak" size="small" extend={true} />
             </div>
           </div>
         </div>
