@@ -19,7 +19,7 @@
 </script>
 
 <div
-  class="group w-82.5 overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-xl transition-transform duration-300 hover:scale-105 hover:cursor-pointer max-sm:w-[95%] sm:max-md:w-67.5 xl:w-88"
+  class="group w-82.5 overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-xl transition-transform duration-300 hover:scale-105 hover:cursor-pointer max-sm:w-[95%] max-sm:max-w-96 sm:max-md:w-67.5 xl:w-88"
   class:max-sm:hidden={isHiddenOnMobile}
 >
   <div class="relative h-50 w-full object-cover sm:max-md:h-40">
