@@ -13,7 +13,12 @@
 
   onMount(() => {
     const lastSegment = getUrlLastSegment().toLowerCase();
-    selectedCategory = capitalizeFirstLetter(lastSegment);
+
+    if (lastSegment === 'aktivitas' || lastSegment === 'artikel') {
+      selectedCategory = capitalizeFirstLetter(lastSegment);
+    } else {
+      selectedCategory = 'Semua';
+    }
   });
 </script>
 
@@ -24,11 +29,11 @@
 <section class="nav-space mx-auto w-full max-w-[90rem] text-center">
   <span class="block h-23 w-full"></span>
   <h1 class="text-5xl text-orange-600"><b>CryptoSharia Blog</b></h1>
-  <p class="my-2 text-slate-700">
+  <p class="my-2 text-[1.11rem] text-slate-700">
     Temukan semua update terbaru tentang <i><b>CryptoSharia</b></i> di sini
   </p>
   <Divider />
-  <div class="mt-3 flex flex-row items-center justify-center gap-x-2">
+  <div class="mt-4 flex flex-row items-center justify-center gap-x-2">
     {#each categories as category}
       <Chip
         isSelected={category === selectedCategory}

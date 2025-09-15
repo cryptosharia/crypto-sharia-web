@@ -30,7 +30,9 @@
     >
   </div>
   <div class="p-2.5 pt-1 md:p-3 md:pt-1">
-    <h2 class="line-clamp-1 text-[1.4rem] font-medium text-orange-600 group-hover:underline">
+    <h2
+      class="line-clamp-1 text-left text-[1.4rem] font-medium text-orange-600 group-hover:underline"
+    >
       {title}
     </h2>
     <p class="line-clamp-2 text-justify text-slate-700">{content}</p>
