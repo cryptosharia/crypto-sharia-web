@@ -41,7 +41,7 @@
   ];
 </script>
 
-<section id="kontak" class="w-full">
+<section id="kontak" class="mt-14 w-full">
   <GradientDivider size="large" />
   <div
     class="w-full bg-cover bg-center"

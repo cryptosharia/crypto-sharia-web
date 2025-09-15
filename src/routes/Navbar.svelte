@@ -3,10 +3,10 @@
   import { onMount } from 'svelte';
 
   const links: { text: string; href: string }[] = [
-    { text: 'Pembina', href: '#pembina' },
     { text: 'Discord', href: '#discord' },
-    { text: 'Screening', href: '#screening' },
+    { text: 'Kegiatan', href: '#kegiatan' },
     { text: 'Artikel', href: '#artikel' },
+    { text: 'Screening', href: '#screening' },
     { text: 'FAQ', href: '#faq' },
     { text: 'Kontak', href: '#kontak' }
   ];

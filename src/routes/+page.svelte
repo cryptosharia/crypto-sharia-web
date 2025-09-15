@@ -1,23 +1,21 @@
 <script lang="ts">
-  import Artikel from './Artikel.svelte';
+  import Article from './Article.svelte';
   import Banner from './Banner.svelte';
   import Discord from './Discord.svelte';
   import Faq from './Faq.svelte';
-  import Kolaborasi from './Kolaborasi.svelte';
-  import Kontak from './Kontak.svelte';
-  import Pembina from './Pembina.svelte';
+  import Collaboration from './Collaboration.svelte';
+  import Team from './Team.svelte';
   import Screening from './Screening.svelte';
-  import Tentang from './Tentang.svelte';
+  import About from './About.svelte';
 </script>
 
 <main class="flex flex-col items-center gap-y-14">
   <Banner />
-  <Tentang />
-  <Kolaborasi />
-  <Pembina />
+  <About />
+  <Collaboration />
+  <Team />
   <Discord />
-  <Artikel />
+  <Article />
   <Screening />
   <Faq />
-  <Kontak />
 </main>

@@ -1,17 +1,20 @@
 <script lang="ts">
-	import '../app.css';
-	import logo1 from '$lib/assets/logo1.png';
+  import '../app.css';
+  import logo1 from '$lib/assets/logo1.png';
 
-	import Navbar from './Navbar.svelte';
+  import Navbar from './Navbar.svelte';
+  import Footer from './Footer.svelte';
 
-	let { children } = $props();
+  let { children } = $props();
 </script>
 
 <svelte:head>
-	<title>CryptoSharia</title>
-	<link rel="icon" type="image/png" href={logo1} />
+  <title>CryptoSharia</title>
+  <link rel="icon" type="image/png" href={logo1} />
 </svelte:head>
 
 <Navbar />
 
 {@render children?.()}
+
+<Footer />
