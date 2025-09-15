@@ -119,7 +119,7 @@
   ];
 </script>
 
-<section id="screening" class="nav-space z-9 w-full max-w-[90rem]">
+<section id="screening" class="nav-space z-8 mb-10 w-full max-w-[90rem]">
   <Title class="text-center">Token Screening</Title>
   <Divider />
   <div class="mx-auto mt-8 flex w-full flex-col items-center gap-y-6 md:gap-y-8 lg:gap-y-10">

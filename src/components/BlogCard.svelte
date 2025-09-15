@@ -23,7 +23,7 @@
   class:max-sm:hidden={isHiddenOnMobile}
 >
   <div class="relative h-50 w-full object-cover sm:max-md:h-40">
-    <img src={thumbnailUrl} alt={title} class="size-full" />
+    <img src={thumbnailUrl} alt={title} class="size-full object-cover" />
     <span
       class="absolute right-2 bottom-2 rounded-md bg-black/50 px-1.5 py-0.5 text-sm font-normal text-white"
       >{formatDate(date)}</span

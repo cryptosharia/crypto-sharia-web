@@ -1,21 +1,23 @@
 <script lang="ts">
-  import Article from './Article.svelte';
+  import Articles from './Articles.svelte';
   import Banner from './Banner.svelte';
   import Discord from './Discord.svelte';
   import Faq from './Faq.svelte';
-  import Collaboration from './Collaboration.svelte';
+  import Collaborations from './Collaborations.svelte';
   import Team from './Team.svelte';
-  import Screening from './Screening.svelte';
+  import Screenings from './Screening.svelte';
   import About from './About.svelte';
+  import Activities from './Activities.svelte';
 </script>
 
-<main class="flex flex-col items-center gap-y-14">
+<main class="flex flex-col items-center gap-y-10">
   <Banner />
   <About />
-  <Collaboration />
+  <Collaborations />
   <Team />
   <Discord />
-  <Article />
-  <Screening />
+  <Activities />
+  <Articles />
+  <Screenings />
   <Faq />
 </main>
