@@ -80,7 +80,17 @@
         />
       {/each}
     </div>
-    <PrimaryButton text="Lihat Semua Artikel" href="/blog" size="medium" class="hidden md:block" />
-    <PrimaryButton text="Lihat Semua Artikel" href="/blog" size="small" class="block md:hidden" />
+    <PrimaryButton
+      text="Lihat Semua Artikel"
+      href="/blog/artikel"
+      size="medium"
+      class="hidden md:block"
+    />
+    <PrimaryButton
+      text="Lihat Semua Artikel"
+      href="/blog/artikel"
+      size="small"
+      class="block md:hidden"
+    />
   </div>
 </section>

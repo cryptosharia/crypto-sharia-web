@@ -82,7 +82,7 @@
     </div>
     <PrimaryButton
       text="Lihat Semua Aktivitas"
-      href="/blog"
+      href="/blog/aktivitas"
       size="medium"
       class="hidden md:block"
     />

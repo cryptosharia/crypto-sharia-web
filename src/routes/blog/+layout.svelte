@@ -1,12 +1,20 @@
 <script lang="ts">
+  import { goto } from '$app/navigation';
+  import { onMount } from 'svelte';
   import Chip from '../../components/Chip.svelte';
   import Divider from '../../components/Divider.svelte';
+  import { capitalizeFirstLetter, getUrlLastSegment } from '../../utils';
 
   let { children } = $props();
 
   const categories = ['Semua', 'Aktivitas', 'Artikel'];
 
   let selectedCategory = $state('Semua');
+
+  onMount(() => {
+    const lastSegment = getUrlLastSegment().toLowerCase();
+    selectedCategory = capitalizeFirstLetter(lastSegment);
+  });
 </script>
 
 <svelte:head>
@@ -25,7 +33,15 @@
       <Chip
         isSelected={category === selectedCategory}
         text={category}
-        onPress={(text) => (selectedCategory = text)}
+        onPress={(text) => {
+          selectedCategory = text;
+
+          if (text.toUpperCase() === 'SEMUA') {
+            goto('/blog');
+          } else {
+            goto(`/blog/${text.toLowerCase()}`);
+          }
+        }}
       />
     {/each}
   </div>
