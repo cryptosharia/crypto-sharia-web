@@ -7,33 +7,6 @@
   const articles = [
     {
       thumbnailUrl:
-        'https://static.news.bitcoin.com/wp-content/uploads/2024/09/suisisisdhhdhhd.jpg',
-      date: new Date(),
-      title: 'Sui Lorem Ipsum Dolor Sit Amet',
-      tags: ['Sui', 'Web 3', 'Layer 1'],
-      content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    },
-    {
-      thumbnailUrl:
-        'https://s3-alpha.figma.com/hub/file/3963163118/974598dc-af4c-4381-89ea-83ce5758db4c-cover.png',
-      date: new Date(),
-      title: 'Ethereum Lorem Ipsum Dolor Sit Amet',
-      tags: ['Ethereum', 'Web 3', 'Layer 1'],
-      content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    },
-    {
-      thumbnailUrl:
-        'https://t3.ftcdn.net/jpg/14/51/34/72/360_F_1451347228_sEZHcfvYxSoP9095deryzeRNUfhlpEcS.jpg',
-      date: new Date(),
-      title: 'Bitcoin Lorem Ipsum',
-      tags: ['Bitcoin', 'Web 3', 'Layer 1'],
-      content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    },
-    {
-      thumbnailUrl:
         'https://www.thecoinrepublic.com/wp-content/uploads/2025/01/What-Chainlinks-RSI-Divergence-Means-%E2%80%94-Is-a-Drop-to-13-Now-Imminent-1.jpg',
       date: new Date(),
       title: 'Chainlink Lorem Ipsum',
@@ -56,6 +29,33 @@
       date: new Date(),
       title: 'DeepBook Lorem Ipsum  Dolor Sit Amet',
       tags: ['Order Book', 'DEX', 'Liquidity'],
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    },
+    {
+      thumbnailUrl:
+        'https://static.news.bitcoin.com/wp-content/uploads/2024/09/suisisisdhhdhhd.jpg',
+      date: new Date(),
+      title: 'Sui Lorem Ipsum Dolor Sit Amet',
+      tags: ['Sui', 'Web 3', 'Layer 1'],
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    },
+    {
+      thumbnailUrl:
+        'https://s3-alpha.figma.com/hub/file/3963163118/974598dc-af4c-4381-89ea-83ce5758db4c-cover.png',
+      date: new Date(),
+      title: 'Ethereum Lorem Ipsum Dolor Sit Amet',
+      tags: ['Ethereum', 'Web 3', 'Layer 1'],
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    },
+    {
+      thumbnailUrl:
+        'https://t3.ftcdn.net/jpg/14/51/34/72/360_F_1451347228_sEZHcfvYxSoP9095deryzeRNUfhlpEcS.jpg',
+      date: new Date(),
+      title: 'Bitcoin Lorem Ipsum',
+      tags: ['Bitcoin', 'Web 3', 'Layer 1'],
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     }

@@ -134,10 +134,10 @@
           status={token.status}
           logoUrl={token.logoUrl}
           isHiddenOnXS={i >= 6}
-          isHiddenOnSM={i >= 9}
-          isHiddenOnMD={i >= 9}
-          isHiddenOnLG={i >= 12}
-          isHiddenOnXL={i >= 15}
+          isHiddenOnSM={i >= 6}
+          isHiddenOnMD={i >= 6}
+          isHiddenOnLG={i >= 8}
+          isHiddenOnXL={i >= 10}
         />
       {/each}
     </div>
