@@ -84,9 +84,10 @@
                 <a
                   href={link.href}
                   onclick={() => setTimeout(() => (isDrawerOpen = false), 200)}
-                  class="block w-full text-center text-base font-semibold transition-colors duration-300 ease-in-out hover:text-orange-600"
-                  class:text-orange-600={link.href === window.location.pathname}
-                  class:text-slate-500={link.href !== window.location.pathname}
+                  class="block w-full text-center text-base font-semibold transition-colors duration-300 ease-in-out hover:text-orange-600 {link.href ===
+                  `/${window.location.pathname.split('/')[1]}`
+                    ? 'text-orange-600'
+                    : 'text-slate-500'}"
                 >
                   {link.text}
                 </a>
@@ -112,9 +113,10 @@
             <li>
               <a
                 href={link.href}
-                class="font-semibold transition-colors duration-300 ease-in-out hover:text-orange-600"
-                class:text-orange-600={link.href === window.location.pathname}
-                class:text-slate-500={link.href !== window.location.pathname}
+                class="font-semibold transition-colors duration-300 ease-in-out hover:text-orange-600 {link.href ===
+                `/${window.location.pathname.split('/')[1]}`
+                  ? 'text-orange-600'
+                  : 'text-slate-500'}"
               >
                 {link.text}
               </a>
