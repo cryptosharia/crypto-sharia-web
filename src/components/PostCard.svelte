@@ -5,6 +5,7 @@
     thumbnailUrl,
     date,
     title,
+    slug,
     tags,
     content,
     isHiddenOnMobile = false
@@ -12,14 +13,16 @@
     thumbnailUrl: string;
     date: Date;
     title: string;
+    slug: string;
     tags: string[];
     content: string;
     isHiddenOnMobile?: boolean;
   } = $props();
 </script>
 
-<div
-  class="group w-82.5 overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-xl transition-transform duration-300 hover:scale-105 hover:cursor-pointer max-sm:w-[95%] max-sm:max-w-96 sm:max-md:w-67.5 xl:w-88"
+<a
+  href="/blog/{slug}"
+  class="group w-82.5 overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-xl transition-transform duration-300 hover:scale-105 max-sm:w-[95%] max-sm:max-w-96 sm:max-md:w-67.5 xl:w-88"
   class:max-sm:hidden={isHiddenOnMobile}
 >
   <div class="relative h-50 w-full object-cover sm:max-md:h-40">
@@ -37,7 +40,7 @@
     </h2>
     <p class="line-clamp-2 text-justify text-slate-700">{content}</p>
     <div class="mt-2 flex flex-row justify-end gap-x-1.5">
-      {#each tags as tag}
+      {#each tags.slice(0, 3) as tag}
         <span
           class="block rounded-2xl border border-slate-300 px-2 py-0.5 text-sm text-slate-600 shadow-2xl"
           >{tag}</span
@@ -45,4 +48,4 @@
       {/each}
     </div>
   </div>
-</div>
+</a>

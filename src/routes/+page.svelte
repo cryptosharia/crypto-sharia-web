@@ -10,6 +10,10 @@
   import Activities from './Activities.svelte';
 </script>
 
+<svelte:head>
+  <title>CryptoSharia</title>
+</svelte:head>
+
 <main class="flex flex-col items-center gap-y-10">
   <Banner />
   <About />

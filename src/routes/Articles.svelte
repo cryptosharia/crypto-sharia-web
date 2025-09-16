@@ -1,10 +1,12 @@
 <script lang="ts">
   import Divider from '../components/Divider.svelte';
-  import BlogCard from '../components/BlogCard.svelte';
+  import PostCard from '../components/PostCard.svelte';
   import Title from '../components/Title.svelte';
   import PrimaryButton from '../components/PrimaryButton.svelte';
 
-  import { articles } from './blog/data';
+  import { getPosts } from './blog/data';
+
+  const posts = getPosts('article');
 </script>
 
 <section id="artikel" class="nav-space z-9 mb-10 w-full max-w-[90rem]">
@@ -14,13 +16,14 @@
     <div
       class="flex w-full flex-row flex-wrap items-start justify-center gap-6 px-6 pt-5 md:gap-8 lg:gap-10"
     >
-      {#each articles as article, i}
-        <BlogCard
-          thumbnailUrl={article.thumbnailUrl}
-          date={article.date}
-          title={article.title}
-          tags={article.tags}
-          content={article.content}
+      {#each posts as post, i}
+        <PostCard
+          thumbnailUrl={post.thumbnailUrl}
+          date={post.date}
+          title={post.title}
+          slug={post.slug}
+          tags={post.tags}
+          content={post.content}
           isHiddenOnMobile={i >= 3 ? true : false}
         />
       {/each}

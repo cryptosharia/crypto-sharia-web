@@ -1,5 +1,6 @@
 <script lang="ts">
   import '../app.css';
+  import '../../node_modules/github-markdown-css/github-markdown-light.css';
   import logo1 from '$lib/assets/logo1.png';
 
   import Navbar from './Navbar.svelte';
