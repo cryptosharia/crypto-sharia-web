@@ -1,20 +1,36 @@
 <script lang="ts">
+  import { navigating } from '$app/state';
   import logo1 from '$lib/assets/logo1.png';
   import { onMount } from 'svelte';
 
-  const links: { text: string; href: string }[] = [
-    { text: 'Discord', href: '#discord' },
-    { text: 'Aktivitas', href: '#aktivitas' },
-    { text: 'Artikel', href: '#artikel' },
-    { text: 'Screening', href: '#screening' },
-    { text: 'FAQ', href: '#faq' },
-    { text: 'Kontak', href: '#kontak' }
-  ];
+  let links: { text: string; href: string }[] = $state([{ text: 'Kontak', href: '#kontak' }]);
 
   let isDrawerOpen = $state(false);
   let drawerHeight = $state(1000);
 
-  onMount(() => {
+  $effect(() => {
+    navigating.to; // Run this function whenever the app is navigating
+    if (window.location.pathname === '/') {
+      links = [
+        { text: 'Discord', href: '#discord' },
+        { text: 'Aktivitas', href: '#aktivitas' },
+        { text: 'Artikel', href: '#artikel' },
+        { text: 'Screening', href: '#screening' },
+        { text: 'FAQ', href: '#faq' },
+        { text: 'Kontak', href: '#kontak' }
+      ];
+    } else {
+      links = [
+        { text: 'Beranda', href: '/' },
+        { text: 'Blog', href: '/blog' },
+        { text: 'Screening', href: '/screening' },
+        { text: 'Kontak', href: '#kontak' }
+      ];
+    }
+  });
+
+  $effect(() => {
+    navigating.complete; // Run this function whenever the app is done navigating
     drawerHeight = document.getElementById('drawer')?.clientHeight || 1000;
   });
 </script>
@@ -68,9 +84,12 @@
                 <a
                   href={link.href}
                   onclick={() => setTimeout(() => (isDrawerOpen = false), 200)}
-                  class="block w-full text-center text-base font-medium text-slate-700 transition-colors duration-300 ease-in-out hover:text-orange-600"
-                  >{link.text}</a
+                  class="block w-full text-center text-base font-semibold transition-colors duration-300 ease-in-out hover:text-orange-600"
+                  class:text-orange-600={link.href === window.location.pathname}
+                  class:text-slate-500={link.href !== window.location.pathname}
                 >
+                  {link.text}
+                </a>
               </li>
             {:else}
               <li class="er-slate-200 py-3">
@@ -93,9 +112,12 @@
             <li>
               <a
                 href={link.href}
-                class="font-semibold text-slate-500 transition-colors duration-300 ease-in-out hover:text-orange-600"
-                >{link.text}</a
+                class="font-semibold transition-colors duration-300 ease-in-out hover:text-orange-600"
+                class:text-orange-600={link.href === window.location.pathname}
+                class:text-slate-500={link.href !== window.location.pathname}
               >
+                {link.text}
+              </a>
             </li>
           {:else}
             <li>
