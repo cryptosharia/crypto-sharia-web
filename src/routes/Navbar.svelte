@@ -1,7 +1,6 @@
 <script lang="ts">
   import { navigating } from '$app/state';
   import logo1 from '$lib/assets/logo1.png';
-  import { onMount } from 'svelte';
 
   let links: { text: string; href: string }[] = $state([{ text: 'Kontak', href: '#kontak' }]);
 

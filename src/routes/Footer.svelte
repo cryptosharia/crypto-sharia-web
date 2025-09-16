@@ -82,7 +82,7 @@
             <Divider usePadding={false} />
             <div class="mt-10 flex flex-row items-center justify-between px-[3%] sm:px-14">
               {#each socmeds as socmed}
-                <a href={socmed.url} target="_blank">
+                <a href={socmed.url} target="_blank" class="transition-transform hover:scale-115">
                   <img src={socmed.icon} alt={socmed.name} class="w-12" />
                 </a>
               {/each}

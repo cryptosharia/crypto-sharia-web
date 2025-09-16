@@ -142,13 +142,13 @@
       {/each}
     </div>
     <PrimaryButton
-      text="Lihat Semua Token"
+      text="Lihat Token Lainnya"
       href="/screening"
       size="medium"
       class="hidden md:block"
     />
     <PrimaryButton
-      text="Lihat Semua Token"
+      text="Lihat Token Lainnya"
       href="/screening"
       size="small"
       class="block md:hidden"
