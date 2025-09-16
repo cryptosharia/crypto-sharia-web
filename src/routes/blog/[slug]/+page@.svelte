@@ -5,8 +5,13 @@
   import { formatDate } from '../../../utils';
   import Calendar from '$lib/assets/icons/Calendar.svelte';
   import Divider from '../../../components/Divider.svelte';
+  import PostCard from '../../../components/PostCard.svelte';
+  import { getPosts } from '../data';
+  import DotsDivider from '../../../components/DotsDivider.svelte';
+  import Title from '../../../components/Title.svelte';
 
   let { data }: PageProps = $props();
+  const posts = getPosts(data.post?.category, 3, data.post ? [data.post.slug] : []);
 </script>
 
 <svelte:head>
@@ -23,14 +28,14 @@
     <PrimaryButton text="Kembali ke Blog" href="/blog" size="small" class="block md:hidden" />
   </main>
 {:else}
-  <span class="block h-25 w-full"></span>
+  <span class="block h-21 w-full"></span>
   <main class="mx-auto flex w-full max-w-[70rem] flex-col">
     <section>
-      <div class="flex flex-row items-start gap-x-2.5">
-        <a
+      <div class="mb-3.5 flex flex-row items-start gap-x-4">
+        <button
           aria-label="Kembali ke Blog"
-          href="/blog"
-          class="rounded-full p-2.5 text-orange-600 transition-colors duration-300 hover:bg-black/5"
+          onclick={() => window.history.back()}
+          class="mt-0.75 rounded-full text-orange-600 transition-transform duration-300 hover:scale-115 hover:cursor-pointer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -46,30 +51,64 @@
               d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
             />
           </svg>
-        </a>
-        <h1 class="mt-1.5 pr-10 text-justify text-[2.5rem] leading-10 font-medium text-orange-600">
+        </button>
+        <h1 class="text-justify text-[2.5rem] leading-10 font-medium text-orange-600">
           {data.post.title} Lorem
         </h1>
       </div>
-      <span class="mb-1 flex flex-row justify-end text-slate-700">
-        <Calendar /> <span>{formatDate(data.post.date, 'text')}</span></span
-      >
       <img src={data.post.thumbnailUrl} alt={data.post.title} class="w-full rounded-3xl" />
-      <div class="mt-2 mb-2 flex flex-row flex-wrap gap-2">
-        {#each data.post.tags as tag}
-          <span class="rounded-full bg-slate-200 px-2.5 py-1.25 text-slate-700">{tag}</span>
-        {/each}
+      <div class="mt-2 mb-2 flex flex-row">
+        <div class="flex flex-1 flex-row flex-wrap gap-2">
+          {#each data.post.tags as tag}
+            <span class="rounded-full bg-slate-200 px-2.5 py-1 text-slate-700">{tag}</span>
+          {/each}
+        </div>
+        <span class="mb-1 flex flex-row justify-end text-slate-700">
+          <Calendar /> <span>{formatDate(data.post.date, 'text')}</span></span
+        >
       </div>
       <Divider usePadding={false} />
       <p class="mt-2 text-justify text-slate-700">{data.post.description}</p>
     </section>
-    <div class="my-12 flex items-center justify-center gap-2">
-      {#each [1, 2, 3] as _}
-        <span class="size-2.5 rounded-full bg-slate-300"></span>
-      {/each}
-    </div>
+    <DotsDivider />
     <section class="markdown-body my-4">
       {@html marked(data.post.content)}
     </section>
+    <DotsDivider padding="4rem" />
   </main>
+  <section class="nav-space z-10 mx-auto mb-10 w-full max-w-[90rem]">
+    <Title class="text-center"
+      >{data.post.category === 'activity' ? 'Aktivitas' : 'Artikel'} Terbaru</Title
+    >
+    <Divider />
+    <div class="flex w-full flex-col items-center gap-y-6 md:gap-y-8 lg:gap-y-10">
+      <div
+        class="flex w-full flex-row flex-wrap items-start justify-center gap-6 px-6 pt-5 md:gap-8 lg:gap-10"
+      >
+        {#each posts as post, i}
+          <PostCard
+            thumbnailUrl={post.thumbnailUrl}
+            date={post.date}
+            title={post.title}
+            slug={post.slug}
+            tags={post.tags}
+            description={post.description}
+            isHiddenOnMobile={i >= 3 ? true : false}
+          />
+        {/each}
+      </div>
+      <PrimaryButton
+        text="Lihat {data.post.category === 'activity' ? 'Aktivitas' : 'Artikel'} Lainnya"
+        href="/blog/{data.post.category === 'activity' ? 'aktivitas' : 'artikel'}"
+        size="medium"
+        class="hidden md:block"
+      />
+      <PrimaryButton
+        text="Lihat {data.post.category === 'activity' ? 'Aktivitas' : 'Artikel'} Lainnya"
+        href="/blog/{data.post.category === 'activity' ? 'aktivitas' : 'artikel'}"
+        size="small"
+        class="block md:hidden"
+      />
+    </div>
+  </section>
 {/if}

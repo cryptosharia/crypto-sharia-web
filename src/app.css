@@ -53,3 +53,12 @@ body {
   color: var(--color-orange-600);
   /* @apply text-orange-600; */
 }
+
+.markdown-body li {
+  list-style: disc;
+}
+
+.markdown-body a {
+  color: var(--color-orange-600) !important;
+  text-decoration: underline !important;
+}

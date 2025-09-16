@@ -171,13 +171,27 @@ const posts: Post[] = [
   }
 ];
 
-export function getPosts(category: 'all' | 'activity' | 'article' = 'all') {
+export function getPosts(
+  category: 'all' | 'activity' | 'article' = 'all',
+  limit?: number,
+  skip: string[] = []
+) {
   let data;
 
   if (category === 'all') data = posts;
   else data = posts.filter((post) => post.category === category);
 
-  return data.sort((a, b) => a.date.getTime() - b.date.getTime());
+  data = data.sort((a, b) => a.date.getTime() - b.date.getTime());
+
+  if (skip.length > 0) {
+    data = data.filter((post) => !skip.includes(post.slug));
+  }
+
+  if (limit) {
+    data = data.slice(0, limit);
+  }
+
+  return data;
 }
 
 export function getPostBySlug(slug: string) {
