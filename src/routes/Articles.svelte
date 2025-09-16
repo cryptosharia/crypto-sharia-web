@@ -23,7 +23,7 @@
           title={post.title}
           slug={post.slug}
           tags={post.tags}
-          content={post.content}
+          description={post.description}
           isHiddenOnMobile={i >= 3 ? true : false}
         />
       {/each}

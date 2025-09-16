@@ -7,7 +7,7 @@
     title,
     slug,
     tags,
-    content,
+    description,
     isHiddenOnMobile = false
   }: {
     thumbnailUrl: string;
@@ -15,7 +15,7 @@
     title: string;
     slug: string;
     tags: string[];
-    content: string;
+    description: string;
     isHiddenOnMobile?: boolean;
   } = $props();
 </script>
@@ -28,7 +28,7 @@
   <div class="relative h-50 w-full object-cover sm:max-md:h-40">
     <img src={thumbnailUrl} alt={title} class="size-full object-cover" />
     <span
-      class="absolute right-2 bottom-2 rounded-md bg-black/50 px-1.5 py-0.5 text-sm font-normal text-white"
+      class="absolute right-1 bottom-1 rounded-md bg-black/50 px-1.5 py-0.5 text-sm font-normal text-white"
       >{formatDate(date)}</span
     >
   </div>
@@ -38,11 +38,11 @@
     >
       {title}
     </h2>
-    <p class="line-clamp-2 text-justify text-slate-700">{content}</p>
+    <p class="line-clamp-2 text-justify text-slate-700">{description}</p>
     <div class="mt-2 flex flex-row justify-end gap-x-1.5">
       {#each tags.slice(0, 3) as tag}
         <span
-          class="block rounded-2xl border border-slate-300 px-2 py-0.5 text-sm text-slate-600 shadow-2xl"
+          class="block rounded-2xl border border-slate-200 bg-slate-100 px-2.25 py-0.5 text-sm text-slate-700 shadow-2xl"
           >{tag}</span
         >
       {/each}

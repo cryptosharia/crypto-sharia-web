@@ -4,13 +4,16 @@ import tiga from '$lib/assets/blog/activities/3.jpeg';
 import empat from '$lib/assets/blog/activities/4.jpeg';
 import lima from '$lib/assets/blog/activities/5.jpeg';
 import enam from '$lib/assets/blog/activities/6.jpeg';
+import sui from '$lib/posts/sui.md?raw';
+import walrus from '$lib/posts/walrus.md?raw';
 
 type Post = {
   category: 'activity' | 'article';
   slug: string;
-  title: string;
   date: Date;
   tags: string[];
+  title: string;
+  description: string;
   thumbnailUrl: string;
   content: string;
 };
@@ -23,8 +26,9 @@ const posts: Post[] = [
     title: 'Lorem Ipsum Dolor',
     slug: 'lorem-ipsum-dolor',
     tags: ['Kolaborasi', 'Rapat', 'Lorem'],
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
+    content: sui
   },
   {
     category: 'activity',
@@ -33,8 +37,9 @@ const posts: Post[] = [
     title: 'Lorem Ipsum Dolor Sit',
     slug: 'lorem-ipsum-dolor-sit',
     tags: ['Lorem', 'Kolaborasi', 'Rapat'],
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    content: walrus
   },
   {
     category: 'activity',
@@ -43,8 +48,9 @@ const posts: Post[] = [
     title: 'Lorem Ipsum  Dolor Sit Amet',
     slug: 'lorem-ipsum-dolor-sit-amet',
     tags: ['Kolaborasi', 'Rapat', 'Lorem'],
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    content: sui
   },
   {
     category: 'activity',
@@ -53,8 +59,9 @@ const posts: Post[] = [
     title: 'Lorem Ipsum Dolor Sit Amet Consectetur',
     slug: 'lorem-ipsum-dolor-sit-amet-consectetur',
     tags: ['Lorem', 'Kolaborasi', 'Rapat'],
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    content: walrus
   },
   {
     category: 'activity',
@@ -63,8 +70,9 @@ const posts: Post[] = [
     title: 'Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing',
     slug: 'lorem-ipsum-dolor-sit-amet-consectetur-adipiscing',
     tags: ['Kolaborasi', 'Rapat', 'Lorem'],
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    content: sui
   },
   {
     category: 'activity',
@@ -73,8 +81,9 @@ const posts: Post[] = [
     title: 'Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit',
     slug: 'lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit',
     tags: ['Lorem', 'Kolaborasi', 'Rapat'],
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    content: walrus
   },
   {
     category: 'article',
@@ -97,8 +106,9 @@ const posts: Post[] = [
       'Cryptocurrency',
       'Blockchain'
     ],
-    content:
-      '# **Lorem** ipsum\ndolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    content: sui
   },
   {
     category: 'article',
@@ -107,6 +117,8 @@ const posts: Post[] = [
     title: 'Walrus Lorem Ipsum',
     slug: 'walrus-lorem-ipsum',
     tags: ['Storage', 'dApps', 'Storage Protocol'],
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
   },
@@ -118,18 +130,9 @@ const posts: Post[] = [
     title: 'DeepBook Lorem Ipsum  Dolor Sit Amet',
     slug: 'deepbook-lorem-ipsum-dolor-sit-amet',
     tags: ['Order Book', 'DEX', 'Liquidity'],
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-  },
-  {
-    category: 'article',
-    thumbnailUrl: 'https://static.news.bitcoin.com/wp-content/uploads/2024/09/suisisisdhhdhhd.jpg',
-    date: new Date('2025-10-11T00:00:00.000Z'),
-    title: 'Sui Lorem Ipsum Dolor Sit Amet',
-    slug: 'sui-lorem-ipsum-dolor-sit-amet',
-    tags: ['Sui', 'Web 3', 'Layer 1'],
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    content: sui
   },
   {
     category: 'article',
@@ -139,8 +142,20 @@ const posts: Post[] = [
     title: 'Ethereum Lorem Ipsum Dolor Sit Amet',
     slug: 'ethereum-lorem-ipsum-dolor-sit-amet',
     tags: ['Ethereum', 'Web 3', 'Layer 1'],
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    content: walrus
+  },
+  {
+    category: 'article',
+    thumbnailUrl: 'https://static.news.bitcoin.com/wp-content/uploads/2024/09/suisisisdhhdhhd.jpg',
+    date: new Date('2025-10-11T00:00:00.000Z'),
+    title: 'Sui Lorem Ipsum Dolor Sit Amet',
+    slug: 'sui-lorem-ipsum-dolor-sit-amet',
+    tags: ['Sui', 'Web 3', 'Layer 1'],
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    content: sui
   },
   {
     category: 'article',
@@ -150,8 +165,9 @@ const posts: Post[] = [
     title: 'Bitcoin Lorem Ipsum',
     slug: 'bitcoin-lorem-ipsum',
     tags: ['Bitcoin', 'Web 3', 'Layer 1'],
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    content: sui
   }
 ];
 
