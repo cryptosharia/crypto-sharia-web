@@ -9,9 +9,17 @@
   import { getPosts } from '../data';
   import DotsDivider from '../../../components/DotsDivider.svelte';
   import Title from '../../../components/Title.svelte';
+  import { navigating } from '$app/state';
 
   let { data }: PageProps = $props();
-  const posts = getPosts(data.post?.category, 3, data.post ? [data.post.slug] : []);
+  let posts = $state(getPosts(data.post?.category, 3, data.post ? [data.post.slug] : []));
+
+  $effect(() => {
+    navigating.complete;
+
+    // Refetch posts whenever the route is done changing
+    posts = getPosts(data.post?.category, 3, data.post ? [data.post.slug] : []);
+  });
 </script>
 
 <svelte:head>
@@ -93,7 +101,6 @@
             slug={post.slug}
             tags={post.tags}
             description={post.description}
-            isHiddenOnMobile={i >= 3 ? true : false}
           />
         {/each}
       </div>
