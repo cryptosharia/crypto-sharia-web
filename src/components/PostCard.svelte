@@ -39,10 +39,10 @@
       {title}
     </h2>
     <p class="line-clamp-2 text-justify text-slate-700">{description}</p>
-    <div class="mt-2 flex flex-row justify-end gap-x-1.5">
+    <div class="mt-2 flex flex-row items-stretch justify-end gap-x-1.5">
       {#each tags.slice(0, 3) as tag}
         <span
-          class="block rounded-2xl border border-slate-200 bg-slate-100 px-2.25 py-0.5 text-sm text-slate-700 shadow-2xl"
+          class="flex flex-row items-center rounded-2xl border border-slate-200 bg-slate-100 px-2.25 py-0.5 text-center text-sm text-slate-700 shadow-2xl"
           >{tag}</span
         >
       {/each}
