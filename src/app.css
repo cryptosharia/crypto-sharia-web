@@ -46,6 +46,7 @@ body {
 
 .markdown-body {
   text-align: justify;
+  color: var(--color-slate-700) !important;
 }
 
 .markdown-body h1,
@@ -64,5 +65,9 @@ body {
 
 .markdown-body a {
   color: var(--color-orange-600) !important;
-  text-decoration: underline !important;
+}
+
+.markdown-body a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
 }

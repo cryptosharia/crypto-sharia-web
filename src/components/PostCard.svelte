@@ -22,10 +22,10 @@
 
 <a
   href="/blog/{slug}"
-  class="group w-82.5 overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-xl transition-transform duration-300 hover:scale-105 max-sm:w-[95%] max-sm:max-w-96 sm:max-md:w-67.5 xl:w-88"
-  class:max-sm:hidden={isHiddenOnMobile}
+  class="group w-84 overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-xl transition-transform duration-300 hover:scale-105 max-md:w-[95%] max-md:max-w-111 xl:w-88"
+  class:max-md:hidden={isHiddenOnMobile}
 >
-  <div class="relative h-50 w-full object-cover sm:max-md:h-40">
+  <div class="relative h-50 w-full object-cover">
     <img src={thumbnailUrl} alt={title} class="size-full object-cover" />
     <span
       class="absolute right-1 bottom-1 rounded-md bg-black/50 px-1.5 py-0.5 text-sm font-normal text-white"
