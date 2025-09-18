@@ -1,9 +1,9 @@
 <script lang="ts">
   import { page } from '$app/state';
-  import TokenCard from '../../components/TokenCard.svelte';
-  import { getTokens } from '../../helpers/tokens';
+  import TokenCard from '../../../components/TokenCard.svelte';
+  import { getTokens } from '../../../helpers/tokens';
 
-  const tokens = getTokens(page.data.tokens, 'all');
+  const tokens = getTokens(page.data.tokens, 'haram');
 </script>
 
 <section

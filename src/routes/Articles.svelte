@@ -6,10 +6,10 @@
 
   import { getPosts } from './blog/data';
 
-  const posts = getPosts('article');
+  const posts = getPosts('article', 6);
 </script>
 
-<section id="artikel" class="nav-space z-9 mb-10 w-full max-w-[90rem]">
+<section id="artikel" class="nav-space z-9 mb-10 w-full max-w-[90rem] lg:max-xl:max-w-[70rem]">
   <Title class="text-center">Artikel Terbaru</Title>
   <Divider />
   <div class="flex w-full flex-col items-center gap-y-6 md:gap-y-8 lg:gap-y-10">
@@ -24,7 +24,8 @@
           slug={post.slug}
           tags={post.tags}
           description={post.description}
-          isHiddenOnMobile={i >= 3 ? true : false}
+          isHiddenOnMobile={i >= 3}
+          isHiddenOnTablet={i >= 4}
         />
       {/each}
     </div>

@@ -8,7 +8,8 @@
     slug,
     tags,
     description,
-    isHiddenOnMobile = false
+    isHiddenOnMobile = false,
+    isHiddenOnTablet = false
   }: {
     thumbnailUrl: string;
     date: Date;
@@ -17,6 +18,7 @@
     tags: string[];
     description: string;
     isHiddenOnMobile?: boolean;
+    isHiddenOnTablet?: boolean;
   } = $props();
 </script>
 
@@ -24,6 +26,7 @@
   href="/blog/{slug}"
   class="group w-84 overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-xl transition-transform duration-300 hover:scale-105 max-md:w-[95%] max-md:max-w-111 xl:w-88"
   class:max-md:hidden={isHiddenOnMobile}
+  class:md:max-xl:hidden={isHiddenOnTablet}
 >
   <div class="relative h-50 w-full object-cover">
     <img src={thumbnailUrl} alt={title} class="size-full object-cover" />

@@ -1,5 +1,6 @@
 <script lang="ts">
   let {
+    slug,
     name,
     ticker,
     color,
@@ -11,6 +12,7 @@
     isHiddenOnLG = false,
     isHiddenOnXL = false
   }: {
+    slug: string;
     name: string;
     ticker: string;
     color: string;
@@ -24,8 +26,9 @@
   } = $props();
 </script>
 
-<div
-  class="group -mt-13 flex w-42 flex-col items-center transition-transform duration-300 hover:scale-110 hover:cursor-pointer"
+<a
+  href="/screening/{slug.toLowerCase()}"
+  class="group -mt-13 flex w-42 flex-col items-center transition-transform duration-300 hover:scale-105 hover:cursor-pointer md:hover:scale-110"
   class:max-sm:hidden={isHiddenOnXS}
   class:sm:max-md:hidden={isHiddenOnSM}
   class:md:max-lg:hidden={isHiddenOnMD}
@@ -62,7 +65,7 @@
     </h3>
     <span class="text-md line-clamp-1 font-bold text-slate-600">{ticker}</span>
   </div>
-</div>
+</a>
 
 <!-- <style>
   .strokeme {

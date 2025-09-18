@@ -76,7 +76,7 @@
             <PrimaryButton text="Kirim Pesan" href="#kontak" size="small" extend={true} />
           </div>
         </div>
-        <div class="flex flex-1 flex-col gap-y-12 max-lg:mt-12 lg:gap-y-9">
+        <div class="flex flex-1 flex-col-reverse gap-y-12 max-lg:mt-12 lg:flex-col lg:gap-y-9">
           <div>
             <Title class="text-center text-white">Media Sosial</Title>
             <Divider usePadding={false} />
@@ -107,14 +107,11 @@
         </div>
       </div>
       <div class="mx-auto mt-10 flex max-w-54 flex-col" style="letter-spacing: 1.5px;">
-        <a
-          href="/"
-          class="flex flex-col items-center gap-y-0.5 text-2xl font-semibold text-orange-600"
-        >
+        <a href="/" class="flex flex-col items-center gap-y-0.5">
           <span class="flex size-12.5 items-center justify-center rounded-full bg-white">
             <img src={logo1} alt="CryptoSharia" class="size-12" />
           </span>
-          <span class="strokeme">CryptoSharia</span>
+          <span class="strokeme text-2xl font-semibold text-orange-600">CryptoSharia</span>
         </a>
         <Divider usePadding={false} />
         <span class="spacin text-center text-white"

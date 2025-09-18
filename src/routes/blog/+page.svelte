@@ -5,7 +5,7 @@
   const posts = getPosts('all');
 </script>
 
-<div
+<section
   class="flex w-full flex-row flex-wrap items-start justify-center gap-6 px-6 pt-5 md:gap-8 lg:gap-10"
 >
   {#each posts as post}
@@ -18,4 +18,4 @@
       description={post.description}
     />
   {/each}
-</div>
+</section>

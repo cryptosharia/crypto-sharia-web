@@ -6,15 +6,14 @@
   import { capitalizeFirstLetter, getUrlLastSegment } from '../../utils';
 
   let { children } = $props();
-
-  const categories = ['Semua', 'Aktivitas', 'Artikel'];
+  const categories = ['Semua', 'Halal', 'Haram'];
 
   let selectedCategory = $state('Semua');
 
   onMount(() => {
     const lastSegment = getUrlLastSegment().toLowerCase();
 
-    if (lastSegment === 'aktivitas' || lastSegment === 'artikel') {
+    if (lastSegment === 'halal' || lastSegment === 'haram') {
       selectedCategory = capitalizeFirstLetter(lastSegment);
     } else {
       selectedCategory = 'Semua';
@@ -23,15 +22,15 @@
 </script>
 
 <svelte:head>
-  <title>Blog - CryptoSharia</title>
+  <title>Screening - CryptoSharia</title>
 </svelte:head>
 
 <main class="nav-space mx-auto w-full max-w-[90rem] text-center">
   <span class="block h-23 w-full"></span>
   <section class="mx-auto max-w-[95%]">
-    <h1 class="text-4xl text-orange-600 sm:text-[2.75rem] md:text-5xl"><b>CryptoSharia Blog</b></h1>
+    <h1 class="text-4xl text-orange-600 sm:text-[2.75rem] md:text-5xl"><b>Token Screening</b></h1>
     <p class="my-2 text-[1.11rem] text-slate-700">
-      Temukan semua update terbaru tentang <i><b>CryptoSharia</b></i> di sini
+      Daftar token yang sudah di-<i>screening</i> oleh tim <i><b>CryptoSharia</b></i>
     </p>
   </section>
   <Divider />
@@ -44,9 +43,9 @@
           selectedCategory = text;
 
           if (text.toUpperCase() === 'SEMUA') {
-            goto('/blog');
+            goto('/screening');
           } else {
-            goto(`/blog/${text.toLowerCase()}`);
+            goto(`/screening/${text.toLowerCase()}`);
           }
         }}
       />

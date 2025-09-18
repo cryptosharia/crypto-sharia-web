@@ -3,120 +3,10 @@
   import TokenCard from '../components/TokenCard.svelte';
   import Title from '../components/Title.svelte';
   import PrimaryButton from '../components/PrimaryButton.svelte';
+  import { getTokens } from '../helpers/tokens';
+  import { page } from '$app/state';
 
-  const tokens: {
-    name: string;
-    ticker: string;
-    color: string;
-    status: 'halal' | 'haram';
-    logoUrl: string;
-  }[] = [
-    {
-      name: 'Bitcoin',
-      ticker: 'BTC',
-      color: '#F7931A',
-      status: 'halal',
-      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png'
-    },
-    {
-      name: 'Ethereum',
-      ticker: 'ETH',
-      color: '#627EEA',
-      status: 'halal',
-      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png'
-    },
-    {
-      name: 'XRP',
-      ticker: 'XRP',
-      color: '#23292f',
-      status: 'halal',
-      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/52.png'
-    },
-    {
-      name: 'BNB',
-      ticker: 'BNB',
-      color: '#F3BA2F',
-      status: 'haram',
-      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1839.png'
-    },
-    {
-      name: 'Solana',
-      ticker: 'SOL',
-      color: '#9945FF',
-      status: 'halal',
-      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5426.png'
-    },
-    {
-      name: 'Sui',
-      ticker: 'SUI',
-      color: '#4DA2FF',
-      status: 'halal',
-      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/20947.png'
-    },
-    {
-      name: 'Bonk',
-      ticker: 'BONK',
-      color: '#f6952a',
-      status: 'haram',
-      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/23095.png'
-    },
-    {
-      name: 'Tron',
-      ticker: 'TRX',
-      color: '#FF0000',
-      status: 'halal',
-      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1958.png'
-    },
-    {
-      name: 'Hyperliquid',
-      ticker: 'HYPE',
-      color: '#56EDF0',
-      status: 'haram',
-      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32196.png'
-    },
-    {
-      name: 'Polygon',
-      ticker: 'POL',
-      color: '#8247E5',
-      status: 'halal',
-      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3890.png'
-    },
-    {
-      name: 'Pepe',
-      ticker: 'PEPE',
-      color: '#4c9641',
-      status: 'haram',
-      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/24478.png'
-    },
-    {
-      name: 'Arbitrum',
-      ticker: 'ARB',
-      color: '#2c374b',
-      status: 'halal',
-      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11841.png'
-    },
-    {
-      name: 'Cardano',
-      ticker: 'ADA',
-      color: '#3B82F6',
-      status: 'halal',
-      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/2010.png'
-    },
-    {
-      name: 'Shiba Inu',
-      ticker: 'SHIB',
-      color: '#EF8A13',
-      status: 'haram',
-      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5994.png'
-    },
-    {
-      name: 'Pax Gold',
-      ticker: 'PAXG',
-      color: '#cca727',
-      status: 'halal',
-      logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4705.png'
-    }
-  ];
+  const tokens = getTokens(page.data.tokens);
 </script>
 
 <section id="screening" class="nav-space z-8 mb-10 w-full max-w-[90rem]">
@@ -128,8 +18,9 @@
     >
       {#each tokens as token, i}
         <TokenCard
+          slug={token.slug}
           name={token.name}
-          ticker={token.ticker}
+          ticker={token.symbol}
           color={token.color}
           status={token.status}
           logoUrl={token.logoUrl}

@@ -175,20 +175,15 @@ export function getPosts(
   limit?: number,
   skip: string[] = []
 ) {
-  let data;
+  let data = posts;
 
-  if (category === 'all') data = posts;
-  else data = posts.filter((post) => post.category === category);
+  if (category !== 'all') data = posts.filter((post) => post.category === category);
 
   data = data.sort((a, b) => a.date.getTime() - b.date.getTime());
 
-  if (skip.length > 0) {
-    data = data.filter((post) => !skip.includes(post.slug));
-  }
+  if (skip.length > 0) data = data.filter((post) => !skip.includes(post.slug));
 
-  if (limit) {
-    data = data.slice(0, limit);
-  }
+  if (limit) data = data.slice(0, limit);
 
   return data;
 }

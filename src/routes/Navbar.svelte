@@ -39,9 +39,9 @@
     class="mx-auto flex h-full w-full max-w-[88rem] items-center justify-between px-4 md:px-0 md:max-lg:max-w-[95%] lg:px-12"
   >
     <div>
-      <a href="/" class="text-xl font-semibold text-orange-600 md:text-[1.4rem]">
+      <a href="/">
         <img src={logo1} alt="CryptoSharia" class="mr-0.5 inline size-9 md:mr-1.5 md:size-10" />
-        CryptoSharia
+        <span class="text-xl font-semibold text-orange-600 md:text-[1.4rem]">CryptoSharia</span>
       </a>
     </div>
     <div>
