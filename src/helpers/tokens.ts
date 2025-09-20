@@ -10,7 +10,7 @@ export function getTokens(
   let data = tokens;
   if (category !== 'all') data = data.filter((token) => token.status === category);
 
-  if (skip.length > 0) data = data.filter((token) => !skip.includes(token.symbol));
+  if (skip.length > 0) data = data.filter((token) => !skip.includes(token.slug));
 
   if (limit) data = data.slice(0, limit);
 

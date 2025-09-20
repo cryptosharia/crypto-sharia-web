@@ -5,6 +5,7 @@ export type Token = {
   color: string;
   logoUrl: string;
   status: 'halal' | 'haram';
+  tags: string[];
   content: {
     overview: string;
     conclusion: string;

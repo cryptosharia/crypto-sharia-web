@@ -95,7 +95,7 @@
             <Divider usePadding={false} />
             <div class="mx-auto mt-5 flex flex-col justify-between gap-y-3 lg:max-w-[90%]">
               <div class="rounded-xl border-2 border-orange-600 bg-white p-3">
-                <p class="text-center text-slate-800">
+                <p class="text-center text-slate-700">
                   Satu donasi kecil hari ini, bisa menjadi investasi besar di akhirat. Mari dukung
                   gerakan edukasi <i><b>CryptoSharia</b></i>, agar ilmu dan pahala terus mengalir
                   tanpa henti.
@@ -114,7 +114,7 @@
           <span class="strokeme text-2xl font-semibold text-orange-600">CryptoSharia</span>
         </a>
         <Divider usePadding={false} />
-        <span class="spacin text-center text-white"
+        <span class="text-center text-slate-200"
           >&copy; 2025 - CryptoSharia<br />All rights reserved.</span
         >
       </div>

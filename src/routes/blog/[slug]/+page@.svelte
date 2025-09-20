@@ -10,6 +10,8 @@
   import DotsDivider from '../../../components/DotsDivider.svelte';
   import Title from '../../../components/Title.svelte';
   import { navigating } from '$app/state';
+  import NotFoundPage from '../../../components/NotFoundPage.svelte';
+  import Tag from '../../../components/Tag.svelte';
 
   let { data }: PageProps = $props();
   let posts = $state(getPosts(data.post?.category, 3, data.post ? [data.post.slug] : []));
@@ -27,14 +29,7 @@
 </svelte:head>
 
 {#if !data.post}
-  <main class="flex h-screen w-full flex-col items-center justify-center gap-y-2 text-center">
-    <h1 class="text-7xl font-bold text-orange-600 md:text-8xl" style="letter-spacing: 0.5rem;">
-      404
-    </h1>
-    <h1 class="mb-4 text-3xl font-bold text-orange-600 md:text-4xl">Postingan Tidak Ditemukan</h1>
-    <PrimaryButton text="Kembali ke Blog" href="/blog" size="medium" class="hidden md:block" />
-    <PrimaryButton text="Kembali ke Blog" href="/blog" size="small" class="block md:hidden" />
-  </main>
+  <NotFoundPage message="Postingan tidak ditemukan" />
 {:else}
   <span class="block h-21 w-full"></span>
   <main class="mx-auto flex w-full max-w-[91%] flex-col xl:max-w-[71rem]">
@@ -53,9 +48,7 @@
       <div class="mt-2 flex flex-col gap-y-3 md:mb-2 md:flex-row">
         <div class="flex flex-1 flex-row flex-wrap gap-2">
           {#each data.post.tags as tag}
-            <span class="rounded-full bg-slate-200 px-2.5 py-1 text-sm text-slate-700 md:text-base"
-              >{tag}</span
-            >
+            <Tag text={tag} />
           {/each}
         </div>
         <span class="mb-1 flex flex-row justify-end text-sm text-slate-700 md:text-base">

@@ -6,7 +6,7 @@
   import { getTokens } from '../helpers/tokens';
   import { page } from '$app/state';
 
-  const tokens = getTokens(page.data.tokens);
+  const tokens = getTokens(page.data.tokens, 'all', 10);
 </script>
 
 <section id="screening" class="nav-space z-8 mb-10 w-full max-w-[90rem]">
@@ -28,7 +28,6 @@
           isHiddenOnSM={i >= 6}
           isHiddenOnMD={i >= 6}
           isHiddenOnLG={i >= 8}
-          isHiddenOnXL={i >= 10}
         />
       {/each}
     </div>

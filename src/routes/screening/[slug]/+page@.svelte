@@ -2,7 +2,7 @@
   import { marked } from 'marked';
   import PrimaryButton from '../../../components/PrimaryButton.svelte';
   import type { PageProps } from './$types';
-  import { formatDate } from '../../../utils';
+  import { formatDate, formatPrice } from '../../../utils';
   import Calendar from '$lib/assets/icons/Calendar.svelte';
   import Divider from '../../../components/Divider.svelte';
   import PostCard from '../../../components/PostCard.svelte';
@@ -10,145 +10,215 @@
   import Title from '../../../components/Title.svelte';
   import { page } from '$app/state';
   import type { QuotedToken } from '../../../models';
-  // import { navigating } from '$app/state';
+  import NotFoundPage from '../../../components/NotFoundPage.svelte';
+  import TokenCard from '../../../components/TokenCard.svelte';
+  import { getTokens } from '../../../helpers/tokens';
+  import Tag from '../../../components/Tag.svelte';
+  import { navigating } from '$app/state';
 
-  // let posts = $state(getPosts(data.post?.category, 3, data.post ? [data.post.slug] : []));
+  let token: QuotedToken | undefined = $state(
+    page.data.tokens.find((x: QuotedToken) => x.slug === page.params.slug)
+  );
 
-  // $effect(() => {
-  //   navigating.complete;
+  let tokens = $state(
+    getTokens(page.data.tokens, 'all', 10, page.params.slug ? [page.params.slug] : [])
+  );
 
-  //   // Refetch posts whenever the route is done changing
-  //   posts = getPosts(data.post?.category, 3, data.post ? [data.post.slug] : []);
-  // });
-  const token = page.data.tokens.find((x: QuotedToken) => x.slug === page.params.slug);
+  $effect(() => {
+    navigating.complete;
+    // Refetch data whenever the route is done changing
+
+    token = page.data.tokens.find((x: QuotedToken) => x.slug === page.params.slug);
+
+    tokens = getTokens(page.data.tokens, 'all', 10, page.params.slug ? [page.params.slug] : []);
+  });
 </script>
 
 <svelte:head>
   <title>{token ? token.name : '404'} - CryptoSharia</title>
 </svelte:head>
 
-{#if token}
-  <span class="block h-23 w-full"></span>
-  <ul>
-    <li>Slug: {token.slug}</li>
-    <li>Name: {token.name}</li>
-    <li>Symbol: {token.symbol}</li>
-    <li>Color: {token.color}</li>
-    <li>Status: {token.status}</li>
-    <li>CMC Rank: {token.cmc_rank}</li>
-    <li>Infinite Supply: {token.infinite_supply ? 'Yes' : 'No'}</li>
-    <li>Max Supply: {token.max_supply}</li>
-    <li>Circulating Supply: {token.circulating_supply}</li>
-    <li>Price: {token.price}</li>
-    <li>Market Cap: {token.market_cap}</li>
-    <li>24h Price Change: {token.percent_change_24h}%</li>
-    <li><img src={token.logoUrl} alt={token.name} /></li>
-    <li>{token.content.overview}</li>
-    <li>{token.content.conclusion}</li>
-  </ul>
-{/if}
-<!-- 
-{#if !data.token}
-  <main class="flex h-screen w-full flex-col items-center justify-center gap-y-2 text-center">
-    <h1 class="text-7xl font-bold text-orange-600 md:text-8xl" style="letter-spacing: 0.5rem;">
-      404
-    </h1>
-    <h1 class="mb-4 text-3xl font-bold text-orange-600 md:text-4xl">Postingan Tidak Ditemukan</h1>
-    <PrimaryButton text="Kembali ke Blog" href="/blog" size="medium" class="hidden md:block" />
-    <PrimaryButton text="Kembali ke Blog" href="/blog" size="small" class="block md:hidden" />
-  </main>
+{#if !token}
+  <NotFoundPage message="Token tidak ditemukan" />
 {:else}
-  <span class="block h-21 w-full"></span>
-  <main class="mx-auto flex w-full max-w-[91%] flex-col xl:max-w-[71rem]">
-    <section>
-      <div class="mb-3.5 flex flex-row items-start gap-x-4">
-        {@render backButton()}
-        <h1 class="text-[2rem] leading-10 font-medium text-orange-600 sm:text-4xl md:text-[2.5rem]">
-          {data.token.title}
-        </h1>
-      </div>
-      <img
-        src={data.token.thumbnailUrl}
-        alt={data.token.title}
-        class="w-full rounded-2xl md:rounded-3xl"
-      />
-      <div class="mt-2 flex flex-col gap-y-3 md:mb-2 md:flex-row">
-        <div class="flex flex-1 flex-row flex-wrap gap-2">
-          {#each data.token.tags as tag}
-            <span class="rounded-full bg-slate-200 px-2.5 py-1 text-sm text-slate-700 md:text-base"
-              >{tag}</span
-            >
-          {/each}
+  <span class="block h-20 w-full"></span>
+  <main class="mx-auto flex w-full max-w-[94%] flex-col gap-y-5 xl:max-w-[71rem]">
+    {@render header(token)}
+    {@render overview(token.tags, token.content.overview)}
+    {@render conclusion(token.status, token.content.conclusion)}
+  </main>
+  <DotsDivider />
+  {@render others(tokens)}
+{/if}
+
+{#snippet header(token: QuotedToken)}
+  <section
+    class="flex flex-col gap-y-2 rounded-2xl border-2 border-slate-200 bg-white px-5 py-6 shadow-lg"
+  >
+    <div class="flex flex-row items-start justify-between sm:items-center">
+      <div class="flex items-start gap-x-1.5 sm:gap-x-3 sm:flex-row">
+        <img
+          src={token.logoUrl}
+          alt={token.symbol}
+          class="size-18 rounded-full border-2 bg-white object-cover sm:size-20 {token.status ===
+          'halal'
+            ? 'border-green-500'
+            : 'border-red-500'}"
+        />
+        <div class="flex flex-col">
+          <h1 class="text-3xl leading-10 font-semibold sm:text-4xl" style="color: {token.color}">
+            {token.name}
+          </h1>
+          <h3 class="ml-0 text-base font-semibold sm:text-xl" style="letter-spacing: 1px;">
+            {token.symbol}
+          </h3>
         </div>
-        <span class="mb-1 flex flex-row justify-end text-sm text-slate-700 md:text-base">
-          <Calendar class="size-5 md:size-6" />
-          <span>{formatDate(data.token.date, 'text')}</span></span
+      </div>
+      <div class="flex flex-row gap-x-2">
+        <h3 class="text-center font-semibold" style="letter-spacing: 2px;">
+          Status <span class="hidden sm:inline">{' : '}</span><br class="inline sm:hidden" /><span
+            style="letter-spacing: 1px;"
+            class="rounded-full px-2 py-1 font-bold text-white uppercase {token.status === 'halal'
+              ? 'bg-green-500'
+              : 'bg-red-500'}">{token.status}</span
+          >
+        </h3>
+      </div>
+    </div>
+    <Divider usePadding={false} />
+    <div
+      class="mx-auto flex w-[95%] flex-row flex-wrap items-center gap-x-8 gap-y-8 sm:gap-x-20 md:gap-x-24 lg:gap-x-8 xl:gap-x-0"
+    >
+      <div class="flex flex-1 flex-col">
+        <span class="font- whitespace-nowrap">Peringkat</span>
+        <span><b>{token.cmc_rank}</b></span>
+      </div>
+      <div class="flex flex-1 flex-col">
+        <span class="font- whitespace-nowrap">Harga per Token</span>
+        <span class="whitespace-nowrap">
+          <b
+            >{formatPrice(token.price)}
+            <span class="text-slate-400">|</span>
+            <span class={token.percent_change_24h > 0 ? 'text-green-500' : 'text-red-500'}
+              >{token.percent_change_24h > 0 ? '+' : ''}{token.percent_change_24h?.toFixed(
+                2
+              )}%</span
+            ></b
+          ></span
         >
       </div>
-      <Divider usePadding={false} />
-      <p class="mt-2 text-justify text-slate-700">{data.token.description}</p>
+      <div class="flex flex-1 flex-col">
+        <span class="font- whitespace-nowrap">Kapitalisasi Pasar</span>
+        <span><b>{formatPrice(token.market_cap)}</b></span>
+      </div>
+      <div class="flex flex-1 flex-col">
+        <span class="font- whitespace-nowrap">Dominasi Pasar</span>
+        <span
+          ><b
+            >{Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(
+              token.market_cap_dominance
+            )}%</b
+          ></span
+        >
+      </div>
+      <div class="flex flex-1 flex-col">
+        <span class="font- whitespace-nowrap"><i>Supply</i> Maksimum</span>
+        <span
+          ><b>
+            {#if token.infinite_supply}
+              {@html '<i>Unlimited</i>'}
+            {:else if !token.max_supply}
+              --
+            {:else}
+              {Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(token.max_supply)}
+            {/if}
+          </b></span
+        >
+      </div>
+      <div class="flex flex-1 flex-col">
+        <span class="font- whitespace-nowrap"><i>Supply</i> Beredar</span>
+        <span
+          ><b
+            >{Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(
+              token.circulating_supply
+            )}</b
+          ></span
+        >
+      </div>
+    </div>
+  </section>
+{/snippet}
+
+{#snippet overview(tags: string[], text: string)}
+  <section
+    class="flex flex-col gap-y-7 rounded-2xl border-2 border-slate-200 bg-white px-5 py-6 shadow-lg"
+  >
+    <div class="flex flex-row flex-wrap gap-2">
+      {#each tags as tag}
+        <Tag text={tag} />
+      {/each}
+    </div>
+    <section class="markdown-body">
+      {@html marked(text)}
     </section>
-    <DotsDivider />
-    <section class="markdown-body my-4">
-      {@html marked(data.token.content)}
-    </section>
-    <DotsDivider padding="4rem" />
-  </main>
-  <section class="nav-space z-10 mx-auto mb-10 w-full max-w-[90rem]">
-    <Title class="text-center"
-      >{data.token.category === 'activity' ? 'Aktivitas' : 'Artikel'} Terbaru</Title
-    >
-    <Divider />
-    <div class="flex w-full flex-col items-center gap-y-6 md:gap-y-8 lg:gap-y-10">
-      <div
-        class="flex w-full flex-row flex-wrap items-start justify-center gap-6 px-6 pt-5 md:gap-8 lg:gap-10"
+  </section>
+{/snippet}
+
+{#snippet conclusion(status: string, text: string)}
+  <section
+    class="flex flex-col gap-y-2 rounded-2xl border-2 border-slate-200 bg-white px-5 py-6 shadow-lg"
+  >
+    <div class="flex flex-row items-center gap-x-2">
+      <h1 class="text-3xl font-semibold text-orange-600">Kesimpulan</h1>
+      <span
+        style="letter-spacing: 1px;"
+        class="rounded-full px-2 py-0.5 font-bold text-white uppercase {status === 'halal'
+          ? 'bg-green-500'
+          : 'bg-red-500'}">{status}</span
       >
-        {#each posts as post, i}
-          <PostCard
-            thumbnailUrl={post.thumbnailUrl}
-            date={post.date}
-            title={post.title}
-            slug={post.slug}
-            tags={post.tags}
-            description={post.description}
+    </div>
+    <Divider usePadding={false} />
+    <section class="markdown-body">
+      {@html marked(text)}
+    </section>
+  </section>
+{/snippet}
+
+{#snippet others(tokens: QuotedToken[])}
+  <section class="nav-space z-8 mx-auto mb-10 w-full max-w-[90rem]">
+    <Title class="text-center">Lihat Token Lain</Title>
+    <Divider />
+    <div class="mx-auto mt-8 flex w-full flex-col items-center gap-y-6 md:gap-y-8 lg:gap-y-10">
+      <div
+        class="flex w-full flex-row flex-wrap items-start justify-center gap-1 gap-y-10 px-6 pt-5 sm:gap-8 md:max-w-[85%] md:gap-12 lg:max-w-[82%] lg:gap-10 xl:max-w-[90%] xl:gap-15"
+      >
+        {#each tokens as token, i}
+          <TokenCard
+            slug={token.slug}
+            name={token.name}
+            ticker={token.symbol}
+            color={token.color}
+            status={token.status}
+            logoUrl={token.logoUrl}
+            isHiddenOnXS={i >= 6}
+            isHiddenOnSM={i >= 6}
+            isHiddenOnMD={i >= 6}
+            isHiddenOnLG={i >= 8}
           />
         {/each}
       </div>
       <PrimaryButton
-        text="Lihat {data.token.category === 'activity' ? 'Aktivitas' : 'Artikel'} Lainnya"
-        href="/blog/{data.token.category === 'activity' ? 'aktivitas' : 'artikel'}"
+        text="Lihat Semua Token"
+        href="/screening"
         size="medium"
         class="hidden md:block"
       />
       <PrimaryButton
-        text="Lihat {data.token.category === 'activity' ? 'Aktivitas' : 'Artikel'} Lainnya"
-        href="/blog/{data.token.category === 'activity' ? 'aktivitas' : 'artikel'}"
+        text="Lihat Semua Token"
+        href="/screening"
         size="small"
         class="block md:hidden"
       />
     </div>
   </section>
-{/if} -->
-
-{#snippet backButton()}
-  <button
-    aria-label="Kembali ke Blog"
-    onclick={() => window.history.back()}
-    class="mt-0.75 hidden rounded-full text-orange-600 transition-transform duration-300 hover:scale-115 hover:cursor-pointer md:block"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="2.3"
-      stroke="currentColor"
-      class="h-8.5 w-8.5"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-      />
-    </svg>
-  </button>
 {/snippet}

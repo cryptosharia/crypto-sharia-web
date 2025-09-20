@@ -10,6 +10,7 @@ export const tokens: Token[] = [
     color: '#F7931A',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
     status: 'halal',
+    tags: ['Cryptocurrency', 'Blockchain', 'Store of Value'],
     content: {
       overview: dummyOverview,
       conclusion: dummyConclusion
@@ -22,6 +23,14 @@ export const tokens: Token[] = [
     color: '#627EEA',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
     status: 'halal',
+    tags: [
+      'Crypto',
+      'Blockchain',
+      'Smart Contract',
+      'Layer 1',
+      'Decentralized Application',
+      'Decentralized Finance'
+    ],
     content: {
       overview: dummyOverview,
       conclusion: dummyConclusion
@@ -34,6 +43,7 @@ export const tokens: Token[] = [
     color: '#23292f',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/52.png',
     status: 'halal',
+    tags: ['Cryptocurrency', 'Blockchain', 'Cross Border Payment'],
     content: {
       overview: dummyOverview,
       conclusion: dummyConclusion
@@ -46,6 +56,7 @@ export const tokens: Token[] = [
     color: '#F3BA2F',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1839.png',
     status: 'haram',
+    tags: ['Cryptocurrency', 'Blockchain', 'Centralized Exchange'],
     content: {
       overview: dummyOverview,
       conclusion: dummyConclusion
@@ -58,6 +69,7 @@ export const tokens: Token[] = [
     color: '#9945FF',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5426.png',
     status: 'halal',
+    tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Application'],
     content: {
       overview: dummyOverview,
       conclusion: dummyConclusion
@@ -70,6 +82,7 @@ export const tokens: Token[] = [
     color: '#4DA2FF',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/20947.png',
     status: 'halal',
+    tags: ['Cryptocurrency', 'Blockchain', 'Parallel Processing'],
     content: {
       overview: dummyOverview,
       conclusion: dummyConclusion
@@ -82,6 +95,7 @@ export const tokens: Token[] = [
     color: '#f6952a',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/23095.png',
     status: 'haram',
+    tags: ['Cryptocurrency', 'Blockchain', 'Yield Farming'],
     content: {
       overview: dummyOverview,
       conclusion: dummyConclusion
@@ -94,6 +108,7 @@ export const tokens: Token[] = [
     color: '#FF0000',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1958.png',
     status: 'halal',
+    tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Application'],
     content: {
       overview: dummyOverview,
       conclusion: dummyConclusion
@@ -106,6 +121,7 @@ export const tokens: Token[] = [
     color: '#56EDF0',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32196.png',
     status: 'haram',
+    tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Finance'],
     content: {
       overview: dummyOverview,
       conclusion: dummyConclusion
@@ -118,6 +134,7 @@ export const tokens: Token[] = [
     color: '#8247E5',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3890.png',
     status: 'halal',
+    tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Application'],
     content: {
       overview: dummyOverview,
       conclusion: dummyConclusion
@@ -130,6 +147,7 @@ export const tokens: Token[] = [
     color: '#4c9641',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/24478.png',
     status: 'haram',
+    tags: ['Cryptocurrency', 'Blockchain', 'Meme Coin'],
     content: {
       overview: dummyOverview,
       conclusion: dummyConclusion
@@ -142,6 +160,7 @@ export const tokens: Token[] = [
     color: '#2c374b',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11841.png',
     status: 'halal',
+    tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Application'],
     content: {
       overview: dummyOverview,
       conclusion: dummyConclusion
@@ -154,6 +173,7 @@ export const tokens: Token[] = [
     color: '#3B82F6',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/2010.png',
     status: 'halal',
+    tags: ['Cryptocurrency', 'Blockchain', 'Smart Contract'],
     content: {
       overview: dummyOverview,
       conclusion: dummyConclusion
@@ -166,6 +186,7 @@ export const tokens: Token[] = [
     color: '#EF8A13',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5994.png',
     status: 'haram',
+    tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Exchange'],
     content: {
       overview: dummyOverview,
       conclusion: dummyConclusion
@@ -178,6 +199,7 @@ export const tokens: Token[] = [
     color: '#cca727',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4705.png',
     status: 'halal',
+    tags: ['Cryptocurrency', 'Blockchain', 'Gold Backed'],
     content: {
       overview: dummyOverview,
       conclusion: dummyConclusion

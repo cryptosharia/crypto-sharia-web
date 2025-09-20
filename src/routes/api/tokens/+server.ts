@@ -34,6 +34,7 @@ export const GET = async () => {
             circulating_supply: cmcToken.circulating_supply,
             price: cmcToken.quote.USD.price,
             market_cap: cmcToken.quote.USD.market_cap,
+            market_cap_dominance: cmcToken.quote.USD.market_cap_dominance,
             percent_change_24h: cmcToken.quote.USD.percent_change_24h
           };
 

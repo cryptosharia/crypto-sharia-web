@@ -6,6 +6,6 @@ export type QuotedToken = {
   circulating_supply: number;
   price: number;
   market_cap: number;
+  market_cap_dominance: number;
   percent_change_24h: number;
 } & Token;
-
