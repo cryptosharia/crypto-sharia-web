@@ -3,9 +3,10 @@
   import PostCard from '../components/PostCard.svelte';
   import Title from '../components/Title.svelte';
   import PrimaryButton from '../components/PrimaryButton.svelte';
-  import { getPosts } from './blog/data';
+  import { getPosts } from '../helpers/posts';
+  import { page } from '$app/state';
 
-  const posts = getPosts('activity', 6);
+  const posts = getPosts(page.data.posts, 'activity', 6);
 </script>
 
 <section id="aktivitas" class="nav-space z-10 mb-10 w-full max-w-[90rem] lg:max-xl:max-w-[70rem]">

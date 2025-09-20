@@ -1,23 +1,20 @@
 <script lang="ts">
   import { marked } from 'marked';
   import PrimaryButton from '../../../components/PrimaryButton.svelte';
-  import type { PageProps } from './$types';
-  import { formatDate, formatPrice } from '../../../utils';
-  import Calendar from '$lib/assets/icons/Calendar.svelte';
+  import { formatPrice } from '../../../utils';
   import Divider from '../../../components/Divider.svelte';
-  import PostCard from '../../../components/PostCard.svelte';
   import DotsDivider from '../../../components/DotsDivider.svelte';
   import Title from '../../../components/Title.svelte';
   import { page } from '$app/state';
   import type { QuotedToken } from '../../../models';
   import NotFoundPage from '../../../components/NotFoundPage.svelte';
   import TokenCard from '../../../components/TokenCard.svelte';
-  import { getTokens } from '../../../helpers/tokens';
+  import { getTokenBySlug, getTokens } from '../../../helpers/tokens';
   import Tag from '../../../components/Tag.svelte';
   import { navigating } from '$app/state';
 
   let token: QuotedToken | undefined = $state(
-    page.data.tokens.find((x: QuotedToken) => x.slug === page.params.slug)
+    getTokenBySlug(page.data.tokens, page.params.slug || '')
   );
 
   let tokens = $state(

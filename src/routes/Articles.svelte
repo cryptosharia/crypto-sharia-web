@@ -4,9 +4,10 @@
   import Title from '../components/Title.svelte';
   import PrimaryButton from '../components/PrimaryButton.svelte';
 
-  import { getPosts } from './blog/data';
+  import { getPosts } from '../helpers/posts';
+  import { page } from '$app/state';
 
-  const posts = getPosts('article', 6);
+  const posts = getPosts(page.data.posts, 'article', 6);
 </script>
 
 <section id="artikel" class="nav-space z-9 mb-10 w-full max-w-[90rem] lg:max-xl:max-w-[70rem]">

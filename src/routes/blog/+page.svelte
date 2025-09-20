@@ -1,8 +1,9 @@
 <script lang="ts">
   import PostCard from '../../components/PostCard.svelte';
-  import { getPosts } from './data';
+  import { getPosts } from '../../helpers/posts';
+  import { page } from '$app/state';
 
-  const posts = getPosts('all');
+  const posts = getPosts(page.data.posts, 'all');
 </script>
 
 <section

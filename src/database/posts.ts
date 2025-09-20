@@ -1,24 +1,16 @@
+import type { Post } from '../models';
+
 import satu from '$lib/assets/blog/activities/1.jpeg';
 import dua from '$lib/assets/blog/activities/2.jpeg';
 import tiga from '$lib/assets/blog/activities/3.jpeg';
 import empat from '$lib/assets/blog/activities/4.jpeg';
 import lima from '$lib/assets/blog/activities/5.jpeg';
 import enam from '$lib/assets/blog/activities/6.jpeg';
+
 import sui from '$lib/posts/sui.md?raw';
 import walrus from '$lib/posts/walrus.md?raw';
 
-type Post = {
-  category: 'activity' | 'article';
-  slug: string;
-  date: Date;
-  tags: string[];
-  title: string;
-  description: string;
-  thumbnailUrl: string;
-  content: string;
-};
-
-const posts: Post[] = [
+export const posts: Post[] = [
   {
     category: 'activity',
     thumbnailUrl: satu,
@@ -169,25 +161,3 @@ const posts: Post[] = [
     content: sui
   }
 ];
-
-export function getPosts(
-  category: 'all' | 'activity' | 'article' = 'all',
-  limit?: number,
-  skip: string[] = []
-) {
-  let data = posts;
-
-  if (category !== 'all') data = posts.filter((post) => post.category === category);
-
-  data = data.sort((a, b) => a.date.getTime() - b.date.getTime());
-
-  if (skip.length > 0) data = data.filter((post) => !skip.includes(post.slug));
-
-  if (limit) data = data.slice(0, limit);
-
-  return data;
-}
-
-export function getPostBySlug(slug: string) {
-  return posts.find((post) => post.slug === slug);
-}

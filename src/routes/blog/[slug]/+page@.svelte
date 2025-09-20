@@ -1,34 +1,49 @@
 <script lang="ts">
   import { marked } from 'marked';
   import PrimaryButton from '../../../components/PrimaryButton.svelte';
-  import type { PageProps } from './$types';
   import { formatDate } from '../../../utils';
   import Calendar from '$lib/assets/icons/Calendar.svelte';
   import Divider from '../../../components/Divider.svelte';
   import PostCard from '../../../components/PostCard.svelte';
-  import { getPosts } from '../data';
+  import { getPostBySlug, getPosts } from '../../../helpers/posts';
+  import { page } from '$app/state';
   import DotsDivider from '../../../components/DotsDivider.svelte';
   import Title from '../../../components/Title.svelte';
   import { navigating } from '$app/state';
   import NotFoundPage from '../../../components/NotFoundPage.svelte';
   import Tag from '../../../components/Tag.svelte';
 
-  let { data }: PageProps = $props();
-  let posts = $state(getPosts(data.post?.category, 3, data.post ? [data.post.slug] : []));
+  let post = $state(getPostBySlug(page.data.posts, page.params.slug || ''));
+
+  let posts = $state(
+    getPosts(
+      page.data.posts,
+      page.data.post?.category,
+      3,
+      page.data.post ? [page.data.post.slug] : []
+    )
+  );
 
   $effect(() => {
     navigating.complete;
+    // Refetch data whenever the route is done changing
 
-    // Refetch posts whenever the route is done changing
-    posts = getPosts(data.post?.category, 3, data.post ? [data.post.slug] : []);
+    post = getPostBySlug(page.data.posts, page.params.slug || '');
+
+    posts = getPosts(
+      page.data.posts,
+      page.data.post?.category,
+      3,
+      page.data.post ? [page.data.post.slug] : []
+    );
   });
 </script>
 
 <svelte:head>
-  <title>{data.post ? data.post.title : '404'} - CryptoSharia</title>
+  <title>{post ? post.title : '404'} - CryptoSharia</title>
 </svelte:head>
 
-{#if !data.post}
+{#if !post}
   <NotFoundPage message="Postingan tidak ditemukan" />
 {:else}
   <span class="block h-21 w-full"></span>
@@ -37,37 +52,33 @@
       <div class="mb-3.5 flex flex-row items-start gap-x-4">
         {@render backButton()}
         <h1 class="text-[2rem] leading-10 font-medium text-orange-600 sm:text-4xl md:text-[2.5rem]">
-          {data.post.title}
+          {post.title}
         </h1>
       </div>
-      <img
-        src={data.post.thumbnailUrl}
-        alt={data.post.title}
-        class="w-full rounded-2xl md:rounded-3xl"
-      />
+      <img src={post.thumbnailUrl} alt={post.title} class="w-full rounded-2xl md:rounded-3xl" />
       <div class="mt-2 flex flex-col gap-y-3 md:mb-2 md:flex-row">
         <div class="flex flex-1 flex-row flex-wrap gap-2">
-          {#each data.post.tags as tag}
+          {#each post.tags as tag}
             <Tag text={tag} />
           {/each}
         </div>
         <span class="mb-1 flex flex-row justify-end text-sm text-slate-700 md:text-base">
           <Calendar class="size-5 md:size-6" />
-          <span>{formatDate(data.post.date, 'text')}</span></span
+          <span>{formatDate(post.date, 'text')}</span></span
         >
       </div>
       <Divider usePadding={false} />
-      <p class="mt-2 text-justify text-slate-700">{data.post.description}</p>
+      <p class="mt-2 text-justify text-slate-700">{post.description}</p>
     </section>
     <DotsDivider />
     <section class="markdown-body my-4">
-      {@html marked(data.post.content)}
+      {@html marked(post.content)}
     </section>
     <DotsDivider padding="4rem" />
   </main>
   <section class="nav-space z-10 mx-auto mb-10 w-full max-w-[90rem]">
     <Title class="text-center"
-      >{data.post.category === 'activity' ? 'Aktivitas' : 'Artikel'} Terbaru</Title
+      >{post.category === 'activity' ? 'Aktivitas' : 'Artikel'} Terbaru</Title
     >
     <Divider />
     <div class="flex w-full flex-col items-center gap-y-6 md:gap-y-8 lg:gap-y-10">
@@ -86,14 +97,14 @@
         {/each}
       </div>
       <PrimaryButton
-        text="Lihat {data.post.category === 'activity' ? 'Aktivitas' : 'Artikel'} Lainnya"
-        href="/blog/{data.post.category === 'activity' ? 'aktivitas' : 'artikel'}"
+        text="Lihat {post.category === 'activity' ? 'Aktivitas' : 'Artikel'} Lainnya"
+        href="/blog/{post.category === 'activity' ? 'aktivitas' : 'artikel'}"
         size="medium"
         class="hidden md:block"
       />
       <PrimaryButton
-        text="Lihat {data.post.category === 'activity' ? 'Aktivitas' : 'Artikel'} Lainnya"
-        href="/blog/{data.post.category === 'activity' ? 'aktivitas' : 'artikel'}"
+        text="Lihat {post.category === 'activity' ? 'Aktivitas' : 'Artikel'} Lainnya"
+        href="/blog/{post.category === 'activity' ? 'aktivitas' : 'artikel'}"
         size="small"
         class="block md:hidden"
       />

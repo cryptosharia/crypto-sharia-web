@@ -4,7 +4,6 @@
   import ArrowUp from '$lib/assets/icons/ArrowUp.svelte';
   import Divider from '../components/Divider.svelte';
   import Title from '../components/Title.svelte';
-  // console.log(arrowUp);
 
   function toggleAccordion(i: number) {
     const container = document.getElementById(`faq-${i}`);

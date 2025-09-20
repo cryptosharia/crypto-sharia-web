@@ -1,4 +1,3 @@
-import { page } from '$app/state';
 import type { QuotedToken } from '../models';
 
 export function getTokens(
