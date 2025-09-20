@@ -56,7 +56,7 @@
     class="flex flex-col gap-y-2 rounded-2xl border-2 border-slate-200 bg-white px-5 py-6 shadow-lg"
   >
     <div class="flex flex-row items-start justify-between sm:items-center">
-      <div class="flex items-start gap-x-1.5 sm:gap-x-3 sm:flex-row">
+      <div class="flex items-start gap-x-1.5 sm:flex-row sm:gap-x-3">
         <img
           src={token.logoUrl}
           alt={token.symbol}
