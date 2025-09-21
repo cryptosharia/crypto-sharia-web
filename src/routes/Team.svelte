@@ -35,7 +35,7 @@
   ];
 </script>
 
-<section id="pembina" class="nav-space w-full max-w-[90rem]">
+<section id="team" class="nav-space w-full max-w-[90rem]">
   <Title class="text-center">CryptoSharia Team</Title>
   <Divider />
   <div

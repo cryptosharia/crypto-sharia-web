@@ -11,11 +11,11 @@
     navigating.to; // Run this function whenever the app is navigating
     if (window.location.pathname === '/') {
       links = [
+        { text: 'Team', href: '#team' },
         { text: 'Discord', href: '#discord' },
         { text: 'Aktivitas', href: '#aktivitas' },
         { text: 'Artikel', href: '#artikel' },
         { text: 'Screening', href: '#screening' },
-        { text: 'FAQ', href: '#faq' },
         { text: 'Kontak', href: '#kontak' }
       ];
     } else {
