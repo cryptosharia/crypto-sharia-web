@@ -9,7 +9,8 @@
   --font-inter: 'Intera', sans-serif;
   --font-jua: 'Jua', sans-serif;
 
-  --animate-infinite-scroll: infinite-scroll 100s linear infinite;
+  --animate-collaboration-brand: infinite-scroll 7.5s linear infinite;
+  --animate-discord-testimonial: infinite-scroll 70s linear infinite;
 
   @keyframes infinite-scroll {
     0% {

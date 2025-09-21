@@ -2,7 +2,6 @@
   import GradientDivider from '../components/GradientDivider.svelte';
   import discordLogo from '$lib/assets/discord/discord-logo.png';
   import post from '$lib/assets/discord/post.png';
-  import testimonial from '$lib/assets/discord/testimonial.png';
   import informationUpdate from '$lib/assets/discord/information-update.png';
   import informationUpdateMobile from '$lib/assets/discord/information-update-mobile.png';
   import halalCoinCalls from '$lib/assets/discord/halal-coin-calls.png';
@@ -23,7 +22,16 @@
     'https://img.freepik.com/free-photo/abstract-orange-glowing-lines-background_1017-3201.jpg?semt=ais_hybrid&w=740';
 
   const containerPadding =
-    'max-w-[70rem] gap-y-12 px-[4%] py-14 sm:px-[12%] md:gap-y-15 md:px-[4%] md:py-17 lg:gap-y-18 lg:px-[5%] lg:py-20 xl:px-[4%] 2xl:px-[0]';
+    'max-w-[70rem] gap-y-12 px-[3%] py-14 sm:px-[12%] md:gap-y-15 md:px-[4%] md:py-17 lg:gap-y-18 lg:px-[5%] lg:py-20 xl:px-[4%] 2xl:px-[0]';
+
+  const testimonials = [
+    testimonial1,
+    testimonial2,
+    testimonial3,
+    testimonial4,
+    testimonial5,
+    testimonial6
+  ];
 </script>
 
 <section id="discord" class="w-full">
@@ -39,7 +47,7 @@
         </h1>
         <div class="flex flex-col justify-center gap-y-8 md:flex-row md:gap-x-4 lg:gap-x-5">
           <img src={post} alt="Discord Post" class="w-full md:w-1/2" />
-          <img src={testimonial} alt="Discord Testimonial" class="w-full md:w-1/2" />
+          <!-- <img src={testimonial} alt="Discord Testimonial" class="w-full md:w-1/2" /> -->
         </div>
         <div class="flex w-full flex-col gap-y-8 md:hidden">
           <img src={cryptoModule} alt="Discord Crypto Module" />
@@ -64,40 +72,17 @@
         <img class="hidden w-full md:block" src={modules} alt="Discord Modules" />
       </div>
       <div class="flex flex-col justify-center gap-y-4">
-        <h1 class="text-center text-5xl font-semibold text-slate-100">Testimonial</h1>
-        <div class="flex w-screen flex-row justify-center gap-x-4 overflow-hidden">
-          {#each Array.from({ length: 5 }) as _, i}
-            <div class="flex shrink-0 animate-infinite-scroll flex-row items-start gap-x-4">
-              <img
-                src={testimonial1}
-                alt="Discord Testimonial 1"
-                class="h-75 w-160 rounded-2xl border-2 border-slate-200"
-              />
-              <img
-                src={testimonial2}
-                alt="Discord Testimonial 2"
-                class="h-75 w-160 rounded-2xl border-2 border-slate-200"
-              />
-              <img
-                src={testimonial3}
-                alt="Discord Testimonial 3"
-                class="h-75 w-160 rounded-2xl border-2 border-slate-200"
-              />
-              <img
-                src={testimonial4}
-                alt="Discord Testimonial 4"
-                class="h-75 w-160 rounded-2xl border-2 border-slate-200"
-              />
-              <img
-                src={testimonial5}
-                alt="Discord Testimonial 5"
-                class="h-75 w-160 rounded-2xl border-2 border-slate-200"
-              />
-              <img
-                src={testimonial6}
-                alt="Discord Testimonial 6"
-                class="h-75 w-160 rounded-2xl border-2 border-slate-200"
-              />
+        <h1
+          class="text-center text-3xl font-semibold text-slate-100 sm:text-4xl md:text-[1.75rem] lg:text-[2rem] xl:text-[2.5rem]"
+        >
+          <i>Testimoni</i>
+        </h1>
+        <div class="flex w-screen flex-row justify-center overflow-hidden">
+          {#each Array.from({ length: 5 }) as _}
+            <div class="flex shrink-0 animate-discord-testimonial flex-row items-start">
+              {#each testimonials as x}
+                {@render testimonial(x)}
+              {/each}
             </div>
           {/each}
         </div>
@@ -118,6 +103,14 @@
   </div>
   <GradientDivider size="large" reverse={true} />
 </section>
+
+{#snippet testimonial(src: string)}
+  <img
+    {src}
+    alt="Discord Testimonial"
+    class="mr-2 h-[95%] w-[12%] rounded-xl border-2 border-slate-200 sm:w-[13%] xl:mr-4 xl:h-66 xl:w-138 xl:rounded-2xl"
+  />
+{/snippet}
 
 {#snippet joinButton(size: 'small' | 'medium' | 'large')}
   <div
