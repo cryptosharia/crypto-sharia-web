@@ -2,7 +2,7 @@
   import GradientDivider from '../components/GradientDivider.svelte';
   import discordLogo from '$lib/assets/discord/discord-logo.png';
   import posterMobile from '$lib/assets/discord/poster-mobile.png';
-  import posterDesktop from '$lib/assets/discord/poster-desktop.png';
+  import poster from '$lib/assets/discord/poster.png';
   import informationUpdate from '$lib/assets/discord/information-update.png';
   import informationUpdateMobile from '$lib/assets/discord/information-update-mobile.png';
   import halalCoinCalls from '$lib/assets/discord/halal-coin-calls.png';
@@ -47,16 +47,8 @@
           JOIN <span class="text-discord">Discord Premium</span> CryptoSharia
         </h1>
         <div class="flex flex-col justify-center gap-y-8 md:flex-row md:gap-x-4 lg:gap-x-5">
-          <img
-            src={posterMobile}
-            alt="Discord Poster (Mobile)"
-            class="block w-full md:hidden md:w-1/2"
-          />
-          <img
-            src={posterDesktop}
-            alt="Discord Poster (Desktop)"
-            class="hidden w-full md:block md:w-1/2"
-          />
+          <img src={posterMobile} alt="Discord Poster" class="block w-full md:hidden md:w-1/2" />
+          <img src={poster} alt="Discord Poster" class="hidden w-full md:block md:w-1/2" />
           <!-- <img src={testimonial} alt="Discord Testimonial" class="w-full md:w-1/2" /> -->
         </div>
         <div class="flex w-full flex-col gap-y-8 md:hidden">
