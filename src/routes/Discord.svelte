@@ -1,7 +1,8 @@
 <script lang="ts">
   import GradientDivider from '../components/GradientDivider.svelte';
   import discordLogo from '$lib/assets/discord/discord-logo.png';
-  import post from '$lib/assets/discord/post.png';
+  import posterMobile from '$lib/assets/discord/poster-mobile.png';
+  import posterDesktop from '$lib/assets/discord/poster-desktop.png';
   import informationUpdate from '$lib/assets/discord/information-update.png';
   import informationUpdateMobile from '$lib/assets/discord/information-update-mobile.png';
   import halalCoinCalls from '$lib/assets/discord/halal-coin-calls.png';
@@ -46,7 +47,8 @@
           JOIN <span class="text-discord">Discord Premium</span> CryptoSharia
         </h1>
         <div class="flex flex-col justify-center gap-y-8 md:flex-row md:gap-x-4 lg:gap-x-5">
-          <img src={post} alt="Discord Post" class="w-full md:w-1/2" />
+          <img src={posterMobile} alt="Discord Poster (Mobile)" class="w-full md:w-1/2 block md:hidden" />
+          <img src={posterDesktop} alt="Discord Poster (Desktop)" class="w-full md:w-1/2 hidden md:block" />
           <!-- <img src={testimonial} alt="Discord Testimonial" class="w-full md:w-1/2" /> -->
         </div>
         <div class="flex w-full flex-col gap-y-8 md:hidden">
