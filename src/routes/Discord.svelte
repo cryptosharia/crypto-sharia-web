@@ -47,8 +47,16 @@
           JOIN <span class="text-discord">Discord Premium</span> CryptoSharia
         </h1>
         <div class="flex flex-col justify-center gap-y-8 md:flex-row md:gap-x-4 lg:gap-x-5">
-          <img src={posterMobile} alt="Discord Poster (Mobile)" class="w-full md:w-1/2 block md:hidden" />
-          <img src={posterDesktop} alt="Discord Poster (Desktop)" class="w-full md:w-1/2 hidden md:block" />
+          <img
+            src={posterMobile}
+            alt="Discord Poster (Mobile)"
+            class="block w-full md:hidden md:w-1/2"
+          />
+          <img
+            src={posterDesktop}
+            alt="Discord Poster (Desktop)"
+            class="hidden w-full md:block md:w-1/2"
+          />
           <!-- <img src={testimonial} alt="Discord Testimonial" class="w-full md:w-1/2" /> -->
         </div>
         <div class="flex w-full flex-col gap-y-8 md:hidden">
@@ -79,9 +87,9 @@
         >
           <i>Testimoni</i>
         </h1>
-        <div class="flex w-screen flex-row justify-center overflow-hidden">
-          {#each Array.from({ length: 5 }) as _}
-            <div class="flex shrink-0 animate-discord-testimonial flex-row items-start">
+        <div class="flex flex-row">
+          {#each Array.from({ length: 3 }) as _}
+            <div class="flex shrink-0 animate-discord-testimonial flex-row">
               {#each testimonials as x}
                 {@render testimonial(x)}
               {/each}
@@ -110,7 +118,7 @@
   <img
     {src}
     alt="Discord Testimonial"
-    class="mr-2 h-[95%] w-[12%] rounded-xl border-2 border-slate-200 sm:w-[13%] xl:mr-4 xl:h-66 xl:w-138 xl:rounded-2xl"
+    class="mr-2 h-52 w-106 rounded-xl border-2 border-slate-200 sm:h-60 sm:w-122 md:mr-3 md:h-62 md:w-126 md:rounded-2xl lg:h-64 lg:w-130 xl:h-66 xl:w-134"
   />
 {/snippet}
 
