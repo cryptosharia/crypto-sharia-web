@@ -9,7 +9,7 @@
   --font-inter: 'Intera', sans-serif;
   --font-jua: 'Jua', sans-serif;
 
-  --animate-infinite-scroll: infinite-scroll 5s linear infinite;
+  --animate-infinite-scroll: infinite-scroll 100s linear infinite;
 
   @keyframes infinite-scroll {
     0% {

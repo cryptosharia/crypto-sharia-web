@@ -12,8 +12,18 @@
   import shariaModule from '$lib/assets/discord/sharia-module.png';
   import PrimaryButton from '../components/PrimaryButton.svelte';
 
+  import testimonial1 from '$lib/assets/testimonials/testimonial1.png';
+  import testimonial2 from '$lib/assets/testimonials/testimonial2.png';
+  import testimonial3 from '$lib/assets/testimonials/testimonial3.png';
+  import testimonial4 from '$lib/assets/testimonials/testimonial4.png';
+  import testimonial5 from '$lib/assets/testimonials/testimonial5.png';
+  import testimonial6 from '$lib/assets/testimonials/testimonial6.png';
+
   const discordBG =
     'https://img.freepik.com/free-photo/abstract-orange-glowing-lines-background_1017-3201.jpg?semt=ais_hybrid&w=740';
+
+  const containerPadding =
+    'max-w-[70rem] gap-y-12 px-[4%] py-14 sm:px-[12%] md:gap-y-15 md:px-[4%] md:py-17 lg:gap-y-18 lg:px-[5%] lg:py-20 xl:px-[4%] 2xl:px-[0]';
 </script>
 
 <section id="discord" class="w-full">
@@ -23,9 +33,7 @@
     style="background-image: url({discordBG}); background-attachment: fixed;"
   >
     <div class="bg-black/80">
-      <div
-        class="mx-auto flex max-w-[70rem] flex-col gap-y-12 px-[4%] py-14 sm:px-[12%] md:gap-y-15 md:px-[4%] md:py-17 lg:gap-y-18 lg:px-[5%] lg:py-20 xl:px-[4%] 2xl:px-[0]"
-      >
+      <div class="mx-auto flex flex-col {containerPadding}">
         <h1 class="strokeme text-center font-jua text-5xl text-orange-600 md:text-6xl">
           JOIN <span class="text-discord">Discord Premium</span> CryptoSharia
         </h1>
@@ -54,18 +62,57 @@
           alt="Discord Halal Coin Calls"
         />
         <img class="hidden w-full md:block" src={modules} alt="Discord Modules" />
-        <div class="flex flex-col items-center gap-y-10">
-          <blockquote class="text-center font-jua">
-            <p class="mb-1.5 text-3xl font-bold text-white md:text-4xl">
-              ❝Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elito. Suspendisse dictum gomu
-              gomu no lacinia elementum❞
-            </p>
-            <cite class="text-2xl font-bold text-white italic md:text-[2rem]">-Daffa Ilhami-</cite>
-          </blockquote>
-          {@render joinButton('large')}
-          {@render joinButton('medium')}
-          {@render joinButton('small')}
+      </div>
+      <div class="flex flex-col justify-center gap-y-4">
+        <h1 class="text-center text-5xl font-semibold text-slate-100">Testimonial</h1>
+        <div class="flex w-screen flex-row justify-center gap-x-4 overflow-hidden">
+          {#each Array.from({ length: 5 }) as _, i}
+            <div class="flex shrink-0 animate-infinite-scroll flex-row items-start gap-x-4">
+              <img
+                src={testimonial1}
+                alt="Discord Testimonial 1"
+                class="h-75 w-160 rounded-2xl border-2 border-slate-200"
+              />
+              <img
+                src={testimonial2}
+                alt="Discord Testimonial 2"
+                class="h-75 w-160 rounded-2xl border-2 border-slate-200"
+              />
+              <img
+                src={testimonial3}
+                alt="Discord Testimonial 3"
+                class="h-75 w-160 rounded-2xl border-2 border-slate-200"
+              />
+              <img
+                src={testimonial4}
+                alt="Discord Testimonial 4"
+                class="h-75 w-160 rounded-2xl border-2 border-slate-200"
+              />
+              <img
+                src={testimonial5}
+                alt="Discord Testimonial 5"
+                class="h-75 w-160 rounded-2xl border-2 border-slate-200"
+              />
+              <img
+                src={testimonial6}
+                alt="Discord Testimonial 6"
+                class="h-75 w-160 rounded-2xl border-2 border-slate-200"
+              />
+            </div>
+          {/each}
         </div>
+      </div>
+      <div class="mx-auto flex flex-col items-center gap-y-10 {containerPadding}">
+        <blockquote class="text-center font-jua">
+          <p class="mb-1.5 text-3xl font-bold text-white md:text-4xl">
+            ❝Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elito. Suspendisse dictum gomu gomu
+            no lacinia elementum❞
+          </p>
+          <cite class="text-2xl font-bold text-white italic md:text-[2rem]">-Daffa Ilhami-</cite>
+        </blockquote>
+        {@render joinButton('large')}
+        {@render joinButton('medium')}
+        {@render joinButton('small')}
       </div>
     </div>
   </div>
