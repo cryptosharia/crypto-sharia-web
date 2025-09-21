@@ -1,3 +1,5 @@
+![Bitcoin Sharia Certificate](/btc-certificate.jpeg)
+
 Ethereum serves clear utility purposes as a computing platform and transaction settlement layer. While some applications built on Ethereum may be problematic from a Shariah perspective, the base protocol and its native token ETH represent legitimate technological infrastructure with real utility.
 
 The primary concerns from an Islamic perspective would be:
