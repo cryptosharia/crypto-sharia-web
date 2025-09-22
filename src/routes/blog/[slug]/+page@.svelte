@@ -51,27 +51,47 @@
     <section>
       <div class="mb-3.5 flex flex-row items-start gap-x-4">
         {@render backButton()}
-        <h1 class="text-[2rem] leading-10 font-medium text-orange-600 sm:text-4xl md:text-[2.5rem]">
+        <h1
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          class="text-[2rem] leading-10 font-medium text-orange-600 sm:text-4xl md:text-[2.5rem]"
+        >
           {post.title}
         </h1>
       </div>
-      <img src={post.thumbnailUrl} alt={post.title} class="w-full rounded-2xl md:rounded-3xl" />
+      <img
+        data-aos="fade"
+        data-aos-duration="1000"
+        src={post.thumbnailUrl}
+        alt={post.title}
+        class="w-full rounded-2xl md:rounded-3xl"
+      />
       <div class="mt-2 flex flex-col gap-y-3 md:mb-2 md:flex-row">
-        <div class="flex flex-1 flex-row flex-wrap gap-2">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          class="flex flex-1 flex-row flex-wrap gap-2"
+        >
           {#each post.tags as tag}
             <Tag text={tag} />
           {/each}
         </div>
-        <span class="mb-1 flex flex-row justify-end text-sm text-slate-700 md:text-base">
+        <span
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+          class="mb-1 flex flex-row justify-end text-sm text-slate-700 md:text-base"
+        >
           <Calendar class="size-5 md:size-6" />
           <span>{formatDate(post.date, 'text')}</span></span
         >
       </div>
       <Divider usePadding={false} />
-      <p class="mt-2 text-justify text-slate-700">{post.description}</p>
+      <p data-aos="zoom-out" data-aos-duration="1000" class="mt-2 text-justify text-slate-700">
+        {post.description}
+      </p>
     </section>
     <DotsDivider />
-    <section class="markdown-body my-4">
+    <section data-aos="fade-up" data-aos-duration="1000" class="markdown-body my-4">
       {@html marked(post.content)}
     </section>
     <DotsDivider padding="4rem" />
@@ -114,6 +134,8 @@
 
 {#snippet backButton()}
   <button
+    data-aos="zoom-in"
+    data-aos-duration="1000"
     aria-label="Kembali ke Blog"
     onclick={() => window.history.back()}
     class="mt-0.75 hidden rounded-full text-orange-600 transition-transform duration-300 hover:scale-115 hover:cursor-pointer md:block"

@@ -26,7 +26,7 @@
       style="background-image: url({collaborationBG});"
     >
       <div class="h-full bg-black/60">
-        <div class="flex h-full overflow-hidden">
+        <div data-aos="zoom-out" data-aos-duration="1000" class="flex h-full overflow-hidden">
           {#each Array.from({ length: 20 }) as _, i}
             <div
               class="flex min-w-fit animate-collaboration-brand items-center gap-x-8 pr-8 md:gap-x-12 md:pr-12 lg:gap-x-14 lg:pr-14 xl:gap-x-16 xl:pr-16"

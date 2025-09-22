@@ -29,13 +29,23 @@
 <main class="nav-space mx-auto w-full max-w-[90rem] text-center">
   <span class="block h-23 w-full"></span>
   <section class="mx-auto max-w-[95%]">
-    <h1 class="text-4xl text-orange-600 sm:text-[2.75rem] md:text-5xl"><b>CryptoSharia Blog</b></h1>
-    <p class="my-2 text-[1.11rem] text-slate-700">
+    <h1
+      data-aos="fade-down"
+      data-aos-duration="1000"
+      class="text-4xl text-orange-600 sm:text-[2.75rem] md:text-5xl"
+    >
+      <b>CryptoSharia Blog</b>
+    </h1>
+    <p data-aos="zoom-out" data-aos-duration="1000" class="my-2 text-[1.11rem] text-slate-700">
       Temukan semua update terbaru tentang <i><b>CryptoSharia</b></i> di sini
     </p>
   </section>
   <Divider />
-  <div class="mt-4 flex flex-row items-center justify-center gap-x-2">
+  <div
+    data-aos="zoom-in"
+    data-aos-duration="1000"
+    class="mt-4 flex flex-row items-center justify-center gap-x-2"
+  >
     {#each categories as category}
       <Chip
         isSelected={category === selectedCategory}
