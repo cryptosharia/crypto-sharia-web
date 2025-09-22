@@ -22,7 +22,7 @@
     data-aos-duration="1000"
     class="flex flex-1 flex-col rounded-4xl border border-slate-200 p-8 shadow-md"
   >
-    <Title isSmall={true}>Tentang <u><i>CryptoSharia</i></u></Title>
+    <Title aos={false} isSmall={true}>Tentang <u><i>CryptoSharia</i></u></Title>
     <p class="text-justify text-base">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum lacinia elementum.
       Praesent molestie vel sem rutrum accumsan. Curabitur fermentum nec erat eu iaculis. Nullam
@@ -51,7 +51,7 @@
           <div
             class="absolute top-1/2 -left-10 size-4 -translate-y-1/2 rounded-full bg-orange-600 lg:-left-14"
           ></div>
-          <Title isSmall={true}>Visi</Title>
+          <Title aos={false} isSmall={true}>Visi</Title>
         </div>
         <p class="text-justify text-base">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum lacinia
@@ -65,7 +65,7 @@
           <div
             class="absolute top-1/2 -left-10 size-4 -translate-y-1/2 rounded-full bg-orange-600 lg:-left-14"
           ></div>
-          <Title isSmall={true}>Misi</Title>
+          <Title aos={false} isSmall={true}>Misi</Title>
         </div>
         <ul class="list-disc text-base">
           <li>Lorem ipsum dolor sit amet</li>

@@ -51,8 +51,8 @@
       <div
         class="mx-auto flex max-w-[90%] flex-col sm:max-w-[36rem] lg:max-w-[90%] lg:flex-row lg:gap-x-8 xl:max-w-[70rem] xl:gap-x-12"
       >
-        <div class="flex-1">
-          <Title class="text-center text-white">Kontak Kami</Title>
+        <div data-aos="fade-right" data-aos-duration="1000" class="flex-1">
+          <Title aos={false} class="text-center text-white">Kontak Kami</Title>
           <Divider usePadding={false} />
           <div class="mt-3.5 flex flex-col">
             <div class="flex flex-col gap-y-3">
@@ -83,8 +83,8 @@
           </div>
         </div>
         <div class="flex flex-1 flex-col-reverse gap-y-12 max-lg:mt-12 lg:flex-col lg:gap-y-9">
-          <div>
-            <Title class="text-center text-white">Media Sosial</Title>
+          <div data-aos="zoom-in" data-aos-duration="1000">
+            <Title aos={false} class="text-center text-white">Media Sosial</Title>
             <Divider usePadding={false} />
             <div class="mt-10 flex flex-row items-center justify-between px-[3%] sm:px-14">
               {#each socmeds as socmed}
@@ -94,8 +94,8 @@
               {/each}
             </div>
           </div>
-          <div>
-            <Title class="text-center text-white"
+          <div data-aos="fade-left" data-aos-duration="1000">
+            <Title aos={false} class="text-center text-white"
               >Support <i class="text-orange-600">CryptoSharia</i></Title
             >
             <Divider usePadding={false} />
@@ -118,7 +118,12 @@
           </div>
         </div>
       </div>
-      <div class="mx-auto mt-10 flex max-w-54 flex-col" style="letter-spacing: 1.5px;">
+      <div
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+        class="mx-auto mt-10 flex max-w-54 flex-col"
+        style="letter-spacing: 1.5px;"
+      >
         <a href="/" class="flex flex-col items-center gap-y-0.5">
           <span class="flex size-12.5 items-center justify-center rounded-full bg-white">
             <img src={logo1} alt="CryptoSharia" class="size-12" />
