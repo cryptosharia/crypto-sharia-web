@@ -42,44 +42,87 @@
     style="background-image: url({discordBG}); background-attachment: fixed;"
   >
     <div class="bg-black/80">
-      <div class="mx-auto flex flex-col {containerPadding}">
-        <h1 class="strokeme text-center font-jua text-5xl text-orange-600 md:text-6xl">
+      <div class="mx-auto flex flex-col items-center {containerPadding}">
+        <h1
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+          class="strokeme text-center font-jua text-5xl text-orange-600 md:text-6xl"
+        >
           JOIN <span class="text-discord">Discord Premium</span> CryptoSharia
         </h1>
-        <div class="flex flex-col justify-center gap-y-8 md:flex-row md:gap-x-4 lg:gap-x-5">
-          <img src={posterMobile} alt="Discord Poster" class="block w-full md:hidden md:w-1/2" />
-          <img src={poster} alt="Discord Poster" class="hidden w-full md:block md:w-1/2" />
-          <!-- <img src={testimonial} alt="Discord Testimonial" class="w-full md:w-1/2" /> -->
-        </div>
+        <img
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          src={posterMobile}
+          alt="Discord Poster"
+          class="mx-auto block w-full md:hidden md:w-1/2"
+        />
+        <img
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          src={poster}
+          alt="Discord Poster"
+          class="hidden w-full md:block md:w-1/2"
+        />
         <div class="flex w-full flex-col gap-y-8 md:hidden">
-          <img src={cryptoModule} alt="Discord Crypto Module" />
-          <img src={shariaModule} alt="Discord Sharia Module" />
+          <img
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            src={cryptoModule}
+            alt="Discord Crypto Module"
+          />
+          <img
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            src={shariaModule}
+            alt="Discord Sharia Module"
+          />
         </div>
         <img
+          data-aos="fade-right"
+          data-aos-duration="1000"
           class="hidden w-full md:block"
           src={informationUpdate}
           alt="Discord Information Update"
         />
         <img
+          data-aos="fade-right"
+          data-aos-duration="1000"
           class="block w-full md:hidden"
           src={informationUpdateMobile}
           alt="Discord Information Update"
         />
-        <img class="hidden w-full md:block" src={halalCoinCalls} alt="Discord Halal Coin Calls" />
         <img
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          class="hidden w-full md:block"
+          src={halalCoinCalls}
+          alt="Discord Halal Coin Calls"
+        />
+        <img
+          data-aos="fade-left"
+          data-aos-duration="1000"
           class="block w-full md:hidden"
           src={halalCoinCallsMobile}
           alt="Discord Halal Coin Calls"
         />
-        <img class="hidden w-full md:block" src={modules} alt="Discord Modules" />
+        <img
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+          class="hidden w-full md:block"
+          src={modules}
+          alt="Discord Modules"
+        />
       </div>
       <div class="flex flex-col justify-center gap-y-4">
         <h1
+          data-aos="zoom-in"
+          data-aos-duration="1000"
           class="text-center text-3xl font-semibold text-slate-100 sm:text-4xl md:text-[1.75rem] lg:text-[2rem] xl:text-[2.5rem]"
         >
           <i>Testimoni</i>
         </h1>
-        <div class="flex flex-row">
+        <div data-aos="fade-up" data-aos-duration="1000" class="flex flex-row">
           {#each Array.from({ length: 3 }) as _}
             <div class="flex shrink-0 animate-discord-testimonial flex-row">
               {#each testimonials as x}
@@ -91,11 +134,19 @@
       </div>
       <div class="mx-auto flex flex-col items-center gap-y-10 {containerPadding}">
         <blockquote class="text-center font-jua">
-          <p class="mb-1.5 text-3xl font-bold text-white md:text-4xl">
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="mb-1.5 text-3xl font-bold text-white md:text-4xl"
+          >
             ❝Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elito. Suspendisse dictum gomu gomu
             no lacinia elementum❞
           </p>
-          <cite class="text-2xl font-bold text-white italic md:text-[2rem]">-Daffa Ilhami-</cite>
+          <cite
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            class="text-2xl font-bold text-white italic md:text-[2rem]">-Daffa Ilhami-</cite
+          >
         </blockquote>
         {@render joinButton('large')}
         {@render joinButton('medium')}
@@ -116,6 +167,8 @@
 
 {#snippet joinButton(size: 'small' | 'medium' | 'large')}
   <div
+    data-aos="zoom-out"
+    data-aos-duration="1000"
     class="flex-row items-center justify-center"
     class:hidden={size === 'large' || size === 'medium'}
     class:xl:flex={size === 'large'}

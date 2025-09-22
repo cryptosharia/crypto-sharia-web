@@ -17,7 +17,11 @@
 <section
   class="flex max-w-[90rem] flex-col items-stretch justify-between px-4 sm:px-6 md:flex-row md:px-8 lg:px-24 xl:px-36"
 >
-  <div class="flex flex-1 flex-col rounded-4xl border border-slate-200 p-8 shadow-md">
+  <div
+    data-aos="fade-right"
+    data-aos-duration="1000"
+    class="flex flex-1 flex-col rounded-4xl border border-slate-200 p-8 shadow-md"
+  >
     <Title isSmall={true}>Tentang <u><i>CryptoSharia</i></u></Title>
     <p class="text-justify text-base">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum lacinia elementum.
@@ -35,7 +39,11 @@
     </div>
   </div>
   {@render line('desktop')}
-  <div class="flex flex-1 flex-row items-stretch p-8 pb-0 pl-0 md:flex-col xl:pr-9">
+  <div
+    data-aos="fade-left"
+    data-aos-duration="1000"
+    class="flex flex-1 flex-row items-stretch p-8 pb-0 pl-0 md:flex-col xl:pr-9"
+  >
     {@render line('mobile')}
     <div>
       <div>
