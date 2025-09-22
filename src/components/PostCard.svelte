@@ -23,6 +23,8 @@
 </script>
 
 <a
+  data-aos="fade-up"
+  data-aos-duration="1000"
   href="/blog/{slug}"
   class="group w-84 overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-xl transition-transform duration-300 hover:scale-105 max-md:w-[95%] max-md:max-w-111 xl:w-88"
   class:max-md:hidden={isHiddenOnMobile}

@@ -27,6 +27,8 @@
 </script>
 
 <a
+  data-aos="flip-right"
+  data-aos-duration="1000"
   href="/screening/{slug.toLowerCase()}"
   class="group -mt-13 flex w-42 flex-col items-center transition-transform duration-300 hover:scale-105 hover:cursor-pointer md:hover:scale-110"
   class:max-sm:hidden={isHiddenOnXS}

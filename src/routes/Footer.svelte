@@ -73,7 +73,13 @@
             <h3 class="my-1 text-right text-white" style="letter-spacing: 2px;">
               <i>cryptoshariaforum@gmail.com</i>
             </h3>
-            <PrimaryButton text="Kirim Pesan" href="#kontak" size="small" extend={true} />
+            <PrimaryButton
+              aos={false}
+              text="Kirim Pesan"
+              href="#kontak"
+              size="small"
+              extend={true}
+            />
           </div>
         </div>
         <div class="flex flex-1 flex-col-reverse gap-y-12 max-lg:mt-12 lg:flex-col lg:gap-y-9">
@@ -101,7 +107,13 @@
                   tanpa henti.
                 </p>
               </div>
-              <PrimaryButton text="💸 Support" href="#kontak" size="small" extend={true} />
+              <PrimaryButton
+                aos={false}
+                text="💸 Support"
+                href="#kontak"
+                size="small"
+                extend={true}
+              />
             </div>
           </div>
         </div>

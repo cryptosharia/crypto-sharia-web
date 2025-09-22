@@ -73,6 +73,8 @@
   >
     {#each faqs as faq, i}
       <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
         id={`faq-${i + 1}`}
         class="rounded-xl border-2 border-slate-200 shadow-sm transition-colors duration-300 ease-in-out max-md:active:border-orange-600 md:hover:border-orange-600"
       >
