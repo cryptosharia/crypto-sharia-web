@@ -29,7 +29,7 @@
   class:md:max-xl:hidden={isHiddenOnTablet}
 >
   <div
-    class="group size-fit w-84 overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-xl transition-transform duration-300 hover:scale-105 max-md:w-[95%] max-md:max-w-111 xl:w-88"
+    class="group mx-auto w-84 overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-xl transition-transform duration-300 hover:scale-105 max-md:w-[95%] max-md:max-w-111 xl:w-88"
   >
     <a href="/blog/{slug}">
       <div class="relative h-50 w-full object-cover">
