@@ -50,6 +50,8 @@
 
 {#snippet header(token: QuotedToken)}
   <section
+    data-aos="flip-down"
+    data-aos-duration="1000"
     class="flex flex-col gap-y-2 rounded-2xl border-2 border-slate-200 bg-white px-5 py-6 shadow-lg"
   >
     <div class="flex flex-row items-start justify-between sm:items-center">
@@ -148,6 +150,8 @@
 
 {#snippet overview(tags: string[], text: string)}
   <section
+    data-aos="fade-up"
+    data-aos-duration="1000"
     class="flex flex-col gap-y-7 rounded-2xl border-2 border-slate-200 bg-white px-5 py-6 shadow-lg"
   >
     <div class="flex flex-row flex-wrap gap-2">
@@ -163,6 +167,8 @@
 
 {#snippet conclusion(status: string, text: string)}
   <section
+    data-aos="zoom-in"
+    data-aos-duration="1000"
     class="flex flex-col gap-y-2 rounded-2xl border-2 border-slate-200 bg-white px-5 py-6 shadow-lg"
   >
     <div class="flex flex-row items-center gap-x-2">
