@@ -188,7 +188,12 @@
       class:translate-x-[10px]={size === 'large'}
       class:translate-x-[9px]={size === 'small' || size === 'medium'}
     />
-    <PrimaryButton {size} text="< Gabung Sekarang >" href="#discord" />
+    <PrimaryButton
+      {size}
+      openInNewTab={true}
+      text="< Gabung Sekarang >"
+      href="https://lynk.id/cryptosharia"
+    />
     <img
       src={discordLogo}
       alt="Discord Logo"

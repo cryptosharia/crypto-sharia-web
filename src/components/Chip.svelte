@@ -8,7 +8,7 @@
 
 <button
   class="rounded-xl border border-orange-600 px-2 py-1 text-orange-600 {!isSelected &&
-    'hover:bg-orange-600/60'}"
+    'transition-colors duration-300 ease-in-out hover:bg-orange-600/60'}"
   class:bg-orange-600={isSelected}
   class:text-white={isSelected}
   class:hover:cursor-pointer={!isSelected}
