@@ -26,15 +26,18 @@
   } = $props();
 </script>
 
-<div data-aos="flip-right" data-aos-duration="1000">
+<div
+  data-aos="flip-right"
+  data-aos-duration="1000"
+  class:max-sm:hidden={isHiddenOnXS}
+  class:sm:max-md:hidden={isHiddenOnSM}
+  class:md:max-lg:hidden={isHiddenOnMD}
+  class:lg:max-xl:hidden={isHiddenOnLG}
+  class:xl:hidden={isHiddenOnXL}
+>
   <a
     href="/screening/{slug.toLowerCase()}"
     class="group -mt-13 flex w-42 flex-col items-center transition-transform duration-300 hover:scale-105 hover:cursor-pointer md:hover:scale-110"
-    class:max-sm:hidden={isHiddenOnXS}
-    class:sm:max-md:hidden={isHiddenOnSM}
-    class:md:max-lg:hidden={isHiddenOnMD}
-    class:lg:max-xl:hidden={isHiddenOnLG}
-    class:xl:hidden={isHiddenOnXL}
   >
     <div class="relative z-3 translate-y-9">
       <div
