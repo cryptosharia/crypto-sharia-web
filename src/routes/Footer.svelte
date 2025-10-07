@@ -60,7 +60,7 @@
               <InputField
                 type="email"
                 required={true}
-                label="Email"
+                label="Alamat Email"
                 hint="Masukkan alamat email anda"
               />
               <InputField
@@ -75,7 +75,7 @@
             </h3>
             <PrimaryButton
               aos={false}
-              text="Kirim Pesan"
+              text="Kirim Email"
               href="#kontak"
               size="small"
               extend={true}
@@ -86,12 +86,21 @@
           <div data-aos="zoom-in" data-aos-duration="1000">
             <Title aos={false} class="text-center text-white">Media Sosial</Title>
             <Divider usePadding={false} />
-            <div class="mt-10 flex flex-row items-center justify-between px-[3%] sm:px-14">
-              {#each socmeds as socmed}
-                <a href={socmed.url} target="_blank" class="transition-transform hover:scale-115">
-                  <img src={socmed.icon} alt={socmed.name} class="w-12" />
-                </a>
-              {/each}
+            <div class="mx-auto max-w-[90%]">
+              <div class="my-8 flex flex-row items-center justify-between px-2">
+                {#each socmeds as socmed}
+                  <a href={socmed.url} target="_blank" class="transition-transform hover:scale-115">
+                    <img src={socmed.icon} alt={socmed.name} class="w-12" />
+                  </a>
+                {/each}
+              </div>
+              <PrimaryButton
+                aos={false}
+                text="💬 Chat Admin"
+                href="https://wa.me/6282186584279"
+                size="small"
+                extend={true}
+              />
             </div>
           </div>
           <div data-aos="fade-left" data-aos-duration="1000">
