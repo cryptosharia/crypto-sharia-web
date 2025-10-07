@@ -12,6 +12,7 @@
   import { getTokenBySlug, getTokens } from '../../../helpers/tokens';
   import Tag from '../../../components/Tag.svelte';
   import { navigating } from '$app/state';
+  import { onMount } from 'svelte';
 
   let token: QuotedToken | undefined = $state(
     getTokenBySlug(page.data.tokens, page.params.slug || '')
@@ -28,6 +29,42 @@
     token = page.data.tokens.find((x: QuotedToken) => x.slug === page.params.slug);
 
     tokens = getTokens(page.data.tokens, 'all', 10, page.params.slug ? [page.params.slug] : []);
+  });
+
+  onMount(() => {
+    // TradingView Chart Widget
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+    script.async = true;
+    script.innerHTML = `
+    {
+          "allow_symbol_change": true,
+          "calendar": false,
+          "details": false,
+          "hide_side_toolbar": true,
+          "hide_top_toolbar": false,
+          "hide_legend": false,
+          "hide_volume": true,
+          "hotlist": false,
+          "interval": "D",
+          "locale": "en",
+          "save_image": true,
+          "style": "1",
+          "symbol": "INDEX:BTCUSD",
+          "theme": "light",
+          "timezone": "Asia/Jakarta",
+          "backgroundColor": "#ffffff",
+          "gridColor": "rgba(46, 46, 46, 0.06)",
+          "watchlist": [],
+          "withdateranges": false,
+          "compareSymbols": [],
+          "studies": [],
+          "autosize": true
+        }
+    `;
+
+    document.getElementById('chart-container')?.appendChild(script);
   });
 </script>
 
@@ -143,6 +180,19 @@
             )}</b
           ></span
         >
+      </div>
+    </div>
+    <div class="tradingview-widget-container size-full" id="chart-container">
+      <div
+        class="tradingview-widget-container__widget"
+        style="height: calc(100% - 32px); width: 100%"
+      ></div>
+      <div class="tradingview-widget-copyright">
+        <a
+          href="https://www.tradingview.com/symbols/INDEX-BTCUSD/"
+          rel="noopener nofollow"
+          target="_blank"><span class="blue-text">BTCUSD chart</span></a
+        ><span class="trademark"> by TradingView</span>
       </div>
     </div>
   </section>
