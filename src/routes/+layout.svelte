@@ -13,13 +13,53 @@
 
   onMount(() => {
     AOS.init();
+    console.log('INIT Lurr');
   });
+
+  let popUpVisible = $state(true);
 </script>
 
 <svelte:head>
   <title>CryptoSharia</title>
   <link rel="icon" type="image/png" href={logo1} />
 </svelte:head>
+
+<div
+  class="fixed z-999999999 h-screen w-screen overflow-hidden"
+  style="display: {popUpVisible ? 'block' : 'none'}"
+>
+  <button
+    aria-label="Close Pop Up"
+    class="h-screen w-screen bg-black/50 hover:cursor-pointer"
+    onclick={() => (popUpVisible = false)}
+  ></button>
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform rounded-xl bg-white p-6 shadow-2xl"
+  >
+    <button
+      aria-label="Close Pop Up"
+      class="absolute top-2 right-2 rounded-xl border border-slate-500 p-1.5 hover:cursor-pointer"
+      onclick={() => (popUpVisible = false)}
+    >
+      <svg
+        class="h-6 w-6 text-slate-500"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <h1 class="text-3xl text-orange-600">Ini Iklan bangg</h1>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta eius illum unde quo nam
+      consectetur nesciunt dignissimos debitis laudantium itaque illo temporibus commodi, quidem
+      necessitatibus fuga quasi sunt consequuntur mollitia!
+    </p>
+  </div>
+</div>
 
 <Navbar />
 
