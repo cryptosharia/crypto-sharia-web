@@ -70,16 +70,27 @@
                 hint="Masukkan pesan anda"
               />
             </div>
-            <h3 class="my-1 text-right text-white" style="letter-spacing: 2px;">
+            <!-- <h3 class="my-1 text-right text-white" style="letter-spacing: 2px;">
               <i>cryptoshariaforum@gmail.com</i>
-            </h3>
-            <PrimaryButton
-              aos={false}
-              text="Kirim Email"
-              href="#kontak"
-              size="small"
-              extend={true}
-            />
+            </h3> -->
+            <div class="mt-3 flex flex-col gap-y-1">
+              <PrimaryButton
+                aos={false}
+                text="✉️ Kirim Email"
+                href="#kontak"
+                size="small"
+                extend={true}
+              />
+              <Divider usePadding={false} />
+              <PrimaryButton
+                openInNewTab={true}
+                aos={false}
+                text="💬 Chat WhatsApp"
+                href="https://wa.me/6282186584279"
+                size="small"
+                extend={true}
+              />
+            </div>
           </div>
         </div>
         <div class="flex flex-1 flex-col-reverse gap-y-12 max-lg:mt-12 lg:flex-col lg:gap-y-9">
@@ -95,9 +106,10 @@
                 {/each}
               </div>
               <PrimaryButton
+                openInNewTab={true}
                 aos={false}
-                text="💬 Chat Admin"
-                href="https://wa.me/6282186584279"
+                text="🗪 Gabung Grup WhatsApp Komunitas"
+                href="https://chat.whatsapp.com/KtqgS9SQGlPLweht53UrHr"
                 size="small"
                 extend={true}
               />
