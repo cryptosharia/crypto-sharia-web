@@ -13,7 +13,6 @@
 
   onMount(() => {
     AOS.init();
-    console.log('INIT Lurr');
   });
 
   let popUpVisible = $state(true);
@@ -38,11 +37,11 @@
   >
     <button
       aria-label="Close Pop Up"
-      class="absolute top-2 right-2 rounded-xl border border-slate-500 p-1.5 hover:cursor-pointer"
+      class="group absolute top-1.5 right-1.5 rounded-xl border border-slate-500 p-1.5 hover:cursor-pointer hover:border-orange-600 hover:bg-orange-600/10"
       onclick={() => (popUpVisible = false)}
     >
       <svg
-        class="h-6 w-6 text-slate-500"
+        class="h-6 w-6 text-slate-500 group-hover:text-orange-600"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"

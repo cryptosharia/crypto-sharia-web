@@ -11,6 +11,7 @@
   import discord from '$lib/assets/socmed-icons/discord.png';
   import x from '$lib/assets/socmed-icons/x.png';
   import youtube from '$lib/assets/socmed-icons/youtube.png';
+  import Modal from '../components/Modal.svelte';
 
   const socmeds = [
     {
@@ -39,6 +40,8 @@
       url: 'https://youtube.com'
     }
   ];
+
+  let modalVisible = $state(false);
 </script>
 
 <footer id="kontak" class="mt-14 w-full">
@@ -131,10 +134,36 @@
               <PrimaryButton
                 aos={false}
                 text="💸 Support"
-                href="#kontak"
                 size="small"
                 extend={true}
+                onclick={() => (modalVisible = true)}
               />
+              <Modal bind:modalVisible>
+                <div class="w-80 sm:w-120">
+                  <h1 class="text-center text-2xl font-semibold text-orange-600">
+                    Rekening Donasi
+                  </h1>
+                  <Divider usePadding={false} />
+                  <ul class="mt-3 space-y-2">
+                    <li class="flex justify-between">
+                      <span>Bank:</span>
+                      <span>BSI</span>
+                    </li>
+                    <li class="flex justify-between">
+                      <span>No. Rekening:</span>
+                      <span>123456789</span>
+                    </li>
+                    <li class="flex justify-between">
+                      <span>Atas Nama:</span>
+                      <span>CryptoSharia</span>
+                    </li>
+                  </ul>
+                  <Divider usePadding={false} />
+                  <p class="mt-2 text-center text-orange-600">
+                    <i>Jazakumullahu Khairan atas dukungannya</i>
+                  </p>
+                </div>
+              </Modal>
             </div>
           </div>
         </div>
