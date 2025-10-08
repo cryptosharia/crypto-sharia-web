@@ -33,7 +33,7 @@
     onclick={() => (popUpVisible = false)}
   ></button>
   <div
-    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform rounded-xl bg-white p-6 shadow-2xl"
+    class="absolute top-1/2 left-1/2 w-[90%] sm:w-145 -translate-x-1/2 -translate-y-1/2 transform rounded-xl bg-white p-6 shadow-2xl"
   >
     <button
       aria-label="Close Pop Up"
