@@ -100,7 +100,7 @@
           <div data-aos="zoom-in" data-aos-duration="1000">
             <Title aos={false} class="text-center text-white">Media Sosial</Title>
             <Divider usePadding={false} />
-            <div class="mx-auto max-w-[90%]">
+            <div class="mx-auto lg:max-w-[90%]">
               <div class="my-8 flex flex-row items-center justify-between px-2">
                 {#each socmeds as socmed}
                   <a href={socmed.url} target="_blank" class="transition-transform hover:scale-115">
@@ -111,7 +111,7 @@
               <PrimaryButton
                 openInNewTab={true}
                 aos={false}
-                text="🗪 Gabung Grup WhatsApp Komunitas"
+                text="👥 Grup WhatsApp Komunitas"
                 href="https://chat.whatsapp.com/KtqgS9SQGlPLweht53UrHr"
                 size="small"
                 extend={true}
