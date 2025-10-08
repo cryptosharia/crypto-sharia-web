@@ -5,6 +5,7 @@ import type { Token } from '../models';
 export const tokens: Token[] = [
   {
     slug: 'bitcoin',
+    pair: 'INDEX:BTCUSD',
     name: 'Bitcoin',
     symbol: 'BTC',
     color: '#F7931A',
@@ -18,6 +19,7 @@ export const tokens: Token[] = [
   },
   {
     slug: 'ethereum',
+    pair: 'INDEX:ETHUSD',
     name: 'Ethereum',
     symbol: 'ETH',
     color: '#627EEA',
@@ -38,6 +40,7 @@ export const tokens: Token[] = [
   },
   {
     slug: 'xrp',
+    pair: 'CRYPTO:XRPUSD',
     name: 'XRP',
     symbol: 'XRP',
     color: '#23292f',
@@ -51,6 +54,7 @@ export const tokens: Token[] = [
   },
   {
     slug: 'bnb',
+    pair: 'CRYPTO:BNBUSD',
     name: 'BNB',
     symbol: 'BNB',
     color: '#F3BA2F',
@@ -64,6 +68,7 @@ export const tokens: Token[] = [
   },
   {
     slug: 'solana',
+    pair: 'CRYPTO:SOLUSD',
     name: 'Solana',
     symbol: 'SOL',
     color: '#9945FF',
@@ -77,6 +82,7 @@ export const tokens: Token[] = [
   },
   {
     slug: 'sui',
+    pair: 'CRYPTO:SUIUSD',
     name: 'Sui',
     symbol: 'SUI',
     color: '#4DA2FF',
@@ -90,6 +96,7 @@ export const tokens: Token[] = [
   },
   {
     slug: 'bonk1',
+    pair: 'CRYPTO:BONKUSD',
     name: 'Bonk',
     symbol: 'BONK',
     color: '#f6952a',
@@ -103,6 +110,7 @@ export const tokens: Token[] = [
   },
   {
     slug: 'tron',
+    pair: 'CRYPTO:TRXUSD',
     name: 'Tron',
     symbol: 'TRX',
     color: '#FF0000',
@@ -116,6 +124,7 @@ export const tokens: Token[] = [
   },
   {
     slug: 'hyperliquid',
+    pair: 'KUCOIN:HYPEUSDT',
     name: 'Hyperliquid',
     symbol: 'HYPE',
     color: '#56EDF0',
@@ -129,6 +138,7 @@ export const tokens: Token[] = [
   },
   {
     slug: 'polygon-ecosystem-token',
+    pair: 'BINANCE:POLUSDT',
     name: 'Polygon',
     symbol: 'POL',
     color: '#8247E5',
@@ -142,6 +152,7 @@ export const tokens: Token[] = [
   },
   {
     slug: 'pepe',
+    pair: 'CRYPTO:PEPEUSD',
     name: 'Pepe',
     symbol: 'PEPE',
     color: '#4c9641',
@@ -155,6 +166,7 @@ export const tokens: Token[] = [
   },
   {
     slug: 'arbitrum',
+    pair: 'BINANCE:ARBUSDT',
     name: 'Arbitrum',
     symbol: 'ARB',
     color: '#2c374b',
@@ -168,6 +180,7 @@ export const tokens: Token[] = [
   },
   {
     slug: 'cardano',
+    pair: 'CRYPTO:ADAUSD',
     name: 'Cardano',
     symbol: 'ADA',
     color: '#3B82F6',
@@ -181,6 +194,7 @@ export const tokens: Token[] = [
   },
   {
     slug: 'shiba-inu',
+    pair: 'CRYPTO:SHIBUSD',
     name: 'Shiba Inu',
     symbol: 'SHIB',
     color: '#EF8A13',
@@ -194,6 +208,7 @@ export const tokens: Token[] = [
   },
   {
     slug: 'pax-gold',
+    pair: 'TVC:GOLD',
     name: 'Pax Gold',
     symbol: 'PAXG',
     color: '#cca727',

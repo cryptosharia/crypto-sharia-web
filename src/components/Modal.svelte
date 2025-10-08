@@ -77,8 +77,7 @@
   button {
     display: block;
   }
-</!-->
--->
+</style> -->
 
 <style>
   dialog::backdrop {

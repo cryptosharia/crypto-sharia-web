@@ -1,5 +1,6 @@
 export type Token = {
   slug: string;
+  pair: string;
   name: string;
   symbol: string;
   color: string;

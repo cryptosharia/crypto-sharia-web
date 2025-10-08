@@ -13,6 +13,7 @@
   import Tag from '../../../components/Tag.svelte';
   import { navigating } from '$app/state';
   import { onMount } from 'svelte';
+  import Modal from '../../../components/Modal.svelte';
 
   let token: QuotedToken | undefined = $state(
     getTokenBySlug(page.data.tokens, page.params.slug || '')
@@ -22,8 +23,11 @@
     getTokens(page.data.tokens, 'all', 10, page.params.slug ? [page.params.slug] : [])
   );
 
+  let modalVisible = $state(false);
+
   $effect(() => {
     navigating.complete;
+
     // Refetch data whenever the route is done changing
 
     token = page.data.tokens.find((x: QuotedToken) => x.slug === page.params.slug);
@@ -31,40 +35,50 @@
     tokens = getTokens(page.data.tokens, 'all', 10, page.params.slug ? [page.params.slug] : []);
   });
 
-  onMount(() => {
-    // TradingView Chart Widget
+  $effect(() => {
+    // Remove existingChart first (In order to be able to refresh the chart when switching tokens)
+    const existingChart = document.querySelector('#chart-container #chart');
+
+    if (existingChart) existingChart.remove();
+
+    // Create a new chart for current token
+    const newChart = document.createElement('div');
+    newChart.id = 'chart';
+    newChart.className = 'size-full';
+    document.querySelector('#chart-container')?.appendChild(newChart);
+
     const script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
     script.async = true;
     script.innerHTML = `
-    {
-          "allow_symbol_change": true,
-          "calendar": false,
-          "details": false,
-          "hide_side_toolbar": true,
-          "hide_top_toolbar": false,
-          "hide_legend": false,
-          "hide_volume": true,
-          "hotlist": false,
-          "interval": "D",
-          "locale": "en",
-          "save_image": true,
-          "style": "1",
-          "symbol": "INDEX:BTCUSD",
-          "theme": "light",
-          "timezone": "Asia/Jakarta",
-          "backgroundColor": "#ffffff",
-          "gridColor": "rgba(46, 46, 46, 0.06)",
-          "watchlist": [],
-          "withdateranges": false,
-          "compareSymbols": [],
-          "studies": [],
-          "autosize": true
-        }
+      {
+        "allow_symbol_change": false,
+        "calendar": false,
+        "details": false,
+        "hide_side_toolbar": false,
+        "hide_top_toolbar": false,
+        "hide_legend": false,
+        "hide_volume": true,
+        "hotlist": false,
+        "interval": "D",
+        "locale": "en",
+        "save_image": false,
+        "style": "1",
+        "symbol": "${token?.pair || 'INDEX:BTCUSD'}",
+        "theme": "light",
+        "timezone": "Asia/Jakarta",
+        "backgroundColor": "#ffffff",
+        "gridColor": "rgba(46, 46, 46, 0.06)",
+        "watchlist": [],
+        "withdateranges": false,
+        "compareSymbols": [],
+        "studies": [],
+        "autosize": true
+      }
     `;
 
-    document.getElementById('chart-container')?.appendChild(script);
+    newChart.appendChild(script);
   });
 </script>
 
@@ -182,19 +196,27 @@
         >
       </div>
     </div>
-    <div class="tradingview-widget-container size-full" id="chart-container">
-      <div
-        class="tradingview-widget-container__widget"
-        style="height: calc(100% - 32px); width: 100%"
-      ></div>
-      <div class="tradingview-widget-copyright">
-        <a
-          href="https://www.tradingview.com/symbols/INDEX-BTCUSD/"
-          rel="noopener nofollow"
-          target="_blank"><span class="blue-text">BTCUSD chart</span></a
-        ><span class="trademark"> by TradingView</span>
-      </div>
+    <Divider usePadding={false} />
+    <div class="flex gap-2">
+      <button
+        class="rounded-xl bg-[#131722] px-2 py-1.5 text-white hover:cursor-pointer"
+        onclick={() => (modalVisible = true)}>TradingView</button
+      >
+      <a
+        class="rounded-xl bg-[#3661fb] px-2 py-1.5 text-white hover:cursor-pointer"
+        href="https://coinmarketcap.com/currencies/{token.slug}"
+        target="_blank">CoinMarketCap</a
+      >
     </div>
+    <Modal bind:modalVisible>
+      <h1
+        class="mb-2 text-start text-2xl font-semibold sm:text-center sm:text-3xl"
+        style="color: {token.color}"
+      >
+        {token.symbol}/USD Chart
+      </h1>
+      <div id="chart-container" class="h-[70vh] w-[85vw]"></div>
+    </Modal>
   </section>
 {/snippet}
 
