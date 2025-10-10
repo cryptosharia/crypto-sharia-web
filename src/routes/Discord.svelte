@@ -62,7 +62,7 @@
           data-aos-duration="1000"
           src={poster}
           alt="Discord Poster"
-          class="hidden w-full md:block md:w-1/2"
+          class="hidden w-full md:block md:w-full"
         />
         <div class="flex w-full flex-col gap-y-8 md:hidden">
           <img
