@@ -4,6 +4,12 @@
   import sol from '$lib/assets/crypto-icons/sol.png';
   import sui from '$lib/assets/crypto-icons/sui.png';
   import Title from '../components/Title.svelte';
+
+  const goals = [
+    'Menjadi pusat edukasi dan informasi aset crypto sesuai syariah di Indonesia.',
+    'Menjadi wadah kolaborasi aktif dan produktif bagi para pelaku industri Web3 di Indonesia.',
+    'Mendukung tranformasi ekonomi digital di Indonesia melalui prinsip keuangan syariah.',
+  ];
 </script>
 
 {#snippet line(device: 'desktop' | 'mobile')}
@@ -23,12 +29,10 @@
     class="flex flex-1 flex-col rounded-4xl border border-slate-200 p-8 shadow-md"
   >
     <Title aos={false} isSmall={true}>Tentang <u><i>CryptoSharia</i></u></Title>
-    <p class="text-justify text-base">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum lacinia elementum.
-      Praesent molestie vel sem rutrum accumsan. Curabitur fermentum nec erat eu iaculis. Nullam
-      urna mauris, varius in luctus et, faucibus id elit.<br /><br />Fusce id pretium ligula. Proin
-      tincidunt facilisis purus, non commodo metus. Quisque nec tellus et turpis facilisis rutrum.
-      Praesent in egestas odio.
+    <p class="text-justify text-[1.0625rem]">
+      <i><b>CryptoSharia</b></i> adalah komunitas pionir yang menghubungkan dunia crypto dengan prinsip
+      syariah, menghadirkan ekosistem edukasi, riset, dan komunitas terpercaya bagi teman-teman muslim
+      yang tertarik untuk berinvestasi aset digital crypto tapi masih sesuai dengan prinsip-prinsip syariah.
     </p>
     <div class="flex-1"></div>
     <div class="flex flex-row items-center justify-around gap-6 pt-6">
@@ -47,30 +51,16 @@
     {@render line('mobile')}
     <div>
       <div>
-        <div class="relative">
-          <div
-            class="absolute top-1/2 -left-10 size-4 -translate-y-1/2 rounded-full bg-orange-600 lg:-left-14"
-          ></div>
-          <Title aos={false} isSmall={true}>Visi</Title>
-        </div>
-        <p class="text-justify text-base">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum lacinia
-          elementum. Praesent molestie vel sleft-10 left-10em rutrum accumsan. Curabitur fermentum
-          nec erat eu iaculis. Nullam urna mauris, varius in luctus et, faucibus elit.
-        </p>
-      </div>
-      <br />
-      <div>
-        <div class="relative">
-          <div
-            class="absolute top-1/2 -left-10 size-4 -translate-y-1/2 rounded-full bg-orange-600 lg:-left-14"
-          ></div>
-          <Title aos={false} isSmall={true}>Misi</Title>
-        </div>
-        <ul class="list-disc text-base">
-          <li>Lorem ipsum dolor sit amet</li>
-          <li>Consectetur adipiscing elit</li>
-          <li>Suspendisse dictum lacinia elementum</li>
+        <Title aos={false} isSmall={true}>Community Goals</Title>
+        <ul class="text-base">
+          {#each goals as goal}
+            <li class="relative mb-2 text-[1.0625rem]">
+              <div
+                class="absolute top-1.5 -left-9.75 size-3 rounded-full bg-orange-600 lg:-left-13.75"
+              ></div>
+              {goal}
+            </li>
+          {/each}
         </ul>
       </div>
     </div>
