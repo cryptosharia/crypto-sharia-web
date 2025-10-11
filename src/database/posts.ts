@@ -1,19 +1,21 @@
 import type { Post } from '../models';
 
-import satu from '$lib/assets/blog/activities/1.jpeg';
-import dua from '$lib/assets/blog/activities/2.jpeg';
-import tiga from '$lib/assets/blog/activities/3.jpeg';
-import empat from '$lib/assets/blog/activities/4.jpeg';
-import lima from '$lib/assets/blog/activities/5.jpeg';
-import enam from '$lib/assets/blog/activities/6.jpeg';
+import activitySatu from '$lib/assets/blog/activities/1.jpeg';
+import activityDua from '$lib/assets/blog/activities/2.jpeg';
+import activityTiga from '$lib/assets/blog/activities/3.jpeg';
+import activityEmpat from '$lib/assets/blog/activities/4.jpeg';
+import activityLima from '$lib/assets/blog/activities/5.jpeg';
+import activityEnam from '$lib/assets/blog/activities/6.jpeg';
+import articleSatu from '$lib/assets/blog/articles/1.jpeg';
 
 import sui from '$lib/posts/sui.md?raw';
 import walrus from '$lib/posts/walrus.md?raw';
+import memahamiUang from '$lib/posts/memahami-uang.md?raw';
 
 export const posts: Post[] = [
   {
     category: 'activity',
-    thumbnailUrl: satu,
+    thumbnailUrl: activitySatu,
     date: new Date('2025-10-10T00:00:00.000Z'),
     title: 'Lorem Ipsum Dolor',
     slug: 'lorem-ipsum-dolor',
@@ -24,7 +26,7 @@ export const posts: Post[] = [
   },
   {
     category: 'activity',
-    thumbnailUrl: dua,
+    thumbnailUrl: activityDua,
     date: new Date('2025-10-11T00:00:00.000Z'),
     title: 'Lorem Ipsum Dolor Sit',
     slug: 'lorem-ipsum-dolor-sit',
@@ -35,7 +37,7 @@ export const posts: Post[] = [
   },
   {
     category: 'activity',
-    thumbnailUrl: tiga,
+    thumbnailUrl: activityTiga,
     date: new Date('2025-10-12T00:00:00.000Z'),
     title: 'Lorem Ipsum  Dolor Sit Amet',
     slug: 'lorem-ipsum-dolor-sit-amet',
@@ -46,7 +48,7 @@ export const posts: Post[] = [
   },
   {
     category: 'activity',
-    thumbnailUrl: empat,
+    thumbnailUrl: activityEmpat,
     date: new Date('2025-10-13T00:00:00.000Z'),
     title: 'Lorem Ipsum Dolor Sit Amet Consectetur',
     slug: 'lorem-ipsum-dolor-sit-amet-consectetur',
@@ -57,7 +59,7 @@ export const posts: Post[] = [
   },
   {
     category: 'activity',
-    thumbnailUrl: lima,
+    thumbnailUrl: activityLima,
     date: new Date('2025-10-14T00:00:00.000Z'),
     title: 'Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing',
     slug: 'lorem-ipsum-dolor-sit-amet-consectetur-adipiscing',
@@ -68,7 +70,7 @@ export const posts: Post[] = [
   },
   {
     category: 'activity',
-    thumbnailUrl: enam,
+    thumbnailUrl: activityEnam,
     date: new Date('2025-10-15T00:00:00.000Z'),
     title: 'Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit',
     slug: 'lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit',
@@ -76,6 +78,17 @@ export const posts: Post[] = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     content: walrus
+  },
+  {
+    category: 'article',
+    thumbnailUrl: articleSatu,
+    date: new Date('2025-10-15T00:00:00.000Z'),
+    title: 'Memahami Uang dan Nilai: Panduan Sederhana untuk Masyarakat Awam',
+    slug: 'ethereum-lorem-ipsum-dolor-sit-amet',
+    tags: ['Ekonomi', 'Uang', 'Inflasi', 'Nilai'],
+    description:
+      'Uang, nilai, dan inflasi adalah konsep ekonomi dasar yang sangat memengaruhi kehidupan sehari-hari kita. Meski terdengar rumit, ketiga hal ini sebenarnya dapat dipahami dengan mudah melalui contoh-contoh sederhana.',
+    content: memahamiUang
   },
   {
     category: 'article',
@@ -124,18 +137,6 @@ export const posts: Post[] = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     content: sui
-  },
-  {
-    category: 'article',
-    thumbnailUrl:
-      'https://s3-alpha.figma.com/hub/file/3963163118/974598dc-af4c-4381-89ea-83ce5758db4c-cover.png',
-    date: new Date('2025-10-15T00:00:00.000Z'),
-    title: 'Ethereum Lorem Ipsum Dolor Sit Amet',
-    slug: 'ethereum-lorem-ipsum-dolor-sit-amet',
-    tags: ['Ethereum', 'Web 3', 'Layer 1'],
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    content: walrus
   },
   {
     category: 'article',

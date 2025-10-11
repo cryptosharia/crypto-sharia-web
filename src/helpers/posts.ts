@@ -10,7 +10,7 @@ export function getPosts(
 
   if (category !== 'all') data = posts.filter((post) => post.category === category);
 
-  data = data.sort((a, b) => a.date.getTime() - b.date.getTime());
+  data = data.sort((a, b) => b.date.getTime() - a.date.getTime());
 
   if (skip.length > 0) data = data.filter((post) => !skip.includes(post.slug));
 

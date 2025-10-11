@@ -8,7 +8,7 @@
   }: { aos?: boolean; isSmall?: boolean; class?: string; children: Snippet } = $props();
 </script>
 
-<h1
+<h2
   data-aos={aos ? 'zoom-out' : null}
   data-aos-duration={aos ? '1000' : null}
   class={`mb-1.5 font-bold text-orange-600 ${props.class || ''}`}
@@ -16,4 +16,4 @@
   class:text-3xl={isSmall}
 >
   {@render props.children?.()}
-</h1>
+</h2>
