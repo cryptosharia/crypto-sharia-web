@@ -42,6 +42,41 @@
   ];
 
   let modalVisible = $state(false);
+  let isSendingEmail = $state(false);
+  let isSendingEmailError = $state(false);
+  let isSendingEmailSuccess = $state(false);
+
+  async function sendEmail(e: Event) {
+    e.preventDefault();
+
+    isSendingEmail = true;
+    isSendingEmailError = false;
+    isSendingEmailSuccess = false;
+
+    const name = (document.querySelector('#contact-form #name') as HTMLInputElement).value;
+    const sender = (document.querySelector('#contact-form #email') as HTMLInputElement).value;
+    const message = (document.querySelector('#contact-form #message') as HTMLTextAreaElement).value;
+
+    try {
+      const res = await fetch('/api/email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sender, name, message })
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to send email');
+      }
+
+      isSendingEmailSuccess = true;
+    } catch (error) {
+      console.error(error);
+
+      isSendingEmailError = true;
+    }
+
+    isSendingEmail = false;
+  }
 </script>
 
 <footer id="kontak" class="mt-14 w-full">
@@ -57,33 +92,51 @@
         <div data-aos="fade-right" data-aos-duration="1000" class="flex-1">
           <Title aos={false} class="text-center text-white">Kontak Kami</Title>
           <Divider usePadding={false} />
-          <div class="mt-3.5 flex flex-col">
+          <form id="contact-form" class="mt-3.5 flex flex-col" onsubmit={sendEmail}>
             <div class="flex flex-col gap-y-3">
-              <InputField type="text" required={true} label="Nama" hint="Masukkan nama anda" />
               <InputField
+                id="name"
+                type="text"
+                required={true}
+                label="Nama"
+                hint="Masukkan nama anda"
+              />
+              <InputField
+                id="email"
                 type="email"
                 required={true}
                 label="Alamat Email"
                 hint="Masukkan alamat email anda"
               />
               <InputField
+                id="message"
                 type="multiline"
                 required={true}
                 label="Pesan"
                 hint="Masukkan pesan anda"
               />
             </div>
-            <!-- <h3 class="my-1 text-right text-white" style="letter-spacing: 2px;">
-              <i>cryptoshariaforum@gmail.com</i>
-            </h3> -->
-            <div class="mt-3 flex flex-col gap-y-1">
-              <PrimaryButton
-                aos={false}
-                text="✉️ Kirim Email"
-                href="#kontak"
-                size="small"
-                extend={true}
-              />
+            <div
+              class="flex flex-col gap-y-1 {isSendingEmail ||
+              isSendingEmailError ||
+              isSendingEmailSuccess
+                ? 'mt-1.5'
+                : 'mt-3'}"
+            >
+              {#if isSendingEmailError && !isSendingEmail}
+                <span class="text-base text-white italic"
+                  >Gagal mengirim pesan, silahkkan chat WhatsApp saja!</span
+                >
+              {:else if isSendingEmailSuccess && !isSendingEmail}
+                <span class="text-base text-white italic"
+                  >Pesan berhasil dikirim, terima kasih!</span
+                >
+              {:else if isSendingEmail}
+                <span class="text-base text-white italic">Mengirim pesan...</span>
+              {/if}
+              <button type="submit">
+                <PrimaryButton aos={false} text="✉️ Kirim Email" size="small" extend={true} />
+              </button>
               <Divider usePadding={false} />
               <PrimaryButton
                 openInNewTab={true}
@@ -94,7 +147,7 @@
                 extend={true}
               />
             </div>
-          </div>
+          </form>
         </div>
         <div class="flex flex-1 flex-col-reverse gap-y-12 max-lg:mt-12 lg:flex-col lg:gap-y-9">
           <div data-aos="zoom-in" data-aos-duration="1000">
