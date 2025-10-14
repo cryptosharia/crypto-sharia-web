@@ -4,6 +4,7 @@
   import AOS from 'aos';
   import '../../node_modules/github-markdown-css/github-markdown-light.css';
   import logo1 from '$lib/assets/logo1.png';
+  import popUpAd from '$lib/assets/pop-up-ad.jpg';
 
   import Navbar from './Navbar.svelte';
   import Footer from './Footer.svelte';
@@ -23,6 +24,7 @@
   <link rel="icon" type="image/png" href={logo1} />
 </svelte:head>
 
+<!-- On load pop ip -->
 <div
   class="fixed z-999999999 h-screen w-screen overflow-hidden"
   style="display: {popUpVisible ? 'block' : 'none'}"
@@ -33,7 +35,7 @@
     onclick={() => (popUpVisible = false)}
   ></button>
   <div
-    class="absolute top-1/2 left-1/2 w-[90%] sm:w-145 -translate-x-1/2 -translate-y-1/2 transform rounded-xl bg-white p-6 shadow-2xl"
+    class="absolute top-1/2 left-1/2 w-[90%] -translate-x-1/2 -translate-y-1/2 transform rounded-xl bg-white p-3 shadow-2xl sm:w-145"
   >
     <button
       aria-label="Close Pop Up"
@@ -51,12 +53,14 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
-    <h1 class="text-3xl text-orange-600">Ini Iklan bangg</h1>
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta eius illum unde quo nam
-      consectetur nesciunt dignissimos debitis laudantium itaque illo temporibus commodi, quidem
-      necessitatibus fuga quasi sunt consequuntur mollitia!
-    </p>
+    <h1 class="text-2xl text-orange-600 sm:text-3xl">Selamat Datang 👋</h1>
+    <a href="https://lynk.id/cryptosharia" target="_blank">
+      <img
+        src={popUpAd}
+        alt="Join Discord Premium CryptoSharia"
+        class="mt-2 w-full rounded-lg border border-slate-200 shadow-lg"
+      />
+    </a>
   </div>
 </div>
 
