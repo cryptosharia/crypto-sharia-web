@@ -9,7 +9,7 @@
   import instagram from '$lib/assets/socmed-icons/instagram.png';
   import tiktok from '$lib/assets/socmed-icons/tiktok.png';
   import discord from '$lib/assets/socmed-icons/discord.png';
-  import x from '$lib/assets/socmed-icons/x.png';
+  import facebook from '$lib/assets/socmed-icons/facebook.png';
   import youtube from '$lib/assets/socmed-icons/youtube.png';
   import Modal from '../components/Modal.svelte';
 
@@ -17,27 +17,27 @@
     {
       name: 'Instagram',
       icon: instagram,
-      url: 'https://instagram.com'
+      url: 'https://www.instagram.com/cryptosharia'
     },
     {
       name: 'TikTok',
       icon: tiktok,
-      url: 'https://tiktok.com'
+      url: 'https://tiktok.com/@cryptosharia'
     },
     {
       name: 'Discord',
       icon: discord,
-      url: 'https://discord.com'
+      url: 'https://lynk.id/cryptosharia'
     },
     {
-      name: 'X',
-      icon: x,
-      url: 'https://x.com'
+      name: 'Facebook',
+      icon: facebook,
+      url: 'https://facebook.com/cryptosharia'
     },
     {
       name: 'YouTube',
       icon: youtube,
-      url: 'https://youtube.com'
+      url: 'https://youtube.com/@cryptosharia'
     }
   ];
 
@@ -151,11 +151,11 @@
                     </li>
                     <li class="flex justify-between">
                       <span>No. Rekening:</span>
-                      <span>123456789</span>
+                      <span>7316831669</span>
                     </li>
                     <li class="flex justify-between">
                       <span>Atas Nama:</span>
-                      <span>CryptoSharia</span>
+                      <span>Habibullah Haidar</span>
                     </li>
                   </ul>
                   <Divider usePadding={false} />
