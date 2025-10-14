@@ -4,6 +4,12 @@
   import ArrowUp from '$lib/assets/icons/ArrowUp.svelte';
   import Divider from '../components/Divider.svelte';
   import Title from '../components/Title.svelte';
+  import { marked } from 'marked';
+  import satu from '$lib/faqs/1.md?raw';
+  import dua from '$lib/faqs/2.md?raw';
+  import tiga from '$lib/faqs/3.md?raw';
+  import empat from '$lib/faqs/4.md?raw';
+  import lima from '$lib/faqs/5.md?raw';
 
   function toggleAccordion(i: number) {
     const container = document.getElementById(`faq-${i}`);
@@ -36,31 +42,24 @@
 
   const faqs = [
     {
-      question: 'Klo join Discord Premium bakal bisa beli McLaren ga bang?',
-      answer:
-        'Ga tau.. Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+      question: 'Kenapa harus CryptoSharia?',
+      answer: satu
     },
     {
-      question:
-        'Lorem Ipsum Dolor Sit Amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut?',
-      answer:
-        'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+      question: 'Seberapa penting memahami halal-haram dalam investasi crypto?',
+      answer: dua
     },
     {
-      question: 'Lorem Ipsum Dolor Sit Amet consectetur adipiscing elit?',
-      answer:
-        'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+      question: 'Saya belum paham apa-apa tentang crypto, apakah bisa ikut?',
+      answer: tiga
     },
     {
-      question:
-        'Lorem Ipsum Dolor Sit Amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut?',
-      answer:
-        'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+      question: 'Apakah butuh modal besar untuk mulai berinvestasi?',
+      answer: empat
     },
     {
-      question: 'Lorem Ipsum Dolor Sit Amet consectetur adipiscing elit?',
-      answer:
-        'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+      question: 'Apakah investasi di crypto pasti menguntungkan?',
+      answer: lima
     }
   ];
 </script>
@@ -103,7 +102,7 @@
           class="max-h-0 overflow-hidden px-5 transition-all duration-300 ease-in-out"
         >
           <p class="pb-5 text-justify text-base">
-            {faq.answer}
+            {@html marked(faq.answer)}
           </p>
         </div>
       </div>
