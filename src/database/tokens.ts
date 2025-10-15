@@ -38,7 +38,7 @@ export const tokens: Token[] = [
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
     certificateUrl: bitcoinCertificate,
     status: 'halal',
-    tags: ['Cryptocurrency', 'Blockchain', 'Store of Value'],
+    tags: ['Layer-1', 'Store of Value', 'Digital Currency', 'Payment', 'Pioneer'],
     content: {
       overview: bitcoinOverview,
       conclusion: bitcoinConclusion
@@ -53,14 +53,7 @@ export const tokens: Token[] = [
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
     certificateUrl: bitcoinCertificate,
     status: 'halal',
-    tags: [
-      'Crypto',
-      'Blockchain',
-      'Smart Contract',
-      'Layer 1',
-      'Decentralized Application',
-      'Decentralized Finance'
-    ],
+    tags: ['Layer-1', 'Smart Contract Platform', 'DeFi', 'dApp', 'NFT'],
     content: {
       overview: ethereumOverview,
       conclusion: ethereumConclusion
@@ -75,7 +68,7 @@ export const tokens: Token[] = [
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/52.png',
     certificateUrl: bitcoinCertificate,
     status: 'halal',
-    tags: ['Cryptocurrency', 'Blockchain', 'Cross Border Payment'],
+    tags: ['Layer-1', 'Payment Network', 'Remittance', 'Bridge Currency'],
     content: {
       overview: xrpOverview,
       conclusion: xrpConclusion
@@ -90,7 +83,7 @@ export const tokens: Token[] = [
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1839.png',
     certificateUrl: bitcoinCertificate,
     status: 'syubhat',
-    tags: ['Cryptocurrency', 'Blockchain', 'Centralized Exchange'],
+    tags: ['Layer-1', 'Smart Contract Platform', 'Exchange Ecosystem', 'Binance', 'Changpeng Zhao'],
     content: {
       overview: bnbOverview,
       conclusion: bnbConclusion
@@ -105,7 +98,7 @@ export const tokens: Token[] = [
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5426.png',
     certificateUrl: bitcoinCertificate,
     status: 'halal',
-    tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Application'],
+    tags: ['Layer-1', 'Smart Contract Platform', 'DeFi', 'dApp', 'NFT', 'Gaming'],
     content: {
       overview: solanaOverview,
       conclusion: solanaConclusion
@@ -120,7 +113,7 @@ export const tokens: Token[] = [
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1958.png',
     certificateUrl: bitcoinCertificate,
     status: 'halal',
-    tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Application'],
+    tags: ['Layer-1', 'Content Platform', 'Entertainment', 'DeFi', 'Payment'],
     content: {
       overview: tronOverview,
       conclusion: tronConclusion
@@ -135,7 +128,16 @@ export const tokens: Token[] = [
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/20947.png',
     certificateUrl: bitcoinCertificate,
     status: 'halal',
-    tags: ['Cryptocurrency', 'Blockchain', 'Parallel Processing'],
+    tags: [
+      'Layer-1',
+      'Smart Contract Platform',
+      'Web3',
+      'dApp',
+      'DeFi',
+      'NFT',
+      'Gaming',
+      'Parallel Processing'
+    ],
     content: {
       overview: suiOverview,
       conclusion: suiConclusion
@@ -150,7 +152,7 @@ export const tokens: Token[] = [
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5805.png',
     certificateUrl: bitcoinCertificate,
     status: 'halal',
-    tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Application', 'DeFi', 'Layer 1'],
+    tags: ['Layer-1', 'Smart Contract Platform', 'DeFi', 'dApp', 'Gaming'],
     content: {
       overview: avalancheOverview,
       conclusion: avalancheConclusion
@@ -165,7 +167,7 @@ export const tokens: Token[] = [
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/36645.png',
     certificateUrl: bitcoinCertificate,
     status: 'halal',
-    tags: ['Cryptocurrency', 'Blockchain', 'Stablecoin', 'DeFi', 'EVM'],
+    tags: ['Layer-1', 'Stablecoin Infrastructure', 'Payment', 'EVM-Compatible'],
     content: {
       overview: plasmaXplOverview,
       conclusion: plasmaXplConclusion
