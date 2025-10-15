@@ -13,6 +13,8 @@ export function getTokens(
 
   if (limit) data = data.slice(0, limit);
 
+  data = data.sort((a, b) => a.cmc_rank - b.cmc_rank);
+
   return data;
 }
 

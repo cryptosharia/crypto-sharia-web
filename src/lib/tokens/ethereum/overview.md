@@ -1,23 +1,66 @@
-## Purpose and Utility
+## Ringkasan Singkat
 
-Ethereum is a decentralized computing platform that enables the creation and deployment of smart contracts and decentralized applications (dApps). Its native cryptocurrency, ETH, serves multiple purposes: paying for transaction fees (gas), serving as collateral in various protocols, and acting as a store of value.
+**Ethereum** adalah _blockchain generasi kedua_ yang diluncurkan pada tahun **2015** oleh **Vitalik Buterin**, seorang _programmer muda asal Rusia-Kanada_.
 
-## Current Usage
+Jika **Bitcoin** berfokus sebagai _“emas digital”_ (_store of value_ dan alat tukar), maka **Ethereum** berfokus sebagai _“komputer dunia”_ — sebuah jaringan global yang dapat menjalankan **aplikasi terdesentralisasi (dApps)** dan **kontrak pintar (smart contracts)** tanpa campur tangan pihak ketiga.
 
-Ethereum remains the dominant smart contract platform, hosting thousands of decentralized applications across various sectors including decentralized finance (DeFi), NFTs, gaming, and enterprise solutions. The network processes millions of transactions daily and has a thriving developer ecosystem.
+**Ethereum membuka pintu bagi ribuan inovasi baru**, seperti:
 
-## Business Model Analysis
+- **DeFi** (_Decentralized Finance_)
+- **NFT** (_Non-Fungible Tokens_)
+- **GameFi** (_Game berbasis blockchain_)
+- **DAO** (_Decentralized Autonomous Organization_)
 
-The core Ethereum protocol facilitates permissionless, transparent transactions and smart contract execution. While some applications built on Ethereum may involve prohibited activities (gambling, interest-based lending), the base protocol itself is neutral infrastructure technology.
+## Fakta Teknis
 
-## Development Activity
+- **Token Asli:** _Ether (ETH)_
+- **Diluncurkan:** _30 Juli 2015_
+- **Blockchain:** _Terdesentralisasi, open source_
+- **Jumlah Supply:** _Tidak terbatas (inflationary, tetapi dikendalikan)_
+- **Mekanisme Konsensus:** _Proof of Stake_ (sejak _The Merge_, 2022)
+- **Fungsi Utama:** Menjadi _“bahan bakar”_ (_gas fee_) untuk menjalankan _smart contracts_ dan aplikasi di jaringan **Ethereum**
 
-Ethereum maintains strong development activity, having successfully completed its transition to Proof of Stake in 2022 (The Merge). The platform continues to implement major upgrades, including the recent Shapella upgrade enabling staking withdrawals and upcoming improvements for scalability.
+## Manfaat
 
-## Token Distribution
+- **Smart Contract**  
+  Kontrak digital otomatis yang mengeksekusi perjanjian sesuai kode, tanpa memerlukan notaris atau bank.  
+  _Contoh:_ akad jual beli otomatis yang langsung mengirim barang digital setelah pembayaran dilakukan.
 
-ETH had a relatively fair launch through a public sale in 2014. The Ethereum Foundation and early developers received a minority allocation. Currently, ETH is widely distributed among millions of holders, with no single entity controlling a dominant share.
+- **DeFi (Decentralized Finance)**  
+  Ekosistem keuangan tanpa bank yang memungkinkan _lending, borrowing, staking_, dan aktivitas lainnya.  
+  _Namun harus berhati-hati, karena banyak produk DeFi yang masih mengandung unsur riba atau spekulasi._
 
-## Revenue Model
+- **NFT & Aset Digital**  
+  **Ethereum** menjadi standar utama untuk NFT (_ERC-721_), memungkinkan jual beli karya seni digital, sertifikat, bahkan _properti virtual_.
 
-The primary revenue mechanism is transaction fees paid in ETH, which are partially burned since EIP-1559 and partially paid to validators. Staking rewards come from new issuance and are not interest-based, but rather compensation for securing the network.
+- **Infrastruktur Blockchain**  
+  Mayoritas proyek kripto besar dibangun di atas **Ethereum** atau menggunakan standar kompatibel seperti _ERC-20_.
+
+## Catatan Syariah
+
+📖 **Prinsip Fiqh Muamalah:**
+
+> “Hukum asal muamalah adalah boleh, selama tidak ada dalil yang mengharamkan.”
+
+**Ethereum (ETH)** dapat dikategorikan sebagai _māl i‘tibārī_ — yaitu _harta bernilai berdasarkan kesepakatan masyarakat_, seperti uang kertas atau saham.  
+Hal ini karena ETH:
+
+- Dapat **dimiliki secara pribadi** (_wallet / private key_)
+- **Diakui nilainya** secara luas di komunitas
+- Dapat **digunakan sebagai alat tukar** dan **pembayaran jasa atau produk**
+- Dapat **disimpan sebagai aset bernilai**
+
+**Boleh diperjualbelikan dan dimanfaatkan**, dengan syarat:
+
+- Digunakan untuk aktivitas **halal**
+- Tidak digunakan untuk **judi, ponzi, atau riba**
+- Menghindari **spekulasi ekstrem** (_gharar fāhiš_)
+
+**Catatan khusus:**  
+Banyak produk turunan berbasis Ethereum — seperti _staking DeFi, yield farming,_ atau _margin trading_ — yang mengandung unsur **riba** atau **maisir**.  
+Karena itu, yang perlu dihindari adalah **praktik haram di atas ekosistem Ethereum**, bukan teknologi atau koinnya itu sendiri.
+
+## Fun Fact
+
+**Vitalik Buterin** mendirikan Ethereum pada usia **21 tahun**.  
+Ia **menolak tawaran kerja dari Google** dan memilih membangun _blockchain_-nya sendiri karena ingin menciptakan _internet yang lebih terbuka, adil, dan bebas sensor._

@@ -1,10 +1,4 @@
-Ethereum serves clear utility purposes as a computing platform and transaction settlement layer. While some applications built on Ethereum may be problematic from a Shariah perspective, the base protocol and its native token ETH represent legitimate technological infrastructure with real utility.
+**Ethereum** adalah salah satu inovasi terbesar setelah **Bitcoin**, karena memperluas fungsi _blockchain_ dari sekadar _uang digital_ menjadi **platform global** untuk aplikasi dan kontrak pintar.
 
-The primary concerns from an Islamic perspective would be:
-
-1. Ensuring one's usage of ETH avoids participating in prohibited activities (gambling, interest-based lending, etc.)
-2. Understanding that staking ETH is permissible as it represents validation services rather than interest-bearing loans
-
-Based on our analysis, ETH itself serves legitimate purposes and its core functions do not violate Islamic principles.
-
-Note: While we find this token comfortable to invest in from a halal perspective, this doesn't imply we think it is a strong investment.
+**Dari perspektif syariah**, **ETH** termasuk _māl i‘tibārī_ yang sah, sehingga **boleh diperjualbelikan** selama tidak digunakan untuk transaksi haram.  
+_Sama seperti Bitcoin, yang perlu diwaspadai bukanlah aset dasarnya, melainkan produk-produk turunannya._

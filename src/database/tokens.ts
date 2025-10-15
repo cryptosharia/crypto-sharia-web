@@ -1,7 +1,32 @@
-import dummyOverview from '../lib/tokens/ethereum/overview.md?raw';
-import dummyConclusion from '../lib/tokens/ethereum/conclusion.md?raw';
 import type { Token } from '../models';
-import dummyCertificate from '../lib/tokens/ethereum/certificate.jpg';
+
+import bitcoinOverview from '../lib/tokens/bitcoin/overview.md?raw';
+import bitcoinConclusion from '../lib/tokens/bitcoin/conclusion.md?raw';
+import bitcoinCertificate from '../lib/tokens/bitcoin/certificate.jpg';
+
+import ethereumOverview from '../lib/tokens/ethereum/overview.md?raw';
+import ethereumConclusion from '../lib/tokens/ethereum/conclusion.md?raw';
+
+import xrpOverview from '../lib/tokens/xrp/overview.md?raw';
+import xrpConclusion from '../lib/tokens/xrp/conclusion.md?raw';
+
+import bnbOverview from '../lib/tokens/bnb/overview.md?raw';
+import bnbConclusion from '../lib/tokens/bnb/conclusion.md?raw';
+
+import solanaOverview from '../lib/tokens/solana/overview.md?raw';
+import solanaConclusion from '../lib/tokens/solana/conclusion.md?raw';
+
+import tronOverview from '../lib/tokens/tron/overview.md?raw';
+import tronConclusion from '../lib/tokens/tron/conclusion.md?raw';
+
+import suiOverview from '../lib/tokens/sui/overview.md?raw';
+import suiConclusion from '../lib/tokens/sui/conclusion.md?raw';
+
+import avalancheOverview from '../lib/tokens/avalanche/overview.md?raw';
+import avalancheConclusion from '../lib/tokens/avalanche/conclusion.md?raw';
+
+import plasmaXplOverview from '../lib/tokens/plasma-xpl/overview.md?raw';
+import plasmaXplConclusion from '../lib/tokens/plasma-xpl/conclusion.md?raw';
 
 export const tokens: Token[] = [
   {
@@ -11,12 +36,12 @@ export const tokens: Token[] = [
     symbol: 'BTC',
     color: '#F7931A',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
-    certificateUrl: dummyCertificate,
+    certificateUrl: bitcoinCertificate,
     status: 'halal',
     tags: ['Cryptocurrency', 'Blockchain', 'Store of Value'],
     content: {
-      overview: dummyOverview,
-      conclusion: dummyConclusion
+      overview: bitcoinOverview,
+      conclusion: bitcoinConclusion
     }
   },
   {
@@ -26,7 +51,7 @@ export const tokens: Token[] = [
     symbol: 'ETH',
     color: '#627EEA',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
-    certificateUrl: dummyCertificate,
+    certificateUrl: bitcoinCertificate,
     status: 'halal',
     tags: [
       'Crypto',
@@ -37,8 +62,8 @@ export const tokens: Token[] = [
       'Decentralized Finance'
     ],
     content: {
-      overview: dummyOverview,
-      conclusion: dummyConclusion
+      overview: ethereumOverview,
+      conclusion: ethereumConclusion
     }
   },
   {
@@ -48,12 +73,12 @@ export const tokens: Token[] = [
     symbol: 'XRP',
     color: '#23292f',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/52.png',
-    certificateUrl: dummyCertificate,
+    certificateUrl: bitcoinCertificate,
     status: 'halal',
     tags: ['Cryptocurrency', 'Blockchain', 'Cross Border Payment'],
     content: {
-      overview: dummyOverview,
-      conclusion: dummyConclusion
+      overview: xrpOverview,
+      conclusion: xrpConclusion
     }
   },
   {
@@ -63,12 +88,12 @@ export const tokens: Token[] = [
     symbol: 'BNB',
     color: '#F3BA2F',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1839.png',
-    certificateUrl: dummyCertificate,
+    certificateUrl: bitcoinCertificate,
     status: 'syubhat',
     tags: ['Cryptocurrency', 'Blockchain', 'Centralized Exchange'],
     content: {
-      overview: dummyOverview,
-      conclusion: dummyConclusion
+      overview: bnbOverview,
+      conclusion: bnbConclusion
     }
   },
   {
@@ -78,42 +103,12 @@ export const tokens: Token[] = [
     symbol: 'SOL',
     color: '#9945FF',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5426.png',
-    certificateUrl: dummyCertificate,
+    certificateUrl: bitcoinCertificate,
     status: 'halal',
     tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Application'],
     content: {
-      overview: dummyOverview,
-      conclusion: dummyConclusion
-    }
-  },
-  {
-    slug: 'sui',
-    pair: 'CRYPTO:SUIUSD',
-    name: 'Sui',
-    symbol: 'SUI',
-    color: '#4DA2FF',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/20947.png',
-    certificateUrl: dummyCertificate,
-    status: 'halal',
-    tags: ['Cryptocurrency', 'Blockchain', 'Parallel Processing'],
-    content: {
-      overview: dummyOverview,
-      conclusion: dummyConclusion
-    }
-  },
-  {
-    slug: 'bonk1',
-    pair: 'CRYPTO:BONKUSD',
-    name: 'Bonk',
-    symbol: 'BONK',
-    color: '#f6952a',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/23095.png',
-    certificateUrl: dummyCertificate,
-    status: 'haram',
-    tags: ['Cryptocurrency', 'Blockchain', 'Yield Farming'],
-    content: {
-      overview: dummyOverview,
-      conclusion: dummyConclusion
+      overview: solanaOverview,
+      conclusion: solanaConclusion
     }
   },
   {
@@ -123,117 +118,57 @@ export const tokens: Token[] = [
     symbol: 'TRX',
     color: '#FF0000',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1958.png',
-    certificateUrl: dummyCertificate,
+    certificateUrl: bitcoinCertificate,
     status: 'halal',
     tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Application'],
     content: {
-      overview: dummyOverview,
-      conclusion: dummyConclusion
+      overview: tronOverview,
+      conclusion: tronConclusion
     }
   },
   {
-    slug: 'hyperliquid',
-    pair: 'KUCOIN:HYPEUSDT',
-    name: 'Hyperliquid',
-    symbol: 'HYPE',
-    color: '#56EDF0',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32196.png',
-    certificateUrl: dummyCertificate,
-    status: 'syubhat',
-    tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Finance'],
-    content: {
-      overview: dummyOverview,
-      conclusion: dummyConclusion
-    }
-  },
-  {
-    slug: 'polygon-ecosystem-token',
-    pair: 'BINANCE:POLUSDT',
-    name: 'Polygon',
-    symbol: 'POL',
-    color: '#8247E5',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/3890.png',
-    certificateUrl: dummyCertificate,
+    slug: 'sui',
+    pair: 'CRYPTO:SUIUSD',
+    name: 'Sui',
+    symbol: 'SUI',
+    color: '#4DA2FF',
+    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/20947.png',
+    certificateUrl: bitcoinCertificate,
     status: 'halal',
-    tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Application'],
+    tags: ['Cryptocurrency', 'Blockchain', 'Parallel Processing'],
     content: {
-      overview: dummyOverview,
-      conclusion: dummyConclusion
+      overview: suiOverview,
+      conclusion: suiConclusion
     }
   },
   {
-    slug: 'pepe',
-    pair: 'CRYPTO:PEPEUSD',
-    name: 'Pepe',
-    symbol: 'PEPE',
-    color: '#4c9641',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/24478.png',
-    certificateUrl: dummyCertificate,
-    status: 'haram',
-    tags: ['Cryptocurrency', 'Blockchain', 'Meme Coin'],
-    content: {
-      overview: dummyOverview,
-      conclusion: dummyConclusion
-    }
-  },
-  {
-    slug: 'arbitrum',
-    pair: 'BINANCE:ARBUSDT',
-    name: 'Arbitrum',
-    symbol: 'ARB',
-    color: '#2c374b',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/11841.png',
-    certificateUrl: dummyCertificate,
+    slug: 'avalanche',
+    pair: 'CRYPTO:AVAXUSD',
+    name: 'Avalanche',
+    symbol: 'AVAX',
+    color: '#E84142',
+    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5805.png',
+    certificateUrl: bitcoinCertificate,
     status: 'halal',
-    tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Application'],
+    tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Application', 'DeFi', 'Layer 1'],
     content: {
-      overview: dummyOverview,
-      conclusion: dummyConclusion
+      overview: avalancheOverview,
+      conclusion: avalancheConclusion
     }
   },
   {
-    slug: 'cardano',
-    pair: 'CRYPTO:ADAUSD',
-    name: 'Cardano',
-    symbol: 'ADA',
-    color: '#3B82F6',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/2010.png',
-    certificateUrl: dummyCertificate,
+    slug: 'plasma-xpl',
+    pair: 'BINANCE:XPLUSDT.P',
+    name: 'Plasma',
+    symbol: 'XPL',
+    color: '#295B4F',
+    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/36645.png',
+    certificateUrl: bitcoinCertificate,
     status: 'halal',
-    tags: ['Cryptocurrency', 'Blockchain', 'Smart Contract'],
+    tags: ['Cryptocurrency', 'Blockchain', 'Stablecoin', 'DeFi', 'EVM'],
     content: {
-      overview: dummyOverview,
-      conclusion: dummyConclusion
-    }
-  },
-  {
-    slug: 'shiba-inu',
-    pair: 'CRYPTO:SHIBUSD',
-    name: 'Shiba Inu',
-    symbol: 'SHIB',
-    color: '#EF8A13',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5994.png',
-    certificateUrl: dummyCertificate,
-    status: 'haram',
-    tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Exchange'],
-    content: {
-      overview: dummyOverview,
-      conclusion: dummyConclusion
-    }
-  },
-  {
-    slug: 'pax-gold',
-    pair: 'TVC:GOLD',
-    name: 'Pax Gold',
-    symbol: 'PAXG',
-    color: '#cca727',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4705.png',
-    certificateUrl: dummyCertificate,
-    status: 'halal',
-    tags: ['Cryptocurrency', 'Blockchain', 'Gold Backed'],
-    content: {
-      overview: dummyOverview,
-      conclusion: dummyConclusion
+      overview: plasmaXplOverview,
+      conclusion: plasmaXplConclusion
     }
   }
 ];

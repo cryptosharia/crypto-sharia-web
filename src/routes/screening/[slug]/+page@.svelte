@@ -119,9 +119,9 @@
           <h1 class="text-3xl leading-10 font-semibold sm:text-4xl" style="color: {token.color}">
             {token.name}
           </h1>
-          <h3 class="ml-0 text-base font-semibold sm:text-xl" style="letter-spacing: 1px;">
+          <h2 class="ml-0 text-base font-semibold sm:text-xl" style="letter-spacing: 1px;">
             {token.symbol}
-          </h3>
+          </h2>
         </div>
       </div>
       <div class="flex flex-row gap-x-2">
@@ -273,7 +273,7 @@
     class="flex flex-col gap-y-2 rounded-2xl border-2 border-slate-200 bg-white px-5 py-6 shadow-lg"
   >
     <div class="flex flex-row items-center gap-x-2">
-      <h1 class="text-3xl font-semibold text-orange-600">Kesimpulan</h1>
+      <h2 class="text-3xl font-semibold text-orange-600">Kesimpulan</h2>
       <span
         style="letter-spacing: 1px;"
         class="rounded-full px-2 py-0.5 font-bold text-white uppercase"
