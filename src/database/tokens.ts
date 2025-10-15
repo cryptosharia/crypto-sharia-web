@@ -38,7 +38,14 @@ export const tokens: Token[] = [
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1.png',
     certificateUrl: bitcoinCertificate,
     status: 'halal',
-    tags: ['Layer-1', 'Store of Value', 'Digital Currency', 'Payment', 'Pioneer'],
+    tags: [
+      'Layer-1',
+      'Store of Value',
+      'Digital Currency',
+      'Payment',
+      'Pioneer',
+      'Satoshi Nakamoto'
+    ],
     content: {
       overview: bitcoinOverview,
       conclusion: bitcoinConclusion
@@ -53,7 +60,15 @@ export const tokens: Token[] = [
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1027.png',
     certificateUrl: bitcoinCertificate,
     status: 'halal',
-    tags: ['Layer-1', 'Smart Contract Platform', 'DeFi', 'dApp', 'NFT'],
+    tags: [
+      'Layer-1',
+      'Smart Contract Platform',
+      'DeFi',
+      'dApp',
+      'NFT',
+      'Pioneer',
+      'Vitalik Buterin'
+    ],
     content: {
       overview: ethereumOverview,
       conclusion: ethereumConclusion
@@ -68,7 +83,7 @@ export const tokens: Token[] = [
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/52.png',
     certificateUrl: bitcoinCertificate,
     status: 'halal',
-    tags: ['Layer-1', 'Payment Network', 'Remittance', 'Bridge Currency'],
+    tags: ['Layer-1', 'Payment Network', 'Remittance', 'Bridge Currency', 'Ripple'],
     content: {
       overview: xrpOverview,
       conclusion: xrpConclusion
@@ -98,7 +113,15 @@ export const tokens: Token[] = [
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5426.png',
     certificateUrl: bitcoinCertificate,
     status: 'halal',
-    tags: ['Layer-1', 'Smart Contract Platform', 'DeFi', 'dApp', 'NFT', 'Gaming'],
+    tags: [
+      'Layer-1',
+      'Smart Contract Platform',
+      'DeFi',
+      'dApp',
+      'NFT',
+      'Gaming',
+      'Anatoly Yakovenko'
+    ],
     content: {
       overview: solanaOverview,
       conclusion: solanaConclusion
@@ -113,7 +136,7 @@ export const tokens: Token[] = [
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1958.png',
     certificateUrl: bitcoinCertificate,
     status: 'halal',
-    tags: ['Layer-1', 'Content Platform', 'Entertainment', 'DeFi', 'Payment'],
+    tags: ['Layer-1', 'Content Platform', 'Entertainment', 'DeFi', 'Payment', 'Justin Sun'],
     content: {
       overview: tronOverview,
       conclusion: tronConclusion
@@ -131,12 +154,13 @@ export const tokens: Token[] = [
     tags: [
       'Layer-1',
       'Smart Contract Platform',
-      'Web3',
       'dApp',
       'DeFi',
       'NFT',
       'Gaming',
-      'Parallel Processing'
+      'Parallel Processing',
+      'Mysten Labs',
+      'Evan Cheng'
     ],
     content: {
       overview: suiOverview,
