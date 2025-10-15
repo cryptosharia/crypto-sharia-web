@@ -64,7 +64,7 @@ export const tokens: Token[] = [
     color: '#F3BA2F',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1839.png',
     certificateUrl: dummyCertificate,
-    status: 'haram',
+    status: 'syubhat',
     tags: ['Cryptocurrency', 'Blockchain', 'Centralized Exchange'],
     content: {
       overview: dummyOverview,
@@ -139,7 +139,7 @@ export const tokens: Token[] = [
     color: '#56EDF0',
     logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/32196.png',
     certificateUrl: dummyCertificate,
-    status: 'haram',
+    status: 'syubhat',
     tags: ['Cryptocurrency', 'Blockchain', 'Decentralized Finance'],
     content: {
       overview: dummyOverview,

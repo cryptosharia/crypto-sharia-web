@@ -2,7 +2,7 @@ import type { QuotedToken } from '../models';
 
 export function getTokens(
   tokens: QuotedToken[],
-  category: 'all' | 'halal' | 'haram' = 'all',
+  category: 'all' | 'halal' | 'haram' | 'syubhat' = 'all',
   limit?: number,
   skip: string[] = []
 ) {

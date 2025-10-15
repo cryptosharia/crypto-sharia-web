@@ -16,7 +16,7 @@
     name: string;
     ticker: string;
     color: string;
-    status: 'halal' | 'haram' | 'gray';
+    status: 'halal' | 'haram' | 'syubhat';
     logoUrl: string;
     isHiddenOnXS?: boolean;
     isHiddenOnSM?: boolean;
@@ -44,6 +44,7 @@
         class="mx-auto flex size-24 items-center justify-center overflow-hidden rounded-full bg-white outline-2"
         class:outline-green-500={status === 'halal'}
         class:outline-red-500={status === 'haram'}
+        class:outline-slate-400={status === 'syubhat'}
       >
         <img src={logoUrl} alt={`${name} | ${ticker}`} class="size-24 rounded-full" />
       </div>
@@ -51,12 +52,14 @@
         class="absolute bottom-0 left-1/2 h-2.5 w-24 -translate-x-1/2"
         class:bg-green-500={status === 'halal'}
         class:bg-red-500={status === 'haram'}
+        class:bg-slate-400={status === 'syubhat'}
       ></div>
     </div>
     <div
       class="z-2 h-10 w-full rounded-2xl border-2 border-white shadow-md"
       class:bg-green-500={status === 'halal'}
       class:bg-red-500={status === 'haram'}
+      class:bg-slate-400={status === 'syubhat'}
     ></div>
     <div
       class="w-[93%] -translate-y-1 rounded-b-4xl border-2 border-t-0 border-slate-200 bg-white pt-1.75 pb-0.75 text-center shadow-md"

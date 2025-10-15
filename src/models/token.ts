@@ -6,7 +6,7 @@ export type Token = {
   color: string;
   logoUrl: string;
   certificateUrl: string;
-  status: 'halal' | 'haram' | 'gray';
+  status: 'halal' | 'haram' | 'syubhat';
   tags: string[];
   content: {
     overview: string;

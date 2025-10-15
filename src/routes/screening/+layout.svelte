@@ -6,7 +6,7 @@
   import { capitalizeFirstLetter, getUrlLastSegment } from '../../utils';
 
   let { children } = $props();
-  const categories = ['Semua', 'Halal', 'Haram'];
+  const categories = ['Semua', 'Halal', 'Haram', 'Syubhat'];
 
   let selectedCategory = $state('Semua');
 

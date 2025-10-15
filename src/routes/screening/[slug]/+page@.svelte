@@ -110,10 +110,10 @@
         <img
           src={token.logoUrl}
           alt={token.symbol}
-          class="size-18 rounded-full border-2 bg-white object-cover sm:size-20 {token.status ===
-          'halal'
-            ? 'border-green-500'
-            : 'border-red-500'}"
+          class="size-18 rounded-full border-2 bg-white object-cover sm:size-20"
+          class:border-green-500={token.status === 'halal'}
+          class:border-red-500={token.status === 'haram'}
+          class:border-slate-400={token.status === 'syubhat'}
         />
         <div class="flex flex-col">
           <h1 class="text-3xl leading-10 font-semibold sm:text-4xl" style="color: {token.color}">
@@ -128,9 +128,10 @@
         <h3 class="text-center font-semibold" style="letter-spacing: 2px;">
           Status <span class="hidden sm:inline">{' : '}</span><br class="inline sm:hidden" /><span
             style="letter-spacing: 1px;"
-            class="rounded-full px-2 py-1 font-bold text-white uppercase {token.status === 'halal'
-              ? 'bg-green-500'
-              : 'bg-red-500'}">{token.status}</span
+            class="rounded-full px-2 py-1 font-bold text-white uppercase"
+            class:bg-green-500={token.status === 'halal'}
+            class:bg-red-500={token.status === 'haram'}
+            class:bg-slate-400={token.status === 'syubhat'}>{token.status}</span
           >
         </h3>
       </div>
@@ -149,7 +150,7 @@
           <b
             >{formatPrice(token.price)}
             <span class="text-slate-400">|</span>
-            <span class={token.percent_change_24h > 0 ? 'text-green-500' : 'text-red-500'}
+            <span class={token.percent_change_24h < 0 ? 'text-red-500' : 'text-green-500'}
               >{token.percent_change_24h > 0 ? '+' : ''}{token.percent_change_24h?.toFixed(
                 2
               )}%</span
@@ -275,9 +276,10 @@
       <h1 class="text-3xl font-semibold text-orange-600">Kesimpulan</h1>
       <span
         style="letter-spacing: 1px;"
-        class="rounded-full px-2 py-0.5 font-bold text-white uppercase {status === 'halal'
-          ? 'bg-green-500'
-          : 'bg-red-500'}">{status}</span
+        class="rounded-full px-2 py-0.5 font-bold text-white uppercase"
+        class:bg-green-500={status === 'halal'}
+        class:bg-red-500={status === 'haram'}
+        class:bg-slate-400={status === 'syubhat'}>{status}</span
       >
     </div>
     <Divider usePadding={false} />
