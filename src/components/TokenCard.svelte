@@ -16,7 +16,7 @@
     name: string;
     ticker: string;
     color: string;
-    status: 'halal' | 'haram';
+    status: 'halal' | 'haram' | 'gray';
     logoUrl: string;
     isHiddenOnXS?: boolean;
     isHiddenOnSM?: boolean;

@@ -43,13 +43,13 @@
   >
     <div class="bg-black/80">
       <div class="mx-auto flex flex-col items-center {containerPadding}">
-        <h1
+        <h2
           data-aos="zoom-in"
           data-aos-duration="1000"
           class="strokeme text-center font-jua text-5xl text-orange-600 md:text-6xl"
         >
           JOIN <span class="text-discord">Discord Premium</span> CryptoSharia
-        </h1>
+        </h2>
         <img
           data-aos="fade-up"
           data-aos-duration="1000"
@@ -115,13 +115,13 @@
         />
       </div>
       <div class="flex flex-col justify-center gap-y-4">
-        <h1
+        <h2
           data-aos="zoom-in"
           data-aos-duration="1000"
           class="text-center text-3xl font-semibold text-slate-100 sm:text-4xl md:text-[1.75rem] lg:text-[2rem] xl:text-[2.5rem]"
         >
           <i>Testimoni</i>
-        </h1>
+        </h2>
         <div data-aos="fade-up" data-aos-duration="1000" class="flex flex-row">
           {#each Array.from({ length: 3 }) as _}
             <div class="flex shrink-0 animate-discord-testimonial flex-row">

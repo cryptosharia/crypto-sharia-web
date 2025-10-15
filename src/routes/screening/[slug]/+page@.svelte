@@ -12,7 +12,6 @@
   import { getTokenBySlug, getTokens } from '../../../helpers/tokens';
   import Tag from '../../../components/Tag.svelte';
   import { navigating } from '$app/state';
-  import { onMount } from 'svelte';
   import Modal from '../../../components/Modal.svelte';
 
   let token: QuotedToken | undefined = $state(
@@ -24,6 +23,7 @@
   );
 
   let modalVisible = $state(false);
+  let modalContent = $state<'certificate' | 'chart'>('certificate');
 
   $effect(() => {
     navigating.complete;
@@ -197,25 +197,53 @@
       </div>
     </div>
     <Divider usePadding={false} />
-    <div class="flex gap-2">
+    <div class="flex flex-wrap gap-2">
       <button
-        class="rounded-xl bg-[#131722] px-2 py-1.5 text-white hover:cursor-pointer"
-        onclick={() => (modalVisible = true)}>TradingView</button
+        class="rounded-xl bg-orange-500 px-2 py-1.5 text-white hover:cursor-pointer hover:opacity-80"
+        onclick={() => {
+          modalContent = 'certificate';
+          modalVisible = true;
+        }}>Sertifikat</button
+      >
+      <button
+        class="rounded-xl bg-[#131722] px-2 py-1.5 text-white hover:cursor-pointer hover:opacity-80"
+        onclick={() => {
+          modalContent = 'chart';
+          modalVisible = true;
+        }}>Grafik</button
       >
       <a
-        class="rounded-xl bg-[#3661fb] px-2 py-1.5 text-white hover:cursor-pointer"
+        class="rounded-xl bg-[#3661fb] px-2 py-1.5 text-white hover:cursor-pointer hover:opacity-80"
         href="https://coinmarketcap.com/currencies/{token.slug}"
         target="_blank">CoinMarketCap</a
       >
     </div>
     <Modal bind:modalVisible>
-      <h1
+      <h2
         class="mb-2 text-start text-2xl font-semibold sm:text-center sm:text-3xl"
         style="color: {token.color}"
       >
-        {token.symbol}/USD Chart
-      </h1>
-      <div id="chart-container" class="h-[70vh] w-[85vw]"></div>
+        {#if modalContent === 'chart'}
+          Grafik {token.symbol}/USD
+        {:else}
+          Sertifikat {token.name}
+        {/if}
+      </h2>
+      <div
+        id="chart-container"
+        class="h-[70vh] w-[85vw]"
+        class:hidden={modalContent !== 'chart'}
+      ></div>
+      <div
+        class="max-h-[70vh] w-[80vw] overflow-hidden md:w-[80vw] xl:w-[65vw]"
+        class:hidden={modalContent !== 'certificate'}
+      >
+        <img
+          src={token.certificateUrl}
+          alt="{token.name} Certificate"
+          class="size-full rounded-lg object-contain"
+        />
+      </div>
     </Modal>
   </section>
 {/snippet}

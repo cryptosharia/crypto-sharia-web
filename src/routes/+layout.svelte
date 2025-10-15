@@ -53,7 +53,7 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
-    <h1 class="text-2xl text-orange-600 sm:text-3xl">Selamat Datang 👋</h1>
+    <span class="text-2xl text-orange-600 sm:text-3xl">Selamat Datang 👋</span>
     <a href="https://lynk.id/cryptosharia" target="_blank">
       <img
         src={popUpAd}

@@ -18,7 +18,7 @@
   style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);"
   class="rounded-xl border-2 border-slate-300 bg-white shadow-xl"
 >
-  <div class="p-4">
+  <div class="p-2.5 md:p-4">
     <button
       aria-label="Close Pop Up"
       class="group absolute top-1.5 right-1.5 rounded-xl border border-slate-500 p-1.5 hover:cursor-pointer hover:border-orange-600 hover:bg-orange-600/10"

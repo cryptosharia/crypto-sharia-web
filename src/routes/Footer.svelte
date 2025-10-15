@@ -125,14 +125,14 @@
             >
               {#if isSendingEmailError && !isSendingEmail}
                 <span class="text-base text-white italic"
-                  >Gagal mengirim pesan, silahkkan chat WhatsApp saja!</span
+                  >Gagal mengirim email, silahkkan chat WhatsApp saja!</span
                 >
               {:else if isSendingEmailSuccess && !isSendingEmail}
                 <span class="text-base text-white italic"
-                  >Pesan berhasil dikirim, terima kasih!</span
+                  >Email berhasil dikirim, terima kasih!</span
                 >
               {:else if isSendingEmail}
-                <span class="text-base text-white italic">Mengirim pesan...</span>
+                <span class="text-base text-white italic">Mengirim email...</span>
               {/if}
               <button type="submit">
                 <PrimaryButton aos={false} text="✉️ Kirim Email" size="small" extend={true} />
@@ -193,9 +193,9 @@
               />
               <Modal bind:modalVisible>
                 <div class="w-80 sm:w-120">
-                  <h1 class="text-center text-2xl font-semibold text-orange-600">
+                  <span class="block text-center text-2xl font-semibold text-orange-600">
                     Rekening Donasi
-                  </h1>
+                  </span>
                   <Divider usePadding={false} />
                   <ul class="mt-3 space-y-2">
                     <li class="flex justify-between">
