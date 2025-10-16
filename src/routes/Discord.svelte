@@ -139,8 +139,8 @@
             data-aos-duration="1000"
             class="mb-1.5 text-3xl font-bold text-white md:text-4xl"
           >
-            ❝Lorem Ipsum Dolor Sit Amet, consectetur adipiscing elito. Suspendisse dictum gomu gomu
-            no lacinia elementum❞
+            ❝Kapan lagi ada komunitas crypto yang bukan cuma ngajarin cuan, tapi juga taat syariat,
+            serta melek teknologi masa depan?❞
           </p>
           <cite
             data-aos="zoom-in"
