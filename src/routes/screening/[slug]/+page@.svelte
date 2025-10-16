@@ -227,7 +227,7 @@
         {#if modalContent === 'chart'}
           Grafik {token.symbol}/USD
         {:else}
-          Sertifikat {token.name}
+          Sertifikat {token.symbol}
         {/if}
       </h2>
       <div

@@ -1,4 +1,4 @@
-Uang, nilai, dan inflasi adalah konsep ekonomi dasar yang sangat memengaruhi kehidupan sehari-hari kita. Meski terdengar rumit, ketiga hal ini sebenarnya dapat dipahami dengan mudah melalui contoh-contoh sederhana. Panduan ini akan menjelaskan **apa itu uang**, **bagaimana nilai uang bekerja**, **apa itu inflasi**, serta **hubungan di antara ketiganya**, dilengkapi ilustrasi praktis dan tips untuk menghadapi inflasi. Dengan memahami konsep-konsep ini, diharapkan masyarakat umum dapat lebih bijak dalam mengelola keuangan sehari-hari dan melindungi daya beli uangnya.
+Panduan ini akan menjelaskan **apa itu uang**, **bagaimana nilai uang bekerja**, **apa itu inflasi**, serta **hubungan di antara ketiganya**, dilengkapi ilustrasi praktis dan tips untuk menghadapi inflasi. Dengan memahami konsep-konsep ini, diharapkan masyarakat umum dapat lebih bijak dalam mengelola keuangan sehari-hari dan melindungi daya beli uangnya.
 
 ## Definisi dan Sejarah Singkat Uang
 

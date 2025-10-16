@@ -15,27 +15,13 @@
 
   let post = $state(getPostBySlug(page.data.posts, page.params.slug || ''));
 
-  let posts = $state(
-    getPosts(
-      page.data.posts,
-      page.data.post?.category,
-      3,
-      page.data.post ? [page.data.post.slug] : []
-    )
-  );
+  let posts = $derived(getPosts(page.data.posts, post?.category, 3, post ? [post.slug] : []));
 
   $effect(() => {
     navigating.complete;
+
     // Refetch data whenever the route is done changing
-
     post = getPostBySlug(page.data.posts, page.params.slug || '');
-
-    posts = getPosts(
-      page.data.posts,
-      page.data.post?.category,
-      3,
-      page.data.post ? [page.data.post.slug] : []
-    );
   });
 </script>
 

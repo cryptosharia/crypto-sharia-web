@@ -9,11 +9,23 @@
   import Navbar from './Navbar.svelte';
   import Footer from './Footer.svelte';
   import { onMount } from 'svelte';
+  import { marked, type RendererThis, type Tokens } from 'marked';
 
   let { children } = $props();
 
   onMount(() => {
     AOS.init();
+
+    marked.use({
+      renderer: {
+        // Make all links that is rendered by marked to always open in a new tab
+        link(this: RendererThis, token: Tokens.Link) {
+          const text = this.parser.parseInline(token.tokens);
+          const link = marked.Renderer.prototype.link.call(this, token);
+          return link.replace('<a', "<a target='_blank' rel='noreferrer noopener' ");
+        }
+      }
+    });
   });
 
   let popUpVisible = $state(true);
