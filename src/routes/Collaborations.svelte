@@ -1,8 +1,9 @@
 <script lang="ts">
+  import Divider from '../components/Divider.svelte';
   import collaborationBG from '$lib/assets/collaborations/collaboration-bg.png';
   import fasset from '$lib/assets/collaborations/fasset-logo.png';
   import halalKulture from '$lib/assets/collaborations/halal-kulture-logo.png';
-  import Divider from '../components/Divider.svelte';
+  import tadzimulQuranAnNaajiyah from '$lib/assets/collaborations/tadzimul-quran-an-naajiyah-logo.png';
 
   const brands = [
     {
@@ -14,6 +15,11 @@
       name: 'Halal Kulture',
       logo: halalKulture,
       url: 'https://halalkulturemarket.com'
+    },
+    {
+      name: 'Tadzimul Qur’an An-Naajiyah',
+      logo: tadzimulQuranAnNaajiyah,
+      url: 'https://annaajiyah.sch.id'
     }
   ];
 </script>

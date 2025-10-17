@@ -1,12 +1,10 @@
 import type { Post } from '../models';
 
-import nushafest2025PakarHinggaTokohNasionalDorongGenerasiMudaKuasaiInvestasiSyariah from '$lib/posts/activities/nushafest-2025-pakar-hingga-tokoh-nasional-dorong-generasi-muda-kuasai-investasi-syariah/content.md?raw';
-
-import nushafest2025MenggugahGenerasiMudaUntukMelekInvestasiSyariahDiEraDigital from '$lib/posts/activities/nushafest-2025-menggugah-generasi-muda-untuk-melek-investasi-syariah-di-era-digital/content.md?raw';
-
-import nushafest2025MenyatukanSemangatGenerasiMudaUntukKeuanganSyariahYangLebihCerdasDanHalal from '$lib/posts/activities/nushafest-2025-menyatukan-semangat-generasi-muda-untuk-keuangan-syariah-yang-lebih-cerdas-dan-halal/content.md?raw';
+import nushafest2025MenyatukanSemangatGenerasiMudaUntukInvestasiDanKeuanganSyariahDiEraDigital from '$lib/posts/activities/nushafest-2025-menyatukan-semangat-generasi-muda-untuk-investasi-dan-keuangan-syariah-di-era-digital/content.md?raw';
+import nushafest2025MenyatukanSemangatGenerasiMudaUntukInvestasiDanKeuanganSyariahDiEraDigitalThumbnail from '$lib/posts/activities/nushafest-2025-menyatukan-semangat-generasi-muda-untuk-investasi-dan-keuangan-syariah-di-era-digital/thumbnail.jpg';
 
 import cryptoShariaGandengPesantrenTadzimulQuranAnNaajiyahSinergiDakwahDanEdukasiKeuanganSyariahDiEraDigital from '$lib/posts/activities/cryptosharia-gandeng-pesantren-tadzimul-quran-an-naajiyah-sinergi-dakwah-dan-edukasi-keuangan-syariah-di-era-digital/content.md?raw';
+import cryptoShariaGandengPesantrenTadzimulQuranAnNaajiyahSinergiDakwahDanEdukasiKeuanganSyariahDiEraDigitalThumbnail from '$lib/posts/activities/cryptosharia-gandeng-pesantren-tadzimul-quran-an-naajiyah-sinergi-dakwah-dan-edukasi-keuangan-syariah-di-era-digital/thumbnail.jpg';
 
 import diskusiTertutupKpmiJakartaDanCryptoshariaMenyelaraskanTeknologiKriptoDanPrinsipSyariah from '$lib/posts/activities/diskusi-tertutup-kpmi-jakarta-dan-cryptosharia-menyelaraskan-teknologi-kripto-dan-prinsip-syariah/content.md?raw';
 import diskusiTertutupKpmiJakartaDanCryptoshariaMenyelaraskanTeknologiKriptoDanPrinsipSyariahThumbnail from '$lib/posts/activities/diskusi-tertutup-kpmi-jakarta-dan-cryptosharia-menyelaraskan-teknologi-kripto-dan-prinsip-syariah/thumbnail.jpg';
@@ -35,67 +33,31 @@ import memahamiUangDanNilaiPanduanSederhanaUntukMasyarakatAwamThumbnail from '$l
 export const posts: Post[] = [
   {
     category: 'activity',
-    thumbnailUrl: 'https://ito-group.com/wp-content/uploads/2025/04/no-image.jpg',
-    date: new Date('2025-09-27T02:00:00.000Z'),
-    title:
-      'Nushafest 2025: Pakar hingga Tokoh Nasional Dorong Generasi Muda Kuasai Investasi Syariah',
-    slug: 'nushafest-2025-pakar-hingga-tokoh-nasional-dorong-generasi-muda-kuasai-investasi-syariah',
-    tags: [
-      'Nushafest',
-      'Investment',
-      'Halal Finance',
-      'Sharia Crypto',
-      'Sharia Stocks',
-      'Islamic Economy',
-      'Digital Economy',
-      'Blockchain'
-    ],
-    description:
-      'Perubahan digital yang begitu cepat membuka peluang sekaligus tantangan baru dalam dunia investasi. Bagaimana umat Islam merespons agar tetap relevan, cerdas, dan halal?',
-    content: nushafest2025PakarHinggaTokohNasionalDorongGenerasiMudaKuasaiInvestasiSyariah
-  },
-  {
-    category: 'activity',
-    thumbnailUrl: 'https://ito-group.com/wp-content/uploads/2025/04/no-image.jpg',
-    date: new Date('2025-09-27T01:00:00.000Z'),
-    title: 'Nushafest 2025: Menggugah Generasi Muda untuk Melek Investasi Syariah di Era Digital',
-    slug: 'nushafest-2025-menggugah-generasi-muda-untuk-melek-investasi-syariah-di-era-digital',
-    tags: [
-      'Nushafest',
-      'Sharia Crypto',
-      'Sharia Stocks',
-      'Digital Literacy',
-      'Halal Economy',
-      'Youth Empowerment'
-    ],
-    description:
-      'Di era digital saat ini, anak muda tidak hanya dituntut menjadi pengguna teknologi, tetapi juga pelaku aktif dalam membangun ekonomi berbasis syariah.',
-    content: nushafest2025MenggugahGenerasiMudaUntukMelekInvestasiSyariahDiEraDigital
-  },
-  {
-    category: 'activity',
-    thumbnailUrl: 'https://ito-group.com/wp-content/uploads/2025/04/no-image.jpg',
+    thumbnailUrl:
+      nushafest2025MenyatukanSemangatGenerasiMudaUntukInvestasiDanKeuanganSyariahDiEraDigitalThumbnail,
     date: new Date('2025-09-27T00:00:00.000Z'),
     title:
-      'Nushafest 2025: Menyatukan Semangat Generasi Muda untuk Keuangan Syariah yang Lebih Cerdas dan Halal',
-    slug: 'nushafest-2025-menyatukan-semangat-generasi-muda-untuk-keuangan-syariah-yang-lebih-cerdas-dan-halal',
+      'Nushafest 2025: Menyatukan Semangat Generasi Muda untuk Investasi dan Keuangan Syariah di Era Digital',
+    slug: 'nushafest-2025-menyatukan-semangat-generasi-muda-untuk-investasi-dan-keuangan-syariah-di-era-digital',
     tags: [
       'Nushafest',
-      'Youth',
+      'Collaboration',
+      'Muslim Youth',
+      'Education',
       'Sharia Crypto',
       'Sharia Finance',
       'Sharia Stocks',
       'Halal Investment',
-      'Halal Economy',
-      'Education'
+      'Halal Economy'
     ],
     description:
-      'Di tengah derasnya arus digitalisasi, umat Islam di Indonesia dihadapkan pada tantangan membangun masa depan keuangan yang cerdas sekaligus halal.',
-    content: nushafest2025MenyatukanSemangatGenerasiMudaUntukKeuanganSyariahYangLebihCerdasDanHalal
+      'Di tengah derasnya arus digitalisasi dan kemajuan teknologi finansial, umat Islam di Indonesia dihadapkan pada tantangan besar: bagaimana membangun masa depan ekonomi yang cerdas, halal, dan berkelanjutan.',
+    content: nushafest2025MenyatukanSemangatGenerasiMudaUntukInvestasiDanKeuanganSyariahDiEraDigital
   },
   {
     category: 'activity',
-    thumbnailUrl: 'https://ito-group.com/wp-content/uploads/2025/04/no-image.jpg',
+    thumbnailUrl:
+      cryptoShariaGandengPesantrenTadzimulQuranAnNaajiyahSinergiDakwahDanEdukasiKeuanganSyariahDiEraDigitalThumbnail,
     date: new Date('2025-09-03T00:00:00.000Z'),
     title:
       'CryptoSharia Gandeng Pesantren Ta’dzimul Qur’an An-Naajiyah: Sinergi Dakwah dan Edukasi Keuangan Syariah di Era Digital',
