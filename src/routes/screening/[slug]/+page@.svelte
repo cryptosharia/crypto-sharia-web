@@ -236,7 +236,7 @@
         class:hidden={modalContent !== 'chart'}
       ></div>
       <div
-        class="max-h-[70vh] w-[80vw] overflow-hidden md:w-[80vw] xl:w-[65vw]"
+        class="max-h-[70vh] w-[80vw] overflow-auto md:w-[80vw] xl:w-[65vw]"
         class:hidden={modalContent !== 'certificate'}
       >
         <img

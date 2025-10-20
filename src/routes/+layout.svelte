@@ -34,6 +34,14 @@
 <svelte:head>
   <title>CryptoSharia</title>
   <link rel="icon" type="image/png" href={logo1} />
+
+  <!-- Google Ads -->
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4244298232118608"
+    crossorigin="anonymous"
+  ></script>
+  <!-- /Google Ads -->
 </svelte:head>
 
 <!-- On load pop ip -->

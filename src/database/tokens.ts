@@ -36,6 +36,18 @@ import plasmaXplOverview from '../lib/tokens/plasma-xpl/overview.md?raw';
 import plasmaXplConclusion from '../lib/tokens/plasma-xpl/conclusion.md?raw';
 import plasmaXplCertificate from '../lib/tokens/plasma-xpl/certificate.png';
 
+import worldLibertyFinancialWLFIOverview from '../lib/tokens/world-liberty-financial-wlfi/overview.md?raw';
+import worldLibertyFinancialWLFIconclusion from '../lib/tokens/world-liberty-financial-wlfi/conclusion.md?raw';
+import worldLibertyFinancialWLFICertificate from '../lib/tokens/world-liberty-financial-wlfi/certificate.png';
+
+import paxGoldOverview from '../lib/tokens/pax-gold/overview.md?raw';
+import paxGoldConclusion from '../lib/tokens/pax-gold/conclusion.md?raw';
+import paxGoldCertificate from '../lib/tokens/pax-gold/certificate.png';
+
+import tetherGoldOverview from '../lib/tokens/tether-gold/overview.md?raw';
+import tetherGoldConclusion from '../lib/tokens/tether-gold/conclusion.md?raw';
+import tetherGoldCertificate from '../lib/tokens/tether-gold/certificate.png';
+
 export const tokens: Token[] = [
   {
     slug: 'bitcoin',
@@ -203,6 +215,51 @@ export const tokens: Token[] = [
     content: {
       overview: plasmaXplOverview,
       conclusion: plasmaXplConclusion
+    }
+  },
+  {
+    slug: 'world-liberty-financial-wlfi',
+    pair: 'MEXC:WLFIUSDT.P',
+    name: 'World Liberty Financial',
+    symbol: 'WLFI',
+    color: '#E7AC08',
+    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/33251.png',
+    certificateUrl: worldLibertyFinancialWLFICertificate,
+    status: 'haram',
+    tags: ['DeFi', 'Governance Token', 'Utility Token', 'World Liberty', 'Donald Trump'],
+    content: {
+      overview: worldLibertyFinancialWLFIOverview,
+      conclusion: worldLibertyFinancialWLFIconclusion
+    }
+  },
+  {
+    slug: 'pax-gold',
+    pair: 'TVC:GOLD',
+    name: 'Pax Gold',
+    symbol: 'PAXG',
+    color: '#e5cb22',
+    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4705.png',
+    certificateUrl: paxGoldCertificate,
+    status: 'halal',
+    tags: ['RWA', 'Gold', 'Asset-Backed Token'],
+    content: {
+      overview: paxGoldOverview,
+      conclusion: paxGoldConclusion
+    }
+  },
+  {
+    slug: 'tether-gold',
+    pair: 'TVC:GOLD',
+    name: 'Tether Gold',
+    symbol: 'XAUt',
+    color: '#D3B25B',
+    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5176.png',
+    certificateUrl: tetherGoldCertificate,
+    status: 'halal',
+    tags: ['RWA', 'Gold', 'Asset-Backed Token'],
+    content: {
+      overview: tetherGoldOverview,
+      conclusion: tetherGoldConclusion
     }
   }
 ];
