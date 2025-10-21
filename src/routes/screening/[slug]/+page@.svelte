@@ -214,10 +214,17 @@
         }}>Grafik</button
       >
       <a
+        class="rounded-xl bg-[#007BFF] px-2 py-1.5 text-white hover:cursor-pointer hover:opacity-80"
+        href={token.website}
+        rel="noopener noreferrer"
+        target="_blank">Website</a
+      >
+      <!-- <a
         class="rounded-xl bg-[#3661fb] px-2 py-1.5 text-white hover:cursor-pointer hover:opacity-80"
         href="https://coinmarketcap.com/currencies/{token.slug}"
-        target="_blank">CoinMarketCap</a
-      >
+        rel="noopener noreferrer"
+        target="_blank">CMC</a
+      > -->
     </div>
     <Modal bind:modalVisible>
       <h2

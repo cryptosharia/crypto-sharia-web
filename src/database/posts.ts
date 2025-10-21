@@ -15,6 +15,9 @@ import ustadzAliHasanBawazierResmiJadiPembinaCryptoShariaSinergiDakwahEdukasiDan
 import cryptoShariaDanHalalKultureMarketBerkolaborasiEdukasiKriptoSyariahUntukKemajuanUmat from '$lib/posts/activities/cryptosharia-dan-halal-kulture-market-berkolaborasi-edukasi-kripto-syariah-untuk-kemajuan-umat/content.md?raw';
 import cryptoShariaDanHalalKultureMarketBerkolaborasiEdukasiKriptoSyariahUntukKemajuanUmatThumbnail from '$lib/posts/activities/cryptosharia-dan-halal-kulture-market-berkolaborasi-edukasi-kripto-syariah-untuk-kemajuan-umat/thumbnail.jpg';
 
+import sejarahBitcoinDariKrisisFinansialKeEraBlockchain from '$lib/posts/articles/sejarah-bitcoin-dari-krisis-finansial-ke-era-blockchain/content.md?raw';
+import sejarahBitcoinDariKrisisFinansialKeEraBlockchainThumbnail from '$lib/posts/articles/sejarah-bitcoin-dari-krisis-finansial-ke-era-blockchain/thumbnail.png';
+
 import sejarahPenggunaanEmasUangLogamDanUangKertasHinggaEraDigital from '$lib/posts/articles/sejarah-penggunaan-emas-uang-logam-dan-uang-kertas-hingga-era-digital/content.md?raw';
 import sejarahPenggunaanEmasUangLogamDanUangKertasHinggaEraDigitalThumbnail from '$lib/posts/articles/sejarah-penggunaan-emas-uang-logam-dan-uang-kertas-hingga-era-digital/thumbnail.jpg';
 
@@ -150,6 +153,17 @@ export const posts: Post[] = [
     description:
       'Dalam upaya memperluas literasi dan pemahaman masyarakat Muslim terhadap dunia aset digital, Crypto Sharia resmi berkolaborasi dengan Halal Kulture Market untuk menghadirkan sesi edukasi bertema “Crypto Syariah dan Blockchain untuk Umat”.',
     content: cryptoShariaDanHalalKultureMarketBerkolaborasiEdukasiKriptoSyariahUntukKemajuanUmat
+  },
+  {
+    category: 'article',
+    thumbnailUrl: sejarahBitcoinDariKrisisFinansialKeEraBlockchainThumbnail,
+    date: new Date('2025-10-20T00:00:00.000Z'),
+    title: 'Sejarah Bitcoin: Dari Krisis Finansial ke Era Blockchain',
+    slug: 'sejarah-bitcoin-dari-krisis-finansial-ke-era-blockchain',
+    tags: ['bitcoin', 'history', 'blockchain', 'decentralization', 'digital finance'],
+    description:
+      'Bitcoin telah menjadi fenomena global dalam dunia keuangan digital. Namun, bagaimana sejarah kemunculannya? Materi ini akan menjelaskan latar belakang dan perjalanan Bitcoin sejak diciptakan tahun 2008 hingga perannya saat ini, dengan bahasa yang sederhana untuk masyarakat umum.',
+    content: sejarahBitcoinDariKrisisFinansialKeEraBlockchain
   },
   {
     category: 'article',

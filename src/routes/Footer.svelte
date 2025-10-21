@@ -8,7 +8,7 @@
   import PrimaryButton from '../components/PrimaryButton.svelte';
   import instagram from '$lib/assets/socmed-icons/instagram.png';
   import tiktok from '$lib/assets/socmed-icons/tiktok.png';
-  import discord from '$lib/assets/socmed-icons/discord.png';
+  import x from '$lib/assets/socmed-icons/x.png';
   import facebook from '$lib/assets/socmed-icons/facebook.png';
   import youtube from '$lib/assets/socmed-icons/youtube.png';
   import Modal from '../components/Modal.svelte';
@@ -25,9 +25,9 @@
       url: 'https://tiktok.com/@cryptosharia'
     },
     {
-      name: 'Discord',
-      icon: discord,
-      url: 'https://lynk.id/cryptosharia'
+      name: 'X',
+      icon: x,
+      url: 'https://x.com/cryptosharia_'
     },
     {
       name: 'Facebook',
@@ -161,14 +161,14 @@
                   </a>
                 {/each}
               </div>
-              <PrimaryButton
+              <!-- <PrimaryButton
                 openInNewTab={true}
                 aos={false}
                 text="👥 Grup WhatsApp Komunitas"
-                href="https://chat.whatsapp.com/KtqgS9SQGlPLweht53UrHr"
+                href="#"
                 size="small"
                 extend={true}
-              />
+              /> -->
             </div>
           </div>
           <div data-aos="fade-left" data-aos-duration="1000">

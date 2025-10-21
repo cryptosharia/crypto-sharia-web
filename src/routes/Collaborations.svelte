@@ -4,6 +4,7 @@
   import fasset from '$lib/assets/collaborations/fasset-logo.png';
   import halalKulture from '$lib/assets/collaborations/halal-kulture-logo.png';
   import tadzimulQuranAnNaajiyah from '$lib/assets/collaborations/tadzimul-quran-an-naajiyah-logo.png';
+  import berbagiLink from '$lib/assets/collaborations/berbagi-link-logo.png';
 
   const brands = [
     {
@@ -20,6 +21,11 @@
       name: 'Tadzimul Qur’an An-Naajiyah',
       logo: tadzimulQuranAnNaajiyah,
       url: 'https://annaajiyah.sch.id'
+    },
+    {
+      name: 'BerbagiLink',
+      logo: berbagiLink,
+      url: 'https://berbagi.link'
     }
   ];
 </script>

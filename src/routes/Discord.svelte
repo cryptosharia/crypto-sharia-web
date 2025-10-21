@@ -142,11 +142,11 @@
             ❝Kapan lagi ada komunitas crypto yang bukan cuma ngajarin cuan, tapi juga taat syariat,
             serta melek teknologi masa depan?❞
           </p>
-          <cite
+          <!-- <cite
             data-aos="zoom-in"
             data-aos-duration="1000"
             class="text-2xl font-bold text-white italic md:text-[2rem]">-Daffa Ilhami-</cite
-          >
+          > -->
         </blockquote>
         {@render joinButton('large')}
         {@render joinButton('medium')}

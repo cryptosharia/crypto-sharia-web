@@ -33,7 +33,7 @@
   <NotFoundPage message="Postingan tidak ditemukan" />
 {:else}
   <span class="block h-21 w-full"></span>
-  <main class="mx-auto flex w-full max-w-[91%] flex-col xl:max-w-[71rem]">
+  <main class="mx-auto flex w-full max-w-[91%] flex-col xl:max-w-[66rem]">
     <section>
       <div class="mb-3.5 flex flex-row items-start gap-x-4">
         {@render backButton()}

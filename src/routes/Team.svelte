@@ -11,29 +11,29 @@
   const people = [
     {
       name: 'K.H. Izzuddin Edi Siswanto, Lc., M.A., Ph.D.',
-      bio: 'Anggota DSN-MUI & DPS Dompet Dhuafa',
+      bio: 'Members of DSN-MUI & DPS Dompet Dhuafa',
       image: pembina1
     },
     {
       name: 'Ustadz Ali Hasan Bawazier',
-      bio: 'Ketua DPP Perhimpunan Al Irsyad',
+      bio: 'Chairman of the DPP Al Irsyad Association',
       image: pembina2
     },
     {
       name: 'Ustadz Devin Halim Wijaya, B.B.A., M. Sc.',
-      bio: 'Alumni Idary LIPIA & IIUM, Malaysia',
+      bio: 'B.B.A. Administrative Management (LIPIA, Indonesia), & M.Sc. Islamic Economics (IIUM, Malaysia)',
       image: pembina3
     },
     {
-      name: 'Ustadz Ade Setiawan, Lc.',
-      bio: 'Alumni Universitas Islam Madinah',
+      name: 'Ustadz Tengku M. Laksamana, B.Sc., B.A.',
+      bio: 'B.Sc. Computer Science (USQ, Australia), B.A. Sharia (Al Rayyan, Yemen), & M.A. Islamic Economics (UIN Samarinda, ongoing)',
       image: pembina4
     },
     {
       name: 'Dea Saka Kurnia Putra, S.Tr.MP',
-      bio: 'Founder AKSI, Blockchain Society',
+      bio: 'Founder of Asosiasi Aset Kripto Syariah Indonesia (AKSI) & Blockchain Society',
       image: pembina5
-    },
+    }
   ];
 </script>
 
