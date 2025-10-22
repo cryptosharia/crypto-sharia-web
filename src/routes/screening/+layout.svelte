@@ -21,16 +21,6 @@
   });
 </script>
 
-<svelte:head>
-  <title>Screening - CryptoSharia</title>
-  <meta property="og:title" content="Screening - CryptoSharia" />
-  <meta name="description" content="Daftar token yang sudah di-screening oleh tim CryptoSharia" />
-  <meta
-    property="og:description"
-    content="Daftar token yang sudah di-screening oleh tim CryptoSharia"
-  />
-</svelte:head>
-
 <main class="nav-space mx-auto w-full max-w-[90rem] text-center">
   <span class="block h-23 w-full"></span>
   <section class="mx-auto max-w-[95%]">

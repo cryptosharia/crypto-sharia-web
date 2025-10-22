@@ -1,4 +1,5 @@
 <script lang="ts">
+  import logo1 from '$lib/assets/logo1.png';
   import { page } from '$app/state';
   import TokenCard from '../../../components/TokenCard.svelte';
   import { getTokens } from '../../../helpers/tokens';
@@ -8,6 +9,20 @@
 
 <svelte:head>
   <meta name="robots" content="noindex" />
+
+  <title>Screening - CryptoSharia</title>
+  <meta property="og:title" content="Screening - CryptoSharia" />
+  <meta
+    name="description"
+    content="Daftar token haram yang sudah di-screening oleh tim CryptoSharia"
+  />
+  <meta
+    property="og:description"
+    content="Daftar token haram yang sudah di-screening oleh tim CryptoSharia"
+  />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content={logo1} />
 </svelte:head>
 
 <section

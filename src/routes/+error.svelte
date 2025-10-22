@@ -1,15 +1,24 @@
 <script lang="ts">
+  import logo1 from '$lib/assets/logo1.png';
   import { page } from '$app/state';
   import PrimaryButton from '../components/PrimaryButton.svelte';
 </script>
 
 <svelte:head>
-  <title>{page.status} - CryptoSharia</title>
   <meta name="robots" content="noindex" />
+  <title>{page.status} - CryptoSharia</title>
+  <meta property="og:title" content="{page.status} - CryptoSharia" />
   <meta
     name="description"
     content={page.status == 404 ? 'Halaman tidak ditemukan' : 'Terjadi kesalahan'}
   />
+  <meta
+    property="og:description"
+    content={page.status == 404 ? 'Halaman tidak ditemukan' : 'Terjadi kesalahan'}
+  />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content={logo1} />
 </svelte:head>
 
 <div class="flex h-screen w-screen flex-col items-center justify-center">

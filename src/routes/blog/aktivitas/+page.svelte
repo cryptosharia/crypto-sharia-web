@@ -1,4 +1,5 @@
 <script lang="ts">
+  import logo1 from '$lib/assets/logo1.png';
   import PostCard from '../../../components/PostCard.svelte';
   import { getPosts } from '../../../helpers/posts';
   import { page } from '$app/state';
@@ -9,11 +10,17 @@
 <svelte:head>
   <title>Aktivitas - CryptoSharia</title>
   <meta property="og:title" content="Aktivitas - CryptoSharia" />
-  <meta name="description" content="Temukan semua update aktivitas terbaru tentang CryptoSharia di sini." />
+  <meta
+    name="description"
+    content="Temukan semua update aktivitas terbaru tentang CryptoSharia di sini."
+  />
   <meta
     property="og:description"
     content="Temukan semua update aktivitas terbaru tentang CryptoSharia di sini."
   />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content={logo1} />
 </svelte:head>
 
 <section

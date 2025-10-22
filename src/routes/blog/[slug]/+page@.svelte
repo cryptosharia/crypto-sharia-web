@@ -35,7 +35,7 @@
   />
 
   <meta property="og:type" content="article" />
-  <meta property="og:image" content={post?.thumbnailUrl} />
+  <meta property="og:image" content="https://www.cryptosharia.id{post?.thumbnailUrl}" />
 </svelte:head>
 
 {#if !post}

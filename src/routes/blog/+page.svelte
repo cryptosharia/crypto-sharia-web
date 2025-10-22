@@ -1,4 +1,5 @@
 <script lang="ts">
+  import logo1 from '$lib/assets/logo1.png';
   import PostCard from '../../components/PostCard.svelte';
   import { getPosts } from '../../helpers/posts';
   import { page } from '$app/state';
@@ -14,6 +15,9 @@
     property="og:description"
     content="Temukan semua update terbaru tentang CryptoSharia di sini."
   />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content={logo1} />
 </svelte:head>
 
 <section

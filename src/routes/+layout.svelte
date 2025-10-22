@@ -72,9 +72,6 @@
   <meta name="author" content="CryptoSharia" />
   <link rel="icon" type="image/png" href={logo1} />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content={logo1} />
-
   <!-- Google Ads -->
   <script
     async
