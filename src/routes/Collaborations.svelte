@@ -45,8 +45,12 @@
               aria-hidden={i !== 0}
             >
               {#each brands as brand}
-                <a href={brand.url} target="_blank" class="transition-transform hover:scale-110">
-                  <img src={brand.logo} alt={brand.name} class="w-38 md:w-42" />
+                <a
+                  href={brand.url}
+                  target="_blank"
+                  class="flex size-38 items-center justify-center transition-transform hover:scale-110 md:size-42"
+                >
+                  <img src={brand.logo} alt={brand.name} class="w-full" />
                 </a>
               {/each}
             </div>
