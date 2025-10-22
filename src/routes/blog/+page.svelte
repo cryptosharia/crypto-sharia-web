@@ -6,6 +6,16 @@
   const posts = getPosts(page.data.posts, 'all');
 </script>
 
+<svelte:head>
+  <title>Blog - CryptoSharia</title>
+  <meta property="og:title" content="Blog - CryptoSharia" />
+  <meta name="description" content="Temukan semua update terbaru tentang CryptoSharia di sini." />
+  <meta
+    property="og:description"
+    content="Temukan semua update terbaru tentang CryptoSharia di sini."
+  />
+</svelte:head>
+
 <section
   class="flex w-full flex-row flex-wrap items-start justify-center gap-6 px-6 pt-5 md:gap-8 lg:gap-10"
 >

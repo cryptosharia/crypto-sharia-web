@@ -27,6 +27,15 @@
 
 <svelte:head>
   <title>{post ? post.title : '404'} - CryptoSharia</title>
+  <meta property="og:title" content="{post ? post.title : '404'} - CryptoSharia" />
+  <meta name="description" content={post ? post.description : 'Postingan tidak ditemukan.'} />
+  <meta
+    property="og:description"
+    content={post ? post.description : 'Postingan tidak ditemukan.'}
+  />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content={post?.thumbnailUrl} />
 </svelte:head>
 
 {#if !post}

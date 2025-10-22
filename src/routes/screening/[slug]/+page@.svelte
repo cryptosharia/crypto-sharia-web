@@ -84,6 +84,18 @@
 
 <svelte:head>
   <title>{token ? token.name : '404'} - CryptoSharia</title>
+  <meta property="og:title" content="{token ? token.name : '404'} - CryptoSharia" />
+  <meta
+    name="description"
+    content={token ? `${token.name} screening by CryptoSharia.` : 'Token tidak ditemukan.'}
+  />
+  <meta
+    property="og:description"
+    content={token ? `${token.name} screening by CryptoSharia.` : 'Token tidak ditemukan.'}
+  />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content={token?.logoUrl} />
 </svelte:head>
 
 {#if !token}

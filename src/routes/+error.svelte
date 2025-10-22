@@ -3,6 +3,15 @@
   import PrimaryButton from '../components/PrimaryButton.svelte';
 </script>
 
+<svelte:head>
+  <title>{page.status} - CryptoSharia</title>
+  <meta name="robots" content="noindex" />
+  <meta
+    name="description"
+    content={page.status == 404 ? 'Halaman tidak ditemukan' : 'Terjadi kesalahan'}
+  />
+</svelte:head>
+
 <div class="flex h-screen w-screen flex-col items-center justify-center">
   <h1 id="status" style="font-weight: bold; color: var(--color-orange-600); text-align: center;">
     {page.status}

@@ -22,10 +22,6 @@
   });
 </script>
 
-<svelte:head>
-  <title>Blog - CryptoSharia</title>
-</svelte:head>
-
 <main class="nav-space mx-auto w-full max-w-[90rem] text-center">
   <span class="block h-23 w-full"></span>
   <section class="mx-auto max-w-[95%]">
