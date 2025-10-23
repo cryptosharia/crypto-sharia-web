@@ -3,11 +3,9 @@
   import PostCard from '../components/PostCard.svelte';
   import Title from '../components/Title.svelte';
   import PrimaryButton from '../components/PrimaryButton.svelte';
+  import type { PageData } from './$types';
 
-  import { getPosts } from '../helpers/posts';
-  import { page } from '$app/state';
-
-  const posts = getPosts(page.data.posts, 'article', 6);
+  let { data }: { data: PageData } = $props();
 </script>
 
 <section id="artikel" class="nav-space z-9 mb-10 w-full max-w-[90rem] lg:max-xl:max-w-[70rem]">
@@ -17,7 +15,7 @@
     <div
       class="flex w-full flex-row flex-wrap items-start justify-center gap-6 px-6 pt-5 md:gap-8 lg:gap-10"
     >
-      {#each posts as post, i}
+      {#each data.posts as post, i}
         <PostCard
           thumbnailUrl={post.thumbnailUrl}
           date={post.date}

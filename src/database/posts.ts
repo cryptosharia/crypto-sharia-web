@@ -1,5 +1,3 @@
-import type { Post } from '../models';
-
 import nushafest2025MenyatukanSemangatGenerasiMudaUntukInvestasiDanKeuanganSyariahDiEraDigital from '$lib/posts/activities/nushafest-2025-menyatukan-semangat-generasi-muda-untuk-investasi-dan-keuangan-syariah-di-era-digital/content.md?raw';
 import nushafest2025MenyatukanSemangatGenerasiMudaUntukInvestasiDanKeuanganSyariahDiEraDigitalThumbnail from '$lib/posts/activities/nushafest-2025-menyatukan-semangat-generasi-muda-untuk-investasi-dan-keuangan-syariah-di-era-digital/thumbnail.jpg';
 
@@ -33,7 +31,7 @@ import menabungInvestasiDanSpekulasiApaBedanyaThumbnail from '$lib/posts/article
 import memahamiUangDanNilaiPanduanSederhanaUntukMasyarakatAwam from '$lib/posts/articles/memahami-uang-dan-nilai-panduan-sederhana-untuk-masyarakat-awam/content.md?raw';
 import memahamiUangDanNilaiPanduanSederhanaUntukMasyarakatAwamThumbnail from '$lib/posts/articles/memahami-uang-dan-nilai-panduan-sederhana-untuk-masyarakat-awam/thumbnail.jpg';
 
-export const posts: Post[] = [
+export const posts = [
   {
     category: 'activity',
     thumbnailUrl:
