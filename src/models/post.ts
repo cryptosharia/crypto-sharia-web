@@ -6,5 +6,5 @@ export type Post = {
   title: string;
   description: string;
   thumbnailUrl: string;
-  content_url: string;
+  content: string;
 };

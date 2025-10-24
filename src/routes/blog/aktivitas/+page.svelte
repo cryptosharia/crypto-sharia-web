@@ -1,10 +1,9 @@
 <script lang="ts">
   import logo1 from '$lib/assets/logo1.png';
   import PostCard from '../../../components/PostCard.svelte';
-  import { getPosts } from '../../../helpers/posts';
-  import { page } from '$app/state';
+  import type { PageProps } from '../$types';
 
-  const posts = getPosts(page.data.posts, 'activity');
+  let { data }: PageProps = $props();
 </script>
 
 <svelte:head>
@@ -26,7 +25,7 @@
 <section
   class="flex w-full flex-row flex-wrap items-start justify-center gap-6 px-6 pt-5 md:gap-8 lg:gap-10"
 >
-  {#each posts as post}
+  {#each data.posts as post}
     <PostCard
       thumbnailUrl={post.thumbnailUrl}
       date={post.date}

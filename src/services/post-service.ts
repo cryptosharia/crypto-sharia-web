@@ -1,6 +1,8 @@
 import type { Post } from '../models';
 
-function mapRowToModel(post: any): Post {
+async function mapRowToModel(post: any): Promise<Post> {
+  const content = await (await fetch(post.content_url)).text();
+
   return {
     slug: post.slug,
     category: post.category,
@@ -8,24 +10,30 @@ function mapRowToModel(post: any): Post {
     tags: post.tags,
     title: post.title,
     description: post.description,
-    thumbnailUrl: post.thumbnailUrl,
-    content_url: post.content_url
+    thumbnailUrl: post.thumbnail_url,
+    content: content
   };
 }
 
 export async function getPosts(
-  slug?: string,
-  category?: 'activity' | 'article',
-  range?: [number, number]
+  fetch: any,
+  baseUrl: string,
+  params: {
+    slug?: string;
+    category?: 'activity' | 'article';
+    skip?: string[];
+    range?: [number, number];
+  } = {}
 ) {
   try {
-    const url = new URL('http://localhost:5173/api/posts');
+    const url = new URL(baseUrl + '/api/posts');
 
-    if (slug) url.searchParams.set('slug', slug);
-    if (category) url.searchParams.set('category', category);
-    if (range && range.length === 2) {
-      url.searchParams.set('from', String(range[0]));
-      url.searchParams.set('to', String(range[1]));
+    if (params.slug) url.searchParams.set('slug', params.slug);
+    if (params.category) url.searchParams.set('category', params.category);
+    if (params.skip && params.skip.length > 0) url.searchParams.set('skip', params.skip.join(','));
+    if (params.range && params.range.length === 2) {
+      const [from, to] = params.range;
+      url.searchParams.set('range', `${from},${to}`);
     }
 
     const res = await fetch(url);
@@ -36,29 +44,14 @@ export async function getPosts(
 
     if (result.error) throw new Error(result.message);
 
-    let posts: Post[] = result.data.map(mapRowToModel);
+    let posts: Post[] = result.data.map(async (post: any) => await mapRowToModel(post));
 
-    // if (skip.length > 0) posts = posts.filter((post: Post) => !skip.includes(post.slug));
-
-    return posts;
+    // Since the posts are fetched asynchronously,
+    // meaning that the posts will be an array of promises,
+    // so we need to wait for all the promises to resolve
+    return await Promise.all(posts);
   } catch (error: any) {
     console.error(error);
     throw new Error(error.toString());
   }
 }
-
-// export async function getPostBySlug(slug: string) {
-//   try {
-//     const res = await fetch('/api/posts?slug=' + slug);
-
-//     if (!res.ok) throw new Error('Failed to fetch post');
-
-//     const data = (await res.json()).data;
-//     const post = mapRowToModel(data[0]);
-
-//     return post;
-//   } catch (error: any) {
-//     console.error(error);
-//     throw new Error(error.toString());
-//   }
-// }

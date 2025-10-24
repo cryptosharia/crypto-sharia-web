@@ -4,8 +4,8 @@ export const GET = async ({ url }) => {
   try {
     const slug = url.searchParams.get('slug');
     const category = url.searchParams.get('category');
-    const from = url.searchParams.get('from') ? parseInt(url.searchParams.get('from')!) : null;
-    const to = url.searchParams.get('to') ? parseInt(url.searchParams.get('to')!) : null;
+    const skip = url.searchParams.get('skip'); // e.g. "slug-a,slug-b,slug-c"
+    const range = url.searchParams.get('range'); // e.g. "1,10"
 
     let query = supabase.from('posts').select('*', { count: 'exact' });
 
@@ -19,8 +19,17 @@ export const GET = async ({ url }) => {
       query = query.eq('category', category);
     }
 
+    // Skip specific slugs
+    if (skip) {
+      const slugsToSkip = skip.split(',').map((s) => s.trim());
+      query = query.not('slug', 'in', `(${slugsToSkip.join(',')})`);
+    }
+
     // Add range for pagination
-    if (from && to) query = query.range(from - 1, to - 1);
+    if (range) {
+      const [from, to] = range.split(',').map((s) => parseInt(s.trim()));
+      query = query.range(from - 1, to - 1);
+    }
 
     const { data, error, count } = await query;
 

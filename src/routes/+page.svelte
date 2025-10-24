@@ -9,6 +9,9 @@
   import Screenings from './Screening.svelte';
   import About from './About.svelte';
   import Activities from './Activities.svelte';
+  import type { PageProps } from './$types';
+
+  let { data }: PageProps = $props();
 </script>
 
 <svelte:head>
@@ -33,8 +36,8 @@
   <Collaborations />
   <Team />
   <Discord />
-  <Activities />
-  <Articles />
+  <Activities posts={data.posts} />
+  <Articles posts={data.posts} />
   <Screenings />
   <Faq />
 </main>

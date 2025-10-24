@@ -5,40 +5,32 @@
   import Calendar from '$lib/assets/icons/Calendar.svelte';
   import Divider from '../../../components/Divider.svelte';
   import PostCard from '../../../components/PostCard.svelte';
-  import { getPostBySlug, getPosts } from '../../../helpers/posts';
-  import { page } from '$app/state';
   import DotsDivider from '../../../components/DotsDivider.svelte';
   import Title from '../../../components/Title.svelte';
-  import { navigating } from '$app/state';
   import NotFoundPage from '../../../components/NotFoundPage.svelte';
   import Tag from '../../../components/Tag.svelte';
+  import type { PageProps } from '../$types';
 
-  let post = $state(getPostBySlug(page.data.posts, page.params.slug || ''));
-
-  let posts = $derived(getPosts(page.data.posts, post?.category, 3, post ? [post.slug] : []));
-
-  $effect(() => {
-    navigating.complete;
-
-    // Refetch data whenever the route is done changing
-    post = getPostBySlug(page.data.posts, page.params.slug || '');
-  });
+  let { data }: PageProps = $props();
 </script>
 
 <svelte:head>
-  <title>{post ? post.title : '404'} - CryptoSharia</title>
-  <meta property="og:title" content="{post ? post.title : '404'} - CryptoSharia" />
-  <meta name="description" content={post ? post.description : 'Postingan tidak ditemukan.'} />
+  <title>{data.post ? data.post.title : '404'} - CryptoSharia</title>
+  <meta property="og:title" content="{data.post ? data.post.title : '404'} - CryptoSharia" />
+  <meta
+    name="description"
+    content={data.post ? data.post.description : 'Postingan tidak ditemukan.'}
+  />
   <meta
     property="og:description"
-    content={post ? post.description : 'Postingan tidak ditemukan.'}
+    content={data.post ? data.post.description : 'Postingan tidak ditemukan.'}
   />
 
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://www.cryptosharia.id{post?.thumbnailUrl}" />
+  <meta property="og:image" content="https://www.cryptosharia.id{data.post?.thumbnailUrl}" />
 </svelte:head>
 
-{#if !post}
+{#if !data.post}
   <NotFoundPage message="Postingan tidak ditemukan" />
 {:else}
   <span class="block h-21 w-full"></span>
@@ -51,14 +43,14 @@
           data-aos-duration="1000"
           class="text-[2rem] leading-10 font-medium text-orange-600 sm:text-4xl md:text-[2.5rem]"
         >
-          {post.title}
+          {data.post.title}
         </h1>
       </div>
       <img
         data-aos="fade"
         data-aos-duration="1000"
-        src={post.thumbnailUrl}
-        alt={post.title}
+        src={data.post.thumbnailUrl}
+        alt={data.post.title}
         class="w-full rounded-2xl md:rounded-3xl"
       />
       <div class="mt-2 flex flex-col gap-y-3 md:mb-2 md:flex-row">
@@ -67,7 +59,7 @@
           data-aos-duration="1000"
           class="flex flex-1 flex-row flex-wrap gap-2"
         >
-          {#each post.tags as tag}
+          {#each data.post.tags as tag}
             <Tag text={tag} />
           {/each}
         </div>
@@ -77,30 +69,30 @@
           class="mb-1 flex flex-row justify-end text-sm text-slate-700 md:text-base"
         >
           <Calendar class="size-5 md:size-6" />
-          <span>{formatDate(post.date, 'text')}</span></span
+          <span>{formatDate(data.post.date, 'text')}</span></span
         >
       </div>
       <Divider usePadding={false} />
       <p data-aos="zoom-out" data-aos-duration="1000" class="mt-2 text-justify text-slate-700">
-        {post.description}
+        {data.post.description}
       </p>
     </section>
     <DotsDivider />
-    <section data-aos="fade-up" data-aos-duration="1000" class="markdown-body my-4">
-      {@html marked(post.content)}
+    <section data-aos="fade-u" data-aos-duration="1000" class="markdown-body my-4">
+      {@html marked(data.post.content)}
     </section>
     <DotsDivider padding="4rem" />
   </main>
   <section class="nav-space z-10 mx-auto mb-10 w-full max-w-[90rem]">
     <Title class="text-center"
-      >{post.category === 'activity' ? 'Aktivitas' : 'Artikel'} Terbaru</Title
+      >{data.post.category === 'activity' ? 'Aktivitas' : 'Artikel'} Terbaru</Title
     >
     <Divider />
     <div class="flex w-full flex-col items-center gap-y-6 md:gap-y-8 lg:gap-y-10">
       <div
         class="flex w-full flex-row flex-wrap items-start justify-center gap-6 px-6 pt-5 md:gap-8 lg:gap-10"
       >
-        {#each posts as post, i}
+        {#each data.posts as post}
           <PostCard
             thumbnailUrl={post.thumbnailUrl}
             date={post.date}
@@ -112,14 +104,14 @@
         {/each}
       </div>
       <PrimaryButton
-        text="Lihat {post.category === 'activity' ? 'Aktivitas' : 'Artikel'} Lainnya"
-        href="/blog/{post.category === 'activity' ? 'aktivitas' : 'artikel'}"
+        text="Lihat {data.post.category === 'activity' ? 'Aktivitas' : 'Artikel'} Lainnya"
+        href="/blog/{data.post.category === 'activity' ? 'aktivitas' : 'artikel'}"
         size="medium"
         class="hidden md:block"
       />
       <PrimaryButton
-        text="Lihat {post.category === 'activity' ? 'Aktivitas' : 'Artikel'} Lainnya"
-        href="/blog/{post.category === 'activity' ? 'aktivitas' : 'artikel'}"
+        text="Lihat {data.post.category === 'activity' ? 'Aktivitas' : 'Artikel'} Lainnya"
+        href="/blog/{data.post.category === 'activity' ? 'aktivitas' : 'artikel'}"
         size="small"
         class="block md:hidden"
       />
