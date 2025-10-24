@@ -51,7 +51,8 @@ import tetherGoldCertificate from '../lib/tokens/tether-gold/certificate.png';
 export const tokens: Token[] = [
   {
     slug: 'bitcoin',
-    pair: 'INDEX:BTCUSD',
+    cmcRank: 1,
+    tvPair: 'INDEX:BTCUSD',
     name: 'Bitcoin',
     symbol: 'BTC',
     color: '#F7931A',
@@ -67,14 +68,13 @@ export const tokens: Token[] = [
       'Pioneer',
       'Satoshi Nakamoto'
     ],
-    content: {
-      overview: bitcoinOverview,
-      conclusion: bitcoinConclusion
-    }
+    overview: bitcoinOverview,
+    conclusion: bitcoinConclusion
   },
   {
     slug: 'ethereum',
-    pair: 'INDEX:ETHUSD',
+    cmcRank: 2,
+    tvPair: 'INDEX:ETHUSD',
     name: 'Ethereum',
     symbol: 'ETH',
     color: '#627EEA',
@@ -91,187 +91,185 @@ export const tokens: Token[] = [
       'Pioneer',
       'Vitalik Buterin'
     ],
-    content: {
-      overview: ethereumOverview,
-      conclusion: ethereumConclusion
-    }
-  },
-  {
-    slug: 'xrp',
-    pair: 'CRYPTO:XRPUSD',
-    name: 'XRP',
-    symbol: 'XRP',
-    color: '#23292f',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/52.png',
-    website: 'https://xrpl.org',
-    certificateUrl: xrpCertificate,
-    status: 'halal',
-    tags: ['Layer-1', 'Payment Network', 'Remittance', 'Bridge Currency', 'Ripple'],
-    content: {
-      overview: xrpOverview,
-      conclusion: xrpConclusion
-    }
-  },
-  {
-    slug: 'bnb',
-    pair: 'CRYPTO:BNBUSD',
-    name: 'BNB',
-    symbol: 'BNB',
-    color: '#F3BA2F',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1839.png',
-    website: 'https://www.bnbchain.org',
-    certificateUrl: 'https://ito-group.com/wp-content/uploads/2025/04/no-image.jpg',
-    status: 'syubhat',
-    tags: ['Layer-1', 'Smart Contract Platform', 'Exchange Ecosystem', 'Binance', 'Changpeng Zhao'],
-    content: {
-      overview: bnbOverview,
-      conclusion: bnbConclusion
-    }
-  },
-  {
-    slug: 'solana',
-    pair: 'CRYPTO:SOLUSD',
-    name: 'Solana',
-    symbol: 'SOL',
-    color: '#9945FF',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5426.png',
-    website: 'https://solana.com',
-    certificateUrl: solanaCertificate,
-    status: 'halal',
-    tags: [
-      'Layer-1',
-      'Smart Contract Platform',
-      'DeFi',
-      'dApp',
-      'NFT',
-      'Gaming',
-      'Anatoly Yakovenko'
-    ],
-    content: {
-      overview: solanaOverview,
-      conclusion: solanaConclusion
-    }
-  },
-  {
-    slug: 'tron',
-    pair: 'CRYPTO:TRXUSD',
-    name: 'Tron',
-    symbol: 'TRX',
-    color: '#FF0000',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1958.png',
-    website: 'https://tron.network',
-    certificateUrl: tronCertificate,
-    status: 'halal',
-    tags: ['Layer-1', 'Content Platform', 'Entertainment', 'DeFi', 'Payment', 'Justin Sun'],
-    content: {
-      overview: tronOverview,
-      conclusion: tronConclusion
-    }
-  },
-  {
-    slug: 'sui',
-    pair: 'CRYPTO:SUIUSD',
-    name: 'Sui',
-    symbol: 'SUI',
-    color: '#4DA2FF',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/20947.png',
-    website: 'https://sui.io',
-    certificateUrl: suiCertificate,
-    status: 'halal',
-    tags: [
-      'Layer-1',
-      'Smart Contract Platform',
-      'dApp',
-      'DeFi',
-      'NFT',
-      'Gaming',
-      'Parallel Processing',
-      'Mysten Labs',
-      'Evan Cheng'
-    ],
-    content: {
-      overview: suiOverview,
-      conclusion: suiConclusion
-    }
-  },
-  {
-    slug: 'avalanche',
-    pair: 'CRYPTO:AVAXUSD',
-    name: 'Avalanche',
-    symbol: 'AVAX',
-    color: '#E84142',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5805.png',
-    website: 'https://avax.network',
-    certificateUrl: avalancheCertificate,
-    status: 'halal',
-    tags: ['Layer-1', 'Smart Contract Platform', 'DeFi', 'dApp', 'Gaming'],
-    content: {
-      overview: avalancheOverview,
-      conclusion: avalancheConclusion
-    }
-  },
-  {
-    slug: 'plasma-xpl',
-    pair: 'BINANCE:XPLUSDT.P',
-    name: 'Plasma',
-    symbol: 'XPL',
-    color: '#295B4F',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/36645.png',
-    website: 'https://plasma.to',
-    certificateUrl: plasmaXplCertificate,
-    status: 'halal',
-    tags: ['Layer-1', 'Stablecoin Infrastructure', 'Payment', 'EVM-Compatible'],
-    content: {
-      overview: plasmaXplOverview,
-      conclusion: plasmaXplConclusion
-    }
-  },
-  {
-    slug: 'world-liberty-financial-wlfi',
-    pair: 'MEXC:WLFIUSDT.P',
-    name: 'World Liberty Financial',
-    symbol: 'WLFI',
-    color: '#E7AC08',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/33251.png',
-    website: 'https://worldlibertyfinancial.com',
-    certificateUrl: worldLibertyFinancialWLFICertificate,
-    status: 'haram',
-    tags: ['DeFi', 'Governance Token', 'Utility Token', 'World Liberty', 'Donald Trump'],
-    content: {
-      overview: worldLibertyFinancialWLFIOverview,
-      conclusion: worldLibertyFinancialWLFIconclusion
-    }
-  },
-  {
-    slug: 'pax-gold',
-    pair: 'TVC:GOLD',
-    name: 'Pax Gold',
-    symbol: 'PAXG',
-    color: '#e5cb22',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4705.png',
-    website: 'https://paxos.com/pax-gold',
-    certificateUrl: paxGoldCertificate,
-    status: 'halal',
-    tags: ['RWA', 'Gold', 'Asset-Backed Token'],
-    content: {
-      overview: paxGoldOverview,
-      conclusion: paxGoldConclusion
-    }
-  },
-  {
-    slug: 'tether-gold',
-    pair: 'TVC:GOLD',
-    name: 'Tether Gold',
-    symbol: 'XAUt',
-    color: '#D3B25B',
-    logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5176.png',
-    website: 'https://gold.tether.to',
-    certificateUrl: tetherGoldCertificate,
-    status: 'halal',
-    tags: ['RWA', 'Gold', 'Asset-Backed Token'],
-    content: {
-      overview: tetherGoldOverview,
-      conclusion: tetherGoldConclusion
-    }
+    overview: ethereumOverview,
+    conclusion: ethereumConclusion
   }
+  // {
+  //   slug: 'xrp',
+  //   pair: 'CRYPTO:XRPUSD',
+  //   name: 'XRP',
+  //   symbol: 'XRP',
+  //   color: '#23292f',
+  //   logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/52.png',
+  //   website: 'https://xrpl.org',
+  //   certificateUrl: xrpCertificate,
+  //   status: 'halal',
+  //   tags: ['Layer-1', 'Payment Network', 'Remittance', 'Bridge Currency', 'Ripple'],
+  //   content: {
+  //     overview: xrpOverview,
+  //     conclusion: xrpConclusion
+  //   }
+  // },
+  // {
+  //   slug: 'bnb',
+  //   pair: 'CRYPTO:BNBUSD',
+  //   name: 'BNB',
+  //   symbol: 'BNB',
+  //   color: '#F3BA2F',
+  //   logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1839.png',
+  //   website: 'https://www.bnbchain.org',
+  //   certificateUrl: 'https://ito-group.com/wp-content/uploads/2025/04/no-image.jpg',
+  //   status: 'syubhat',
+  //   tags: ['Layer-1', 'Smart Contract Platform', 'Exchange Ecosystem', 'Binance', 'Changpeng Zhao'],
+  //   content: {
+  //     overview: bnbOverview,
+  //     conclusion: bnbConclusion
+  //   }
+  // },
+  // {
+  //   slug: 'solana',
+  //   pair: 'CRYPTO:SOLUSD',
+  //   name: 'Solana',
+  //   symbol: 'SOL',
+  //   color: '#9945FF',
+  //   logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5426.png',
+  //   website: 'https://solana.com',
+  //   certificateUrl: solanaCertificate,
+  //   status: 'halal',
+  //   tags: [
+  //     'Layer-1',
+  //     'Smart Contract Platform',
+  //     'DeFi',
+  //     'dApp',
+  //     'NFT',
+  //     'Gaming',
+  //     'Anatoly Yakovenko'
+  //   ],
+  //   content: {
+  //     overview: solanaOverview,
+  //     conclusion: solanaConclusion
+  //   }
+  // },
+  // {
+  //   slug: 'tron',
+  //   pair: 'CRYPTO:TRXUSD',
+  //   name: 'Tron',
+  //   symbol: 'TRX',
+  //   color: '#FF0000',
+  //   logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/1958.png',
+  //   website: 'https://tron.network',
+  //   certificateUrl: tronCertificate,
+  //   status: 'halal',
+  //   tags: ['Layer-1', 'Content Platform', 'Entertainment', 'DeFi', 'Payment', 'Justin Sun'],
+  //   content: {
+  //     overview: tronOverview,
+  //     conclusion: tronConclusion
+  //   }
+  // },
+  // {
+  //   slug: 'sui',
+  //   pair: 'CRYPTO:SUIUSD',
+  //   name: 'Sui',
+  //   symbol: 'SUI',
+  //   color: '#4DA2FF',
+  //   logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/20947.png',
+  //   website: 'https://sui.io',
+  //   certificateUrl: suiCertificate,
+  //   status: 'halal',
+  //   tags: [
+  //     'Layer-1',
+  //     'Smart Contract Platform',
+  //     'dApp',
+  //     'DeFi',
+  //     'NFT',
+  //     'Gaming',
+  //     'Parallel Processing',
+  //     'Mysten Labs',
+  //     'Evan Cheng'
+  //   ],
+  //   content: {
+  //     overview: suiOverview,
+  //     conclusion: suiConclusion
+  //   }
+  // },
+  // {
+  //   slug: 'avalanche',
+  //   pair: 'CRYPTO:AVAXUSD',
+  //   name: 'Avalanche',
+  //   symbol: 'AVAX',
+  //   color: '#E84142',
+  //   logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5805.png',
+  //   website: 'https://avax.network',
+  //   certificateUrl: avalancheCertificate,
+  //   status: 'halal',
+  //   tags: ['Layer-1', 'Smart Contract Platform', 'DeFi', 'dApp', 'Gaming'],
+  //   content: {
+  //     overview: avalancheOverview,
+  //     conclusion: avalancheConclusion
+  //   }
+  // },
+  // {
+  //   slug: 'plasma-xpl',
+  //   pair: 'BINANCE:XPLUSDT.P',
+  //   name: 'Plasma',
+  //   symbol: 'XPL',
+  //   color: '#295B4F',
+  //   logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/36645.png',
+  //   website: 'https://plasma.to',
+  //   certificateUrl: plasmaXplCertificate,
+  //   status: 'halal',
+  //   tags: ['Layer-1', 'Stablecoin Infrastructure', 'Payment', 'EVM-Compatible'],
+  //   content: {
+  //     overview: plasmaXplOverview,
+  //     conclusion: plasmaXplConclusion
+  //   }
+  // },
+  // {
+  //   slug: 'world-liberty-financial-wlfi',
+  //   pair: 'MEXC:WLFIUSDT.P',
+  //   name: 'World Liberty Financial',
+  //   symbol: 'WLFI',
+  //   color: '#E7AC08',
+  //   logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/33251.png',
+  //   website: 'https://worldlibertyfinancial.com',
+  //   certificateUrl: worldLibertyFinancialWLFICertificate,
+  //   status: 'haram',
+  //   tags: ['DeFi', 'Governance Token', 'Utility Token', 'World Liberty', 'Donald Trump'],
+  //   content: {
+  //     overview: worldLibertyFinancialWLFIOverview,
+  //     conclusion: worldLibertyFinancialWLFIconclusion
+  //   }
+  // },
+  // {
+  //   slug: 'pax-gold',
+  //   pair: 'TVC:GOLD',
+  //   name: 'Pax Gold',
+  //   symbol: 'PAXG',
+  //   color: '#e5cb22',
+  //   logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/4705.png',
+  //   website: 'https://paxos.com/pax-gold',
+  //   certificateUrl: paxGoldCertificate,
+  //   status: 'halal',
+  //   tags: ['RWA', 'Gold', 'Asset-Backed Token'],
+  //   content: {
+  //     overview: paxGoldOverview,
+  //     conclusion: paxGoldConclusion
+  //   }
+  // },
+  // {
+  //   slug: 'tether-gold',
+  //   pair: 'TVC:GOLD',
+  //   name: 'Tether Gold',
+  //   symbol: 'XAUt',
+  //   color: '#D3B25B',
+  //   logoUrl: 'https://s2.coinmarketcap.com/static/img/coins/128x128/5176.png',
+  //   website: 'https://gold.tether.to',
+  //   certificateUrl: tetherGoldCertificate,
+  //   status: 'halal',
+  //   tags: ['RWA', 'Gold', 'Asset-Backed Token'],
+  //   content: {
+  //     overview: tetherGoldOverview,
+  //     conclusion: tetherGoldConclusion
+  //   }
+  // }
 ];

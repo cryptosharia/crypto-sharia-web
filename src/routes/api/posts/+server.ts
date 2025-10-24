@@ -31,7 +31,7 @@ export const GET = async ({ url }) => {
       query = query.range(from - 1, to - 1);
     }
 
-    const { data, error, count } = await query;
+    const { data: posts, error, count } = await query;
 
     if (error) throw new Error(error.message);
 
@@ -40,7 +40,7 @@ export const GET = async ({ url }) => {
         error: false,
         message: 'Fetching posts success',
         count: count,
-        data: data || []
+        data: posts
       }),
       {
         status: 200,

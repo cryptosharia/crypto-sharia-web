@@ -1,16 +1,15 @@
 export type Token = {
   slug: string;
-  pair: string;
+  cmcRank: number;
   name: string;
   symbol: string;
   color: string;
+  status: 'halal' | 'haram' | 'syubhat';
+  tvPair: string;
+  tags: string[];
   website: string;
   logoUrl: string;
   certificateUrl: string;
-  status: 'halal' | 'haram' | 'syubhat';
-  tags: string[];
-  content: {
-    overview: string;
-    conclusion: string;
-  };
+  overview: string;
+  conclusion: string;
 };
