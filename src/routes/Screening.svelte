@@ -5,7 +5,6 @@
   import PrimaryButton from '../components/PrimaryButton.svelte';
 
   let { tokens } = $props();
-  console.log(tokens);
 </script>
 
 <section id="screening" class="nav-space z-8 mb-10 w-full max-w-[90rem]">
