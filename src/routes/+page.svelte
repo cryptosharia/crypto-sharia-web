@@ -38,6 +38,6 @@
   <Discord />
   <Activities posts={data.posts} />
   <Articles posts={data.posts} />
-  <Screenings />
+  <Screenings tokens={data.tokens} />
   <Faq />
 </main>

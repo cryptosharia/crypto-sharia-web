@@ -3,10 +3,9 @@
   import TokenCard from '../components/TokenCard.svelte';
   import Title from '../components/Title.svelte';
   import PrimaryButton from '../components/PrimaryButton.svelte';
-  import { getTokens } from '../helpers/tokens';
-  import { page } from '$app/state';
 
-  const tokens = getTokens(page.data.tokens, 'all', 10);
+  let { tokens } = $props();
+  console.log(tokens);
 </script>
 
 <section id="screening" class="nav-space z-8 mb-10 w-full max-w-[90rem]">

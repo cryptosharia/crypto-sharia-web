@@ -31,6 +31,8 @@ export const GET = async ({ url }) => {
       query = query.range(from - 1, to - 1);
     }
 
+    query = query.order('date', { ascending: false });
+
     const { data: posts, error, count } = await query;
 
     if (error) throw new Error(error.message);

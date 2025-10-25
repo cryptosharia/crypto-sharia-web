@@ -34,13 +34,14 @@ export const GET = async ({ url }) => {
       query = query.range(from - 1, to - 1);
     }
 
+    query = query.order('cmc_rank', { ascending: true });
+
     const { data: tokens, error, count } = await query;
 
     if (error) throw new Error(error.message);
 
     if (quoted !== 'true' || tokens.length === 0) {
       // If not quoted, return data directly
-      // y
       return new Response(
         JSON.stringify({
           error: false,

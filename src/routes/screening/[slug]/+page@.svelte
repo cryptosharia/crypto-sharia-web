@@ -5,35 +5,21 @@
   import Divider from '../../../components/Divider.svelte';
   import DotsDivider from '../../../components/DotsDivider.svelte';
   import Title from '../../../components/Title.svelte';
-  import { page } from '$app/state';
-  import type { QuotedToken } from '../../../models';
+  import type { QuotedToken, Token } from '../../../models';
   import NotFoundPage from '../../../components/NotFoundPage.svelte';
   import TokenCard from '../../../components/TokenCard.svelte';
-  import { getTokenBySlug, getTokens } from '../../../helpers/tokens';
   import Tag from '../../../components/Tag.svelte';
-  import { navigating } from '$app/state';
   import Modal from '../../../components/Modal.svelte';
 
-  let token: QuotedToken | undefined = $state(
-    getTokenBySlug(page.data.tokens, page.params.slug || '')
-  );
+  import type { PageProps } from './$types';
 
-  let tokens = $state(
-    getTokens(page.data.tokens, 'all', 10, page.params.slug ? [page.params.slug] : [])
-  );
+  let { data }: PageProps = $props();
+
+  const token = $derived(data.token as QuotedToken);
+  const tokens = $derived(data.tokens as Token[]);
 
   let modalVisible = $state(false);
   let modalContent = $state<'certificate' | 'chart'>('certificate');
-
-  $effect(() => {
-    navigating.complete;
-
-    // Refetch data whenever the route is done changing
-
-    token = page.data.tokens.find((x: QuotedToken) => x.slug === page.params.slug);
-
-    tokens = getTokens(page.data.tokens, 'all', 10, page.params.slug ? [page.params.slug] : []);
-  });
 
   $effect(() => {
     // Remove existingChart first (In order to be able to refresh the chart when switching tokens)
@@ -65,7 +51,7 @@
         "locale": "en",
         "save_image": false,
         "style": "1",
-        "symbol": "${token?.pair || 'INDEX:BTCUSD'}",
+        "symbol": "${data.token?.tvPair || 'INDEX:BTCUSD'}",
         "theme": "light",
         "timezone": "Asia/Jakarta",
         "backgroundColor": "#ffffff",
@@ -103,9 +89,9 @@
 {:else}
   <span class="block h-20 w-full"></span>
   <main class="mx-auto flex w-full max-w-[94%] flex-col gap-y-5 xl:max-w-[71rem]">
-    {@render header(token)}
-    {@render overview(token.tags, token.content.overview)}
-    {@render conclusion(token.status, token.content.conclusion)}
+    {@render header(token as QuotedToken)}
+    {@render overview(token.tags, token.overview)}
+    {@render conclusion(token.status, token.conclusion)}
   </main>
   <DotsDivider />
   {@render others(tokens)}
@@ -154,7 +140,7 @@
     >
       <div class="flex flex-1 flex-col">
         <span class="font- whitespace-nowrap">Peringkat</span>
-        <span><b>{token.cmc_rank}</b></span>
+        <span><b>{token.cmcRank}</b></span>
       </div>
       <div class="flex flex-1 flex-col">
         <span class="font- whitespace-nowrap">Harga per Token</span>
@@ -162,24 +148,22 @@
           <b
             >{formatPrice(token.price)}
             <span class="text-slate-400">|</span>
-            <span class={token.percent_change_24h < 0 ? 'text-red-500' : 'text-green-500'}
-              >{token.percent_change_24h > 0 ? '+' : ''}{token.percent_change_24h?.toFixed(
-                2
-              )}%</span
+            <span class={token.percentChange24h < 0 ? 'text-red-500' : 'text-green-500'}
+              >{token.percentChange24h > 0 ? '+' : ''}{token.percentChange24h?.toFixed(2)}%</span
             ></b
           ></span
         >
       </div>
       <div class="flex flex-1 flex-col">
         <span class="font- whitespace-nowrap">Kapitalisasi Pasar</span>
-        <span><b>{formatPrice(token.market_cap)}</b></span>
+        <span><b>{formatPrice(token.marketCap)}</b></span>
       </div>
       <div class="flex flex-1 flex-col">
         <span class="font- whitespace-nowrap">Dominasi Pasar</span>
         <span
           ><b
             >{Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(
-              token.market_cap_dominance
+              token.marketCapDominance
             )}%</b
           ></span
         >
@@ -188,12 +172,12 @@
         <span class="font- whitespace-nowrap"><i>Supply</i> Maksimum</span>
         <span
           ><b>
-            {#if token.infinite_supply}
+            {#if token.infiniteSupply}
               {@html '<i>Unlimited</i>'}
-            {:else if !token.max_supply}
+            {:else if !token.maxSupply}
               --
             {:else}
-              {Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(token.max_supply)}
+              {Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(token.maxSupply)}
             {/if}
           </b></span
         >
@@ -203,7 +187,7 @@
         <span
           ><b
             >{Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(
-              token.circulating_supply
+              token.circulatingSupply
             )}</b
           ></span
         >
@@ -308,7 +292,7 @@
   </section>
 {/snippet}
 
-{#snippet others(tokens: QuotedToken[])}
+{#snippet others(tokens: Token[])}
   <section class="nav-space z-8 mx-auto mb-10 w-full max-w-[90rem]">
     <Title class="text-center">Lihat Token Lain</Title>
     <Divider />

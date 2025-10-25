@@ -1,11 +1,10 @@
 import type { Token } from './token';
 export type QuotedToken = {
-  cmc_rank: number;
-  infinite_supply: boolean;
-  max_supply: number;
-  circulating_supply: number;
+  infiniteSupply: boolean;
+  maxSupply: number;
+  circulatingSupply: number;
   price: number;
-  market_cap: number;
-  market_cap_dominance: number;
-  percent_change_24h: number;
+  marketCap: number;
+  marketCapDominance: number;
+  percentChange24h: number;
 } & Token;
