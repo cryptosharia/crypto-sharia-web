@@ -3,6 +3,7 @@ import supabase from '../supabase';
 export const GET = async ({ url }) => {
   try {
     const slug = url.searchParams.get('slug');
+    const keyword = url.searchParams.get('keyword');
     const category = url.searchParams.get('category');
     const skip = url.searchParams.get('skip'); // e.g. "slug-a,slug-b,slug-c"
     const range = url.searchParams.get('range'); // e.g. "1,10"
@@ -12,6 +13,11 @@ export const GET = async ({ url }) => {
     // Filter by slug
     if (slug) {
       query = query.eq('slug', slug);
+    }
+
+    // Filter by keyword in title or description
+    if (keyword) {
+      query = query.or(`title.ilike.%${keyword}%,description.ilike.%${keyword}%`);
     }
 
     // Filter by category

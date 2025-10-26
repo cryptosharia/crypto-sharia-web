@@ -5,6 +5,7 @@ export async function getTokens(
   baseUrl: string,
   params: {
     slug?: string;
+    keyword?: string;
     status?: 'halal' | 'haram' | 'syubhat';
     skip?: string[];
     range?: [number, number];
@@ -15,6 +16,7 @@ export async function getTokens(
     const url = new URL(baseUrl + '/api/tokens');
 
     if (params.slug) url.searchParams.set('slug', params.slug);
+    if (params.keyword) url.searchParams.set('keyword', params.keyword);
     if (params.status) url.searchParams.set('status', params.status);
     if (params.skip && params.skip.length > 0) url.searchParams.set('skip', params.skip.join(','));
     if (params.range && params.range.length === 2) {

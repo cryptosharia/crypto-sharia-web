@@ -3,6 +3,7 @@ import supabase from '../supabase';
 export const GET = async ({ url }) => {
   try {
     const slug = url.searchParams.get('slug');
+    const keyword = url.searchParams.get('keyword');
     const status = url.searchParams.get('status');
     const skip = url.searchParams.get('skip'); // e.g. "bitcoin,ethereum,sui"
     const range = url.searchParams.get('range'); // e.g. "1,10"
@@ -12,6 +13,11 @@ export const GET = async ({ url }) => {
     // Filter by slug
     if (slug) {
       query = query.eq('slug', slug);
+    }
+
+    // Filter by keyword in name or symbol
+    if (keyword) {
+      query = query.or(`name.ilike.%${keyword}%,symbol.ilike.%${keyword}%`);
     }
 
     // Filter by status

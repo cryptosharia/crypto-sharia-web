@@ -8,7 +8,7 @@
   const goals = [
     'Menjadi pusat edukasi dan informasi aset crypto sesuai syariah di Indonesia.',
     'Menjadi wadah kolaborasi aktif dan produktif bagi para pelaku industri Web3 di Indonesia.',
-    'Mendukung tranformasi ekonomi digital di Indonesia melalui prinsip keuangan syariah.',
+    'Mendukung tranformasi ekonomi digital di Indonesia melalui prinsip keuangan syariah.'
   ];
 </script>
 
@@ -30,7 +30,7 @@
   >
     <Title aos={false} isSmall={true}>Tentang <u><i>CryptoSharia</i></u></Title>
     <p class="text-justify text-[1.0625rem]">
-      <i><b>CryptoSharia</b></i> adalah komunitas pionir yang menghubungkan dunia crypto dengan prinsip
+      <i><b>Crypto Sharia</b></i> adalah komunitas pionir yang menghubungkan dunia crypto dengan prinsip
       syariah, menghadirkan ekosistem edukasi, riset, dan komunitas terpercaya bagi teman-teman muslim
       yang tertarik untuk berinvestasi aset digital crypto tapi masih sesuai dengan prinsip-prinsip syariah.
     </p>

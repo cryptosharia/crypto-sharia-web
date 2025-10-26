@@ -20,6 +20,7 @@ export async function getPosts(
   baseUrl: string,
   params: {
     slug?: string;
+    keyword?: string;
     category?: 'activity' | 'article';
     skip?: string[];
     range?: [number, number];
@@ -29,6 +30,7 @@ export async function getPosts(
     const url = new URL(baseUrl + '/api/posts');
 
     if (params.slug) url.searchParams.set('slug', params.slug);
+    if (params.keyword) url.searchParams.set('keyword', params.keyword);
     if (params.category) url.searchParams.set('category', params.category);
     if (params.skip && params.skip.length > 0) url.searchParams.set('skip', params.skip.join(','));
     if (params.range && params.range.length === 2) {

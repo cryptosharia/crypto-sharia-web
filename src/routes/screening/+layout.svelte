@@ -4,6 +4,7 @@
   import Chip from '../../components/Chip.svelte';
   import Divider from '../../components/Divider.svelte';
   import { capitalizeFirstLetter, getUrlLastSegment } from '../../utils';
+  import { navigating } from '$app/state';
 
   let { children } = $props();
   const categories = ['Semua', 'Halal', 'Haram', 'Syubhat'];
@@ -13,12 +14,32 @@
   onMount(() => {
     const lastSegment = getUrlLastSegment().toLowerCase();
 
-    if (lastSegment === 'halal' || lastSegment === 'haram') {
+    if (lastSegment === 'halal' || lastSegment === 'haram' || lastSegment === 'syubhat') {
       selectedCategory = capitalizeFirstLetter(lastSegment);
     } else {
       selectedCategory = 'Semua';
     }
   });
+
+  let keyword = $state('');
+  let timer: ReturnType<typeof setTimeout>;
+
+  $effect(() => {
+    // Update keyword when navigation completes
+    navigating.complete;
+    keyword = new URLSearchParams(window.location.search).get('search') || '';
+  });
+
+  // A function to do search whenever the user has stopped typing for 1.2 seconds
+  function onInput(e: any) {
+    keyword = e.target ? e.target.value : '';
+
+    // Reset the timer whenever user types
+    clearTimeout(timer);
+
+    // Do search after 1.2 seconds of not typing
+    timer = setTimeout(() => goto(`${window.location.pathname}?search=${keyword}`), 1200);
+  }
 </script>
 
 <main class="nav-space mx-auto w-full max-w-[90rem] text-center">
@@ -39,23 +60,34 @@
   <div
     data-aos="zoom-in"
     data-aos-duration="1000"
-    class="mt-4 flex flex-row items-center justify-center gap-x-2"
+    class="mx-auto mt-4 flex w-[85%] flex-col items-center justify-between gap-y-4 xl:w-[80%] xl:flex-row"
   >
-    {#each categories as category}
-      <Chip
-        isSelected={category === selectedCategory}
-        text={category}
-        onPress={(text) => {
-          selectedCategory = text;
+    <div class="flex flex-row gap-x-2">
+      {#each categories as category}
+        <Chip
+          isSelected={category === selectedCategory}
+          text={category}
+          onPress={(text) => {
+            selectedCategory = text;
 
-          if (text.toUpperCase() === 'SEMUA') {
-            goto('/screening');
-          } else {
-            goto(`/screening/${text.toLowerCase()}`);
-          }
-        }}
+            if (text.toUpperCase() === 'SEMUA') {
+              goto('/screening');
+            } else {
+              goto(`/screening/${text.toLowerCase()}`);
+            }
+          }}
+        />
+      {/each}
+    </div>
+    <div class="flex w-full flex-row items-center justify-center xl:w-fit">
+      <input
+        type="search"
+        placeholder="Cari token"
+        value={keyword}
+        oninput={onInput}
+        class="w-full rounded-xl bg-slate-50 px-4 py-2.5 ring ring-slate-300 focus:text-orange-600 focus:ring-2 focus:ring-orange-600 focus:outline-0 xl:w-[16rem]"
       />
-    {/each}
+    </div>
   </div>
   {@render children?.()}
 </main>
