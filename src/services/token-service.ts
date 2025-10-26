@@ -8,6 +8,7 @@ export async function getTokens(
     status?: 'halal' | 'haram' | 'syubhat';
     skip?: string[];
     range?: [number, number];
+    includeContent?: boolean;
   } = {}
 ): Promise<Token[]> {
   try {
@@ -30,8 +31,13 @@ export async function getTokens(
     if (result.error) throw new Error(result.message);
 
     const tokens: Token[] = result.data.map(async (token: any) => {
-      const overview = await (await fetch(token.overview_url)).text();
-      const conclusion = await (await fetch(token.conclusion_url)).text();
+      let overview = '';
+      let conclusion = '';
+
+      if (params.includeContent) {
+        overview = await (await fetch(token.overview_url)).text();
+        conclusion = await (await fetch(token.conclusion_url)).text();
+      }
 
       return {
         slug: token.slug,
