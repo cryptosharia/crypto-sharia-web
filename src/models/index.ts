@@ -1,5 +1,5 @@
-import type { Token } from './token';
-import type { QuotedToken } from './quoted-token';
 import type { Post } from './post';
+import type { Token } from './token';
+import type { TokenQuote } from './token-quote';
 
-export type { Token, QuotedToken, Post };
+export type { Post, Token, TokenQuote };

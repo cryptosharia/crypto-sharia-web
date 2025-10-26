@@ -1,5 +1,6 @@
-import type { Token } from './token';
-export type QuotedToken = {
+export type TokenQuote = {
+  slug: string;
+  cmcRank: number;
   infiniteSupply: boolean;
   maxSupply: number;
   circulatingSupply: number;
@@ -7,4 +8,4 @@ export type QuotedToken = {
   marketCap: number;
   marketCapDominance: number;
   percentChange24h: number;
-} & Token;
+};

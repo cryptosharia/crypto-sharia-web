@@ -5,21 +5,33 @@
   import Divider from '../../../components/Divider.svelte';
   import DotsDivider from '../../../components/DotsDivider.svelte';
   import Title from '../../../components/Title.svelte';
-  import type { QuotedToken, Token } from '../../../models';
+  import type { Token, TokenQuote } from '../../../models';
   import NotFoundPage from '../../../components/NotFoundPage.svelte';
   import TokenCard from '../../../components/TokenCard.svelte';
   import Tag from '../../../components/Tag.svelte';
   import Modal from '../../../components/Modal.svelte';
 
   import type { PageProps } from './$types';
+  import { getTokenQuotes } from '../../../services/token-service';
 
   let { data }: PageProps = $props();
 
-  const token = $derived(data.token as QuotedToken);
-  const tokens = $derived(data.tokens as Token[]);
+  const token: Token = $derived(data.token);
+  const tokens: Token[] = $derived(data.tokens);
 
+  let tokenQuote: TokenQuote | undefined = $state(undefined);
   let modalVisible = $state(false);
   let modalContent = $state<'certificate' | 'chart'>('certificate');
+
+  $effect(() => {
+    // Make tokenQuote undefined first (In order to show loading state)
+    tokenQuote = undefined;
+
+    // Fetch token quote for the current token
+    getTokenQuotes(fetch, window.location.origin, { slugs: [token.slug] }).then(
+      (quotes) => (tokenQuote = quotes[0])
+    );
+  });
 
   $effect(() => {
     // Remove existingChart first (In order to be able to refresh the chart when switching tokens)
@@ -89,7 +101,7 @@
 {:else}
   <span class="block h-20 w-full"></span>
   <main class="mx-auto flex w-full max-w-[94%] flex-col gap-y-5 xl:max-w-[71rem]">
-    {@render header(token as QuotedToken)}
+    {@render header(token, tokenQuote)}
     {@render overview(token.tags, token.overview)}
     {@render conclusion(token.status, token.conclusion)}
   </main>
@@ -97,7 +109,7 @@
   {@render others(tokens)}
 {/if}
 
-{#snippet header(token: QuotedToken)}
+{#snippet header(token: Token, quote: TokenQuote | undefined)}
   <section
     data-aos="flip-down"
     data-aos-duration="1000"
@@ -140,57 +152,67 @@
     >
       <div class="flex flex-1 flex-col">
         <span class="font- whitespace-nowrap">Peringkat</span>
-        <span><b>{token.cmcRank}</b></span>
+        <span><b>{!quote ? '...' : quote.cmcRank}</b></span>
       </div>
       <div class="flex flex-1 flex-col">
         <span class="font- whitespace-nowrap">Harga per Token</span>
         <span class="whitespace-nowrap">
-          <b
-            >{formatPrice(token.price)}
-            <span class="text-slate-400">|</span>
-            <span class={token.percentChange24h < 0 ? 'text-red-500' : 'text-green-500'}
-              >{token.percentChange24h > 0 ? '+' : ''}{token.percentChange24h?.toFixed(2)}%</span
-            ></b
-          ></span
-        >
+          <b>
+            {#if !quote}
+              ...
+            {:else}
+              {formatPrice(quote.price)}
+              <span class="text-slate-400">|</span>
+              <span class={quote.percentChange24h < 0 ? 'text-red-500' : 'text-green-500'}>
+                {quote.percentChange24h > 0 ? '+' : ''}{quote.percentChange24h?.toFixed(2)}%
+              </span>
+            {/if}
+          </b>
+        </span>
       </div>
       <div class="flex flex-1 flex-col">
         <span class="font- whitespace-nowrap">Kapitalisasi Pasar</span>
-        <span><b>{formatPrice(token.marketCap)}</b></span>
+        <span><b>{!quote ? '...' : formatPrice(quote.marketCap)}</b></span>
       </div>
       <div class="flex flex-1 flex-col">
         <span class="font- whitespace-nowrap">Dominasi Pasar</span>
-        <span
-          ><b
-            >{Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(
-              token.marketCapDominance
-            )}%</b
-          ></span
-        >
+        <span>
+          <b>
+            {!quote
+              ? '...'
+              : Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(
+                  quote.marketCapDominance
+                ) + '%'}
+          </b>
+        </span>
       </div>
       <div class="flex flex-1 flex-col">
         <span class="font- whitespace-nowrap"><i>Supply</i> Maksimum</span>
         <span
           ><b>
-            {#if token.infiniteSupply}
+            {#if !quote}
+              ...
+            {:else if quote.infiniteSupply}
               {@html '<i>Unlimited</i>'}
-            {:else if !token.maxSupply}
+            {:else if !quote.maxSupply}
               --
             {:else}
-              {Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(token.maxSupply)}
+              {Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(quote.maxSupply)}
             {/if}
           </b></span
         >
       </div>
       <div class="flex flex-1 flex-col">
         <span class="font- whitespace-nowrap"><i>Supply</i> Beredar</span>
-        <span
-          ><b
-            >{Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(
-              token.circulatingSupply
-            )}</b
-          ></span
-        >
+        <span>
+          <b>
+            {!quote
+              ? '...'
+              : Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(
+                  quote.circulatingSupply
+                )}
+          </b>
+        </span>
       </div>
     </div>
     <Divider usePadding={false} />
