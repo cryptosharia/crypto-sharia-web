@@ -1,38 +1,33 @@
-# sv
+# CryptoSharia
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+**CryptoSharia** is an **Islamic-based crypto education platform** that bridges **Web3 innovation** with **Sharia principles**.  
+The platform was created to help the Muslim community **understand, analyze, and invest** in crypto assets **ethically and responsibly**, while remaining true to **Islamic values**.
 
-## Creating a project
+## 🧭 Overview
 
-If you're seeing this, you've probably already done this step. Congrats!
+CryptoSharia aims to become a trusted hub for **halal crypto literacy**, combining **education**, **analysis**, and **community engagement**.  
+It introduces Muslims to the world of Web3 and decentralized finance (DeFi) in a way that aligns with **Sharia ethics** — promoting awareness, transparency, and responsible investing.
 
-```sh
-# create a new project in the current directory
-npx sv create
+## ⚙️ Technology Stack
 
-# create a new project in my-app
-npx sv create my-app
-```
+The website is fully built by Daffa Ilhami using **SvelteKit** and **Supabase**, designed for **speed, scalability, and simplicity**.  
+Its architecture is content-driven, powered by **Markdown-based articles**, and optimized for performance, SEO, and easy maintenance.
 
-## Developing
+## ✨ Key Features
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+💠 **Token Screening System** — evaluates crypto assets based on Sharia compliance and fundamental analysis.  
+📘 **Educational Articles** — provides clear and accessible explanations of complex blockchain and crypto concepts.  
+💬 **Event & Collaboration Hub** — documents national-level seminars, partnerships, and initiatives in the halal crypto ecosystem.  
+🕌 **Community Integration** — connects members through **CryptoSharia Premium Discord**, offering insights, mentorship, and halal trading education.
 
-```sh
-npm run dev
+## 🌙 Mission
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+To build a **responsible and ethical crypto ecosystem** that empowers Muslims to participate in the digital economy **safely, profitably, and in full accordance with Islamic values**.  
+**CryptoSharia** represents a new movement that unites **faith, finance, and future technology** — making crypto both **ethical and empowering**.
 
-## Building
+> _“When else can you find a crypto community that not only teaches profit, but also upholds Sharia — and embraces the future of technology?”_
 
-To create a production version of your app:
+## 🌐 Links
 
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+🔗 **Website:** [https://www.cryptosharia.id](https://www.cryptosharia.id)  
+📁 **Developer:** [https://mdaffailhami.my.id](https://mdaffailhami.my.id)
