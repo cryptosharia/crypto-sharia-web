@@ -92,16 +92,22 @@
       <div
         class="flex w-full flex-row flex-wrap items-start justify-center gap-6 px-6 pt-5 md:gap-8 lg:gap-10"
       >
-        {#each data.posts as post}
-          <PostCard
-            thumbnailUrl={post.thumbnailUrl}
-            date={post.date}
-            title={post.title}
-            slug={post.slug}
-            tags={post.tags}
-            description={post.description}
-          />
-        {/each}
+        {#if !data.posts || data.posts.length === 0}
+          <span class="pt-8 text-center text-xl text-slate-500"
+            >{data.post.category === 'activity' ? 'Aktivitas' : 'Artikel'} tidak ditemukan</span
+          >
+        {:else}
+          {#each data.posts as post}
+            <PostCard
+              thumbnailUrl={post.thumbnailUrl}
+              date={post.date}
+              title={post.title}
+              slug={post.slug}
+              tags={post.tags}
+              description={post.description}
+            />
+          {/each}
+        {/if}
       </div>
       <PrimaryButton
         text="Lihat {data.post.category === 'activity' ? 'Aktivitas' : 'Artikel'} Lainnya"
