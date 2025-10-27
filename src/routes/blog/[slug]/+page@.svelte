@@ -19,15 +19,15 @@
   <meta property="og:title" content="{data.post ? data.post.title : '404'} - CryptoSharia" />
   <meta
     name="description"
-    content={data.post ? data.post.description : 'Postingan tidak ditemukan.'}
+    content={data.post ? data.post.description : 'Aktivitas/Artikel tidak ditemukan.'}
   />
   <meta
     property="og:description"
-    content={data.post ? data.post.description : 'Postingan tidak ditemukan.'}
+    content={data.post ? data.post.description : 'Aktivitas/Artikel tidak ditemukan.'}
   />
 
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://www.cryptosharia.id{data.post?.thumbnailUrl}" />
+  <meta property="og:image" content={data.post?.thumbnailUrl} />
 </svelte:head>
 
 {#if !data.post}

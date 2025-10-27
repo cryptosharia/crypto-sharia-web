@@ -1,7 +1,9 @@
 import type { Post } from '../models';
 
-async function mapRowToModel(post: any): Promise<Post> {
-  const content = await (await fetch(post.content_url)).text();
+async function mapRowToModel(post: any, includeContent?: boolean): Promise<Post> {
+  let content = '';
+
+  if (includeContent) content = await (await fetch(post.content_url)).text();
 
   return {
     slug: post.slug,
@@ -24,6 +26,7 @@ export async function getPosts(
     category?: 'activity' | 'article';
     skip?: string[];
     range?: [number, number];
+    includeContent?: boolean;
   } = {}
 ) {
   try {
@@ -46,7 +49,9 @@ export async function getPosts(
 
     if (result.error) throw new Error(result.message);
 
-    let posts: Post[] = result.data.map(async (post: any) => await mapRowToModel(post));
+    let posts: Post[] = result.data.map(
+      async (post: any) => await mapRowToModel(post, params.includeContent)
+    );
 
     // Since the posts are fetched asynchronously,
     // meaning that the posts will be an array of promises,

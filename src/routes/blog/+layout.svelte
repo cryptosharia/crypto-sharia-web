@@ -27,8 +27,9 @@
 
   $effect(() => {
     // Update keyword when navigation completes
-    navigating.complete;
-    keyword = new URLSearchParams(window.location.search).get('search') || '';
+    navigating.complete?.then(() => {
+      keyword = new URLSearchParams(window.location.search).get('search') || '';
+    });
   });
 
   // A function to do search whenever the user has stopped typing for 1.2 seconds
@@ -83,7 +84,7 @@
     <div class="flex w-full flex-row items-center justify-center xl:w-fit">
       <input
         type="search"
-        placeholder="Cari postingan"
+        placeholder={`Cari ${selectedCategory === 'Semua' ? 'aktivitas/artikel' : selectedCategory.toLowerCase()}`}
         value={keyword}
         oninput={onInput}
         class="w-full rounded-xl bg-slate-50 px-4 py-2.5 ring ring-slate-300 focus:text-orange-600 focus:ring-2 focus:ring-orange-600 focus:outline-0 xl:w-[16rem]"

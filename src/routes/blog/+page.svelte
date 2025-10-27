@@ -2,7 +2,7 @@
   import logo1 from '$lib/assets/logo1.png';
   import PostCard from '../../components/PostCard.svelte';
   import type { PageProps } from '../$types';
-  
+
   let { data }: PageProps = $props();
 </script>
 
@@ -18,10 +18,12 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content={logo1} />
 </svelte:head>
-
 <section
   class="flex w-full flex-row flex-wrap items-start justify-center gap-6 px-6 pt-5 md:gap-8 lg:gap-10"
 >
+  {#if data.posts.length === 0}
+    <p class="text-center text-slate-700 text-xl">Aktivitas/Artikel tidak ditemukan</p>
+  {/if}
   {#each data.posts as post}
     <PostCard
       thumbnailUrl={post.thumbnailUrl}
