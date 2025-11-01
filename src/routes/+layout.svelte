@@ -63,7 +63,7 @@
     {
       name: 'WhatsApp',
       icon: whatsappLogo,
-      url: 'https://chat.whatsapp.com/KtqgS9SQGlPLweht53UrHr'
+      url: 'https://chat.whatsapp.com/KXx0GnVBfbACIcOKjmdSdW'
     }
   ];
 </script>
